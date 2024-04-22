@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/anajembaedwin.github.io/static/css/main.fa7d76ae.css",
-    "main.js": "/anajembaedwin.github.io/static/js/main.a93c3ae8.js",
-    "static/js/787.88062e79.chunk.js": "/anajembaedwin.github.io/static/js/787.88062e79.chunk.js",
-    "index.html": "/anajembaedwin.github.io/index.html",
-    "main.fa7d76ae.css.map": "/anajembaedwin.github.io/static/css/main.fa7d76ae.css.map",
-    "main.a93c3ae8.js.map": "/anajembaedwin.github.io/static/js/main.a93c3ae8.js.map",
-    "787.88062e79.chunk.js.map": "/anajembaedwin.github.io/static/js/787.88062e79.chunk.js.map"
+    "main.css": "/anajembaedwin/anajembaedwin.github.io/static/css/main.fa7d76ae.css",
+    "main.js": "/anajembaedwin/anajembaedwin.github.io/static/js/main.c72a0915.js",
+    "static/js/787.88062e79.chunk.js": "/anajembaedwin/anajembaedwin.github.io/static/js/787.88062e79.chunk.js",
+    "index.html": "/anajembaedwin/anajembaedwin.github.io/index.html",
+    "main.fa7d76ae.css.map": "/anajembaedwin/anajembaedwin.github.io/static/css/main.fa7d76ae.css.map",
+    "main.c72a0915.js.map": "/anajembaedwin/anajembaedwin.github.io/static/js/main.c72a0915.js.map",
+    "787.88062e79.chunk.js.map": "/anajembaedwin/anajembaedwin.github.io/static/js/787.88062e79.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa7d76ae.css",
-    "static/js/main.a93c3ae8.js"
+    "static/js/main.c72a0915.js"
   ]
 }
