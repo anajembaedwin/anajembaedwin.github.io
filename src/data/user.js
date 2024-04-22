@@ -21,10 +21,9 @@ const INFO = {
 			"I am a software developer with expertise in backend development, shopify development, and devOps, using HTML, CSS, React, Node.js, Python, ASP.NET, Go and Bash. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills. I am passionate about creating high-quality code that follows best practices and industry standards. I am always looking for new challenges and opportunities to grow as a developer.",
 	},
 
-	about: {
-		title: "I’m Edwin Anajemba. I live in Abuja, where I develop solutions for the future.",
-		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind. Collaborating with others is a great way to learn and grow, and I'm always open to new ideas and feedback.",
+	"about": {
+		"title": "Edwin Anajemba: Crafting Future Solutions",
+		"description": "My journey is a tapestry of diverse projects, each a testament to my dedication and technical prowess. I pride myself on designing robust systems and delivering efficient, scalable solutions. I'm driven by continuous learning, eagerly embracing new challenges and technologies. Feedback is my compass, guiding my professional development and honing my skills. Each project in my portfolio is not just a task completed, but a unique challenge overcome and a milestone in my career."
 	},
 
 	"articles": {
