@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa7d76ae.css",
-    "main.js": "/static/js/main.9c4a64c4.js",
-    "static/js/787.88062e79.chunk.js": "/static/js/787.88062e79.chunk.js",
-    "index.html": "/index.html",
-    "main.fa7d76ae.css.map": "/static/css/main.fa7d76ae.css.map",
-    "main.9c4a64c4.js.map": "/static/js/main.9c4a64c4.js.map",
-    "787.88062e79.chunk.js.map": "/static/js/787.88062e79.chunk.js.map"
+    "main.css": "/anajembaedwin.github.io/static/css/main.fa7d76ae.css",
+    "main.js": "/anajembaedwin.github.io/static/js/main.a93c3ae8.js",
+    "static/js/787.88062e79.chunk.js": "/anajembaedwin.github.io/static/js/787.88062e79.chunk.js",
+    "index.html": "/anajembaedwin.github.io/index.html",
+    "main.fa7d76ae.css.map": "/anajembaedwin.github.io/static/css/main.fa7d76ae.css.map",
+    "main.a93c3ae8.js.map": "/anajembaedwin.github.io/static/js/main.a93c3ae8.js.map",
+    "787.88062e79.chunk.js.map": "/anajembaedwin.github.io/static/js/787.88062e79.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fa7d76ae.css",
-    "static/js/main.9c4a64c4.js"
+    "static/js/main.a93c3ae8.js"
   ]
 }
