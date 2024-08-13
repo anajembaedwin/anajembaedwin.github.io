@@ -19,9 +19,9 @@ const Works = () => {
 								alt="facebook"
 								className="work-image"
 							/>
-							<div className="work-title">Propatidotnet</div>
+							<div className="work-title">Netzence Sustainability Ltd</div>
 							<div className="work-subtitle">
-								Backend and DevOps Engineer
+								Blockchain Engineer (Integration & Audit)
 							</div>
 							<div className="work-duration">2024 - Present</div>
 						</div>
@@ -34,7 +34,7 @@ const Works = () => {
 							/>
 							<div className="work-title">Algorinth Labs LLC</div>
 							<div className="work-subtitle">
-								Backend and Smart Contract Engineer
+								Solidity Developer (Integration and Audit)
 							</div>
 							<div className="work-duration">2023 - 2024</div>
 						</div>
@@ -47,7 +47,7 @@ const Works = () => {
 							/>
 							<div className="work-title">Grandida LLC</div>
 							<div className="work-subtitle">
-								Backend and Smart Contract Engineer
+								Solidity Developer
 							</div>
 							<div className="work-duration">2022 - 2023</div>
 						</div>
@@ -60,7 +60,7 @@ const Works = () => {
 							/>
 							<div className="work-title">Palimart LLC</div>
 							<div className="work-subtitle">
-								Fullstack Developer - Contract
+								Backend Developer
 							</div>
 							<div className="work-duration">2021 - 2022</div>
 						</div>
@@ -73,7 +73,7 @@ const Works = () => {
 							/>
 							<div className="work-title">UCPro LLC</div>
 							<div className="work-subtitle">
-								Junior Web Developer - Contract 
+								Junior Web Developer 
 							</div>
 							<div className="work-duration">2020 - 2021</div>
 						</div>
@@ -84,11 +84,24 @@ const Works = () => {
 								alt="facebook"
 								className="work-image"
 							/>
-							<div className="work-title">STEM Teers NGO</div>
+							<div className="work-title">Prince Ebeano & Co.</div>
 							<div className="work-subtitle">
-								Junior Frontend Developer - Internship 
+								Inventory and Data Analyst 
 							</div>
-							<div className="work-duration">2018 - 2020</div>
+							<div className="work-duration">2019 - 2021</div>
+						</div>
+
+						<div className="work">
+							<img
+								src="./brief-case.jpg"
+								alt="facebook"
+								className="work-image"
+							/>
+							<div className="work-title">STEM-Teers NGO</div>
+							<div className="work-subtitle">
+								STEM Tutor 
+							</div>
+							<div className="work-duration">2018 - 2019</div>
 						</div>
 					</div>
 				}

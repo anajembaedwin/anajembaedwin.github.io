@@ -16,9 +16,9 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "Shopify Developer, Backend and DevOps Engineer, with interest in Data and Machine Learning.",
+		title: "Blockchain Engineer, Smart Contract Auditor, Backend Specialist, DevOps & SRE.",
 		description:
-			"I am a software developer with expertise in backend development, shopify development, and devOps, using HTML, CSS, React, Node.js, Python, ASP.NET, Go and Bash. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills. I am passionate about creating high-quality code that follows best practices and industry standards. I am always looking for new challenges and opportunities to grow as a developer.",
+			"My proficiency extends across a broad spectrum of Web2 and Web3 technologies, including but not limited to NodeJS, Python, Solidity, Ethereum, and IPFS, optimizing deployment pipelines, ensuring system reliability, and automating infrastructure management. This diverse skill set, coupled with my passion for innovation, empowers me to deliver high-impact results in the realm of decentralized application development. I leverage my in-depth understanding of blockchain technology to transform industries, creating secure, transparent, and impactful applications that drive success.",
 	},
 
 	"about": {
