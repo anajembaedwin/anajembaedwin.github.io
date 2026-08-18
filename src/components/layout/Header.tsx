@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex items-center justify-between px-[171px] py-8">
+    <header className="flex items-center justify-between px-6 sm:px-10 xl:px-[171px] py-8">
       <Logo />
 
       <nav className="hidden items-center gap-8 md:flex">

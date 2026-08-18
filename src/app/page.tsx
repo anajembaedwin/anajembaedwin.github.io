@@ -4,6 +4,7 @@ import SectionHeading from "@/components/common/SectionHeading";
 import ProjectsGrid from "@/components/projects/ProjectsGrid";
 import SkillBlock from "@/components/sections/SkillBlock";
 import AboutMe from "@/components/sections/AboutMe";
+import ContactsSection from "@/components/sections/ContactsSection";
 import { skills } from "@/lib/data";
 
 export default function Home() {
@@ -15,12 +16,12 @@ export default function Home() {
         author="Dr. Who"
       />
 
-      <section className="space-y-8 px-[171px] py-16">
+      <section className="space-y-8 px-6 sm:px-10 xl:px-[171px] py-16">
         <SectionHeading label="projects" viewAllHref="/projects" />
         <ProjectsGrid limit={3} />
       </section>
 
-      <section className="space-y-8 px-[171px] py-16">
+      <section className="space-y-8 px-6 sm:px-10 xl:px-[171px] py-16">
         <SectionHeading label="skills" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill) => (
@@ -29,9 +30,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="space-y-8 px-[171px] py-16">
+      <section className="space-y-8 px-6 sm:px-10 xl:px-[171px] py-16">
         <SectionHeading label="about-me" />
         <AboutMe />
+      </section>
+
+      <section className="space-y-8 px-6 sm:px-10 xl:px-[171px] py-16">
+        <SectionHeading label="contacts" />
+        <ContactsSection />
       </section>
     </main>
   );

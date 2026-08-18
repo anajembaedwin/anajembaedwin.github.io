@@ -29,7 +29,7 @@ export default function AboutMe() {
       </div>
 
       <div className="relative">
-        <div className="relative h-[300px] w-[260px] border border-gray/40 bg-gray/10" />
+        <div className="relative h-[507px] w-[339px] max-w-full border border-gray/40 bg-gray/10" />
         <DecorativeDots className="absolute -top-8 -right-10" cols={5} rows={5} />
         <DecorativeDots className="absolute -bottom-8 -left-10" cols={5} rows={5} />
       </div>

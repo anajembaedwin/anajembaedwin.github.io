@@ -4,7 +4,7 @@ import OutlineSquares from "@/components/decorative/OutlineSquares";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-start gap-8 px-[171px] py-16 md:flex-row md:items-center md:justify-between">
+    <section className="relative flex flex-col items-start gap-8 px-6 sm:px-10 xl:px-[171px] py-16 md:flex-row md:items-center md:justify-between">
       <div className="max-w-xl space-y-6">
         <h1 className="text-heading font-semibold text-white">
           Elias is a <span className="text-primary">web designer</span> and{" "}

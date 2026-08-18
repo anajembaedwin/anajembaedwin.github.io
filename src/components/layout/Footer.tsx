@@ -4,7 +4,7 @@ import { socials } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="mt-auto px-[171px] py-8">
+    <footer className="mt-auto px-6 sm:px-10 xl:px-[171px] py-8">
       <div className="h-px w-full bg-gray/40" />
 
       <div className="flex flex-col justify-between gap-8 py-8 md:flex-row">

@@ -5,7 +5,7 @@ type QuoteBlockProps = {
 
 export default function QuoteBlock({ quote, author }: QuoteBlockProps) {
   return (
-    <section className="px-[171px] py-16">
+    <section className="px-6 sm:px-10 xl:px-[171px] py-16">
       <div className="relative max-w-2xl border border-gray/40 px-10 py-8">
         <span className="absolute -top-5 left-6 bg-bg px-2 text-heading text-gray">“</span>
 
