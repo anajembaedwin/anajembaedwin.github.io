@@ -3,6 +3,7 @@ import QuoteBlock from "@/components/sections/QuoteBlock";
 import SectionHeading from "@/components/common/SectionHeading";
 import ProjectsGrid from "@/components/projects/ProjectsGrid";
 import SkillBlock from "@/components/sections/SkillBlock";
+import AboutMe from "@/components/sections/AboutMe";
 import { skills } from "@/lib/data";
 
 export default function Home() {
@@ -26,6 +27,11 @@ export default function Home() {
             <SkillBlock key={skill.category} {...skill} />
           ))}
         </div>
+      </section>
+
+      <section className="space-y-8 px-[171px] py-16">
+        <SectionHeading label="about-me" />
+        <AboutMe />
       </section>
     </main>
   );
