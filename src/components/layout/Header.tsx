@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import BurgerMenu from "./BurgerMenu";
 
 const NAV_ITEMS = [
   { href: "/", label: "home" },
@@ -40,14 +41,7 @@ export default function Header() {
         <LanguageSwitcher />
       </nav>
 
-      <button
-        type="button"
-        className="flex flex-col gap-1.5 md:hidden"
-        aria-label="Open menu"
-      >
-        <span className="h-px w-6 bg-white" />
-        <span className="h-px w-6 bg-white" />
-      </button>
+      <BurgerMenu />
     </header>
   );
 }
