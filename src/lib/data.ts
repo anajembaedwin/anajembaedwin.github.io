@@ -1,3 +1,5 @@
+import type { IconName } from "@/components/icons";
+
 export type ProjectLink = {
   label: string;
   href: string;
@@ -143,7 +145,7 @@ export const skills: SkillCategory[] = [
 export type SocialLink = {
   name: string;
   href: string;
-  icon: "github" | "dribbble" | "figma" | "twitter" | "discord" | "email";
+  icon: IconName;
 };
 
 export const socials: SocialLink[] = [
