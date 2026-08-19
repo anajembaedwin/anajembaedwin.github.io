@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#0e0f11"/>
+  <path d="M0 20 L20 0" stroke="#8fdc4a" stroke-width="3"/>
+  <path d="M0 150 L60 150 L90 180 L0 180 Z" fill="none" stroke="#8fdc4a" stroke-width="3"/>
+  <text x="28" y="105" font-family="monospace" font-weight="700" font-size="34" fill="#fff">PROTECT<tspan fill="#8fdc4a">X</tspan></text>
+  <g transform="translate(310,70)">
+    <polygon points="30,0 58,15 58,45 30,60 2,45 2,15" fill="#8fdc4a"/>
+    <rect x="18" y="24" width="24" height="18" rx="2" fill="#0e0f11"/>
+    <rect x="24" y="16" width="12" height="14" rx="6" fill="none" stroke="#0e0f11" stroke-width="3"/>
+  </g>
+</svg>

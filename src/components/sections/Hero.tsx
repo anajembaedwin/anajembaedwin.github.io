@@ -1,6 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import DecorativeDots from "@/components/decorative/DecorativeDots";
-import OutlineSquares from "@/components/decorative/OutlineSquares";
 
 export default function Hero() {
   return (
@@ -23,18 +22,14 @@ export default function Hero() {
         </Link>
       </div>
 
-      <div className="relative">
-        <OutlineSquares className="absolute -top-8 -left-8 h-24 w-24" />
-        <div className="relative h-[300px] w-[300px] border border-gray/40 bg-gray/10" />
-        <DecorativeDots className="absolute -right-8 bottom-8" cols={5} rows={5} />
-
-        <div className="absolute -bottom-6 left-0 flex items-center gap-2 border border-gray/40 bg-bg px-4 py-2">
-          <span className="size-2 bg-primary" />
-          <span className="text-body text-gray">
-            Currently working on <span className="font-semibold text-white">Portfolio</span>
-          </span>
-        </div>
-      </div>
+      <Image
+        src="/hero-portrait.png"
+        alt="Elias"
+        width={485}
+        height={423}
+        className="w-full max-w-[485px]"
+        priority
+      />
     </section>
   );
 }

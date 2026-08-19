@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#46178f"/>
+  <text x="80" y="100" font-family="'Arial Black', sans-serif" font-weight="900" font-style="italic" font-size="34" fill="#fff">Kahoot<tspan fill="#e21b3c">!</tspan></text>
+  <text x="80" y="128" font-family="monospace" font-weight="700" font-size="20" fill="#fff">Answers</text>
+</svg>

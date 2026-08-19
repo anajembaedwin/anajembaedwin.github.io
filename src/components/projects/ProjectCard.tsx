@@ -1,9 +1,19 @@
+import Image from "next/image";
 import type { Project } from "@/lib/data";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="flex flex-col border border-gray/40">
-      <div className="h-36 border-b border-gray/40 bg-gray/10" />
+      <div className="relative h-36 border-b border-gray/40 bg-gray/10">
+        {project.image && (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover"
+          />
+        )}
+      </div>
 
       <div className="flex flex-1 flex-col gap-3 p-4">
         <div className="flex flex-wrap gap-2 text-body text-gray">

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#1b1e24"/>
+  <rect x="0" y="0" width="130" height="28" fill="#e8622c"/>
+  <text x="10" y="19" font-family="monospace" font-size="12" fill="#fff">chertnodes.ru</text>
+  <text x="24" y="90" font-family="monospace" font-weight="700" font-size="30" fill="#e8622c">Chert<tspan fill="#fff">Nodes</tspan></text>
+  <text x="24" y="112" font-family="monospace" font-size="12" fill="#9aa0a8">Лучший майнкрафт хостинг</text>
+  <rect x="280" y="30" width="90" height="20" rx="2" fill="#2a2e35" stroke="#444"/>
+  <rect x="280" y="56" width="90" height="20" rx="2" fill="#2a2e35" stroke="#444"/>
+  <rect x="280" y="82" width="90" height="20" rx="2" fill="#2a2e35" stroke="#444"/>
+</svg>

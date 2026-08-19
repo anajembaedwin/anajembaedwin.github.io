@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import DecorativeDots from "@/components/decorative/DecorativeDots";
 
 export default function AboutMe() {
   return (
@@ -28,11 +28,13 @@ export default function AboutMe() {
         </Link>
       </div>
 
-      <div className="relative">
-        <div className="relative h-[507px] w-[339px] max-w-full border border-gray/40 bg-gray/10" />
-        <DecorativeDots className="absolute -top-8 -right-10" cols={5} rows={5} />
-        <DecorativeDots className="absolute -bottom-8 -left-10" cols={5} rows={5} />
-      </div>
+      <Image
+        src="/about-portrait.png"
+        alt="Elias"
+        width={343}
+        height={507}
+        className="w-[343px] max-w-full"
+      />
     </div>
   );
 }

@@ -19,7 +19,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "chertnodes",
-    image: "/projects/chertnodes.png",
+    image: "/projects/chertnodes.svg",
     tags: ["HTML", "SCSS", "Python", "Flask"],
     title: "ChertNodes",
     description: "Minecraft servers hosting",
@@ -30,21 +30,21 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "kahoot-answers-viewer",
-    image: "/projects/kahoot-answers-viewer.png",
-    tags: ["CSS", "Express", "Node.js"],
-    title: "Kahoot Answers Viewer",
-    description: "Get answers to your kahoot quiz",
-    links: [{ label: "Live", href: "#", variant: "primary" }],
-    featured: true,
-  },
-  {
     slug: "protectx",
-    image: "/projects/protectx.png",
+    image: "/projects/protectx.svg",
     tags: ["React", "Express", "Discord.js", "Node.js"],
     title: "ProtectX",
     description: "Discord anti-crash bot",
     links: [{ label: "Cached", href: "#", variant: "secondary" }],
+    featured: true,
+  },
+  {
+    slug: "kahoot-answers-viewer",
+    image: "/projects/kahoot-answers-viewer.svg",
+    tags: ["CSS", "Express", "Node.js"],
+    title: "Kahoot Answers Viewer",
+    description: "Get answers to your kahoot quiz",
+    links: [{ label: "Live", href: "#", variant: "primary" }],
     featured: true,
   },
   {
