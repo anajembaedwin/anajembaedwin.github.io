@@ -4,7 +4,7 @@ import type { Project } from "@/lib/data";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="flex flex-col border border-gray/40">
-      <div className="relative h-36 border-b border-gray/40 bg-gray/10">
+      <div className="relative h-[201px] border-b border-gray/40 bg-gray/10">
         {project.image && (
           <Image
             src={project.image}
@@ -15,17 +15,17 @@ export default function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 p-4">
-        <div className="flex flex-wrap gap-2 text-body text-gray">
-          {project.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
+      <div className="flex flex-wrap gap-2 p-2 text-body text-gray">
+        {project.tags.map((tag) => (
+          <span key={tag}>{tag}</span>
+        ))}
+      </div>
 
+      <div className="flex flex-1 flex-col gap-4 border-t border-gray/40 p-4">
         <h3 className="text-quote font-semibold text-white">{project.title}</h3>
         <p className="text-body text-gray">{project.description}</p>
 
-        <div className="mt-auto flex gap-3 pt-2">
+        <div className="mt-auto flex gap-4">
           {project.links.map((link) => (
             <a
               key={link.label}

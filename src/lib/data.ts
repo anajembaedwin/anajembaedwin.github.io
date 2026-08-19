@@ -13,6 +13,7 @@ export type Project = {
   title: string;
   description: string;
   links: ProjectLink[];
+  category: "complete-apps" | "small-projects";
   featured?: boolean;
 };
 
@@ -27,6 +28,7 @@ export const projects: Project[] = [
       { label: "Live", href: "#", variant: "primary" },
       { label: "Cached", href: "#", variant: "secondary" },
     ],
+    category: "complete-apps",
     featured: true,
   },
   {
@@ -36,6 +38,7 @@ export const projects: Project[] = [
     title: "ProtectX",
     description: "Discord anti-crash bot",
     links: [{ label: "Cached", href: "#", variant: "secondary" }],
+    category: "complete-apps",
     featured: true,
   },
   {
@@ -45,23 +48,26 @@ export const projects: Project[] = [
     title: "Kahoot Answers Viewer",
     description: "Get answers to your kahoot quiz",
     links: [{ label: "Live", href: "#", variant: "primary" }],
+    category: "complete-apps",
     featured: true,
   },
   {
     slug: "kotik-bot",
-    image: "/projects/kotik-bot.png",
+    image: "/projects/kotik-bot.svg",
     tags: ["HTML", "CSS", "JS"],
     title: "Kotik Bot",
     description: "Multi-functional discord bot",
     links: [{ label: "Live", href: "#", variant: "primary" }],
+    category: "complete-apps",
   },
   {
     slug: "portfolio",
-    image: "/projects/portfolio.png",
+    image: "/projects/portfolio.svg",
     tags: ["Vue", "TS", "Less"],
     title: "Portfolio",
     description: "You're using it rn",
     links: [{ label: "Github", href: "#", variant: "primary" }],
+    category: "complete-apps",
   },
   {
     slug: "bot-boilerplate",
@@ -70,6 +76,7 @@ export const projects: Project[] = [
     title: "Bot boilerplate",
     description: "Start creating scalable discord.js bot with typescript in seconds",
     links: [{ label: "Github", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "my-blog",
@@ -78,6 +85,7 @@ export const projects: Project[] = [
     title: "My blog",
     description: "Front-end of my future blog website written in vue",
     links: [{ label: "Github", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "chess-pro",
@@ -86,6 +94,7 @@ export const projects: Project[] = [
     title: "Chess pro",
     description: "Figma landing page about service for viewing chess tournaments",
     links: [{ label: "Figma", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "crash-protect-website",
@@ -94,6 +103,7 @@ export const projects: Project[] = [
     title: "Crash protect website",
     description: "Figma template for website about anti-raid, anti-crash discord bot",
     links: [{ label: "Figma", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "css-experiments",
@@ -102,6 +112,7 @@ export const projects: Project[] = [
     title: "CSS experiments",
     description: "Collection of my different little projects in css",
     links: [{ label: "Live", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "web-dev-nvim-config",
@@ -110,6 +121,7 @@ export const projects: Project[] = [
     title: "Web Dev nvim config",
     description: "Config for neovim perfect for web developer",
     links: [{ label: "Github", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "ooku",
@@ -118,6 +130,7 @@ export const projects: Project[] = [
     title: "Ooku",
     description: "Simple link shortener with auth",
     links: [{ label: "Live", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
   {
     slug: "school-website",
@@ -126,6 +139,7 @@ export const projects: Project[] = [
     title: "School website",
     description: "Figma template website for my school",
     links: [{ label: "Figma", href: "#", variant: "primary" }],
+    category: "small-projects",
   },
 ];
 

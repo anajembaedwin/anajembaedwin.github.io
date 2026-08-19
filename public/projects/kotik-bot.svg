@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#141518"/>
+  <circle cx="70" cy="100" r="38" fill="#e8c98a"/>
+  <circle cx="58" cy="88" r="4" fill="#141518"/>
+  <circle cx="82" cy="88" r="4" fill="#141518"/>
+  <path d="M60 108 Q70 116 80 108" stroke="#141518" stroke-width="2" fill="none"/>
+  <text x="130" y="94" font-family="'Arial Black', sans-serif" font-weight="900" font-size="26" fill="#fff">БОТ КОТИК</text>
+  <text x="130" y="118" font-family="monospace" font-size="12" fill="#9aa0a8">Самый милый бот в мире</text>
+  <circle cx="110" cy="128" r="5" fill="#4ade80"/>
+</svg>

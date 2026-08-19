@@ -1,10 +1,14 @@
-import { projects } from "@/lib/data";
+import { projects, type Project } from "@/lib/data";
 import ProjectCard from "./ProjectCard";
 
-export default function ProjectsGrid({ limit }: { limit?: number }) {
-  const items = limit
-    ? projects.filter((p) => p.featured).slice(0, limit)
-    : projects;
+type ProjectsGridProps = {
+  limit?: number;
+  category?: Project["category"];
+};
+
+export default function ProjectsGrid({ limit, category }: ProjectsGridProps) {
+  let items = category ? projects.filter((p) => p.category === category) : projects;
+  if (limit) items = items.filter((p) => p.featured).slice(0, limit);
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
