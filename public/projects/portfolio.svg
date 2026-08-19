@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#282c33"/>
+  <rect x="16" y="14" width="10" height="10" fill="#fff"/>
+  <text x="32" y="23" font-family="monospace" font-weight="700" font-size="12" fill="#fff">Elias</text>
+  <text x="20" y="70" font-family="monospace" font-weight="700" font-size="18" fill="#fff">Elias is a <tspan fill="#C778DD">web designer</tspan></text>
+  <text x="20" y="90" font-family="monospace" font-weight="700" font-size="18" fill="#C778DD">and front-end developer</text>
+  <rect x="20" y="110" width="72" height="24" fill="none" stroke="#C778DD"/>
+  <text x="30" y="126" font-family="monospace" font-size="10" fill="#fff">Contact me!!</text>
+  <rect x="240" y="20" width="140" height="150" fill="#3a3f48"/>
+</svg>
