@@ -692,7 +692,16 @@ export const start = (canvas, api) => {
 
 	// ---- input ----
 	const onClick = (event) => {
-		if (event.target.closest && event.target.closest("[data-guide]")) return;
+		// Real controls always win: a tiny person standing behind a link or a
+		// button must never swallow the click.
+		if (
+			event.target.closest &&
+			event.target.closest(
+				"[data-guide], .site-header, a, button, input, select, textarea, summary, label, [role='button'], .term"
+			)
+		) {
+			return;
+		}
 		const sx = window.scrollX;
 		const sy = window.scrollY;
 		const px = event.clientX + sx;
