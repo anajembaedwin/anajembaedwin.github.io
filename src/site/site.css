@@ -1030,3 +1030,14 @@
 		gap: 2px;
 	}
 }
+
+.edu {
+	margin-top: 14px;
+	margin-bottom: 0;
+	font-size: 0.95rem;
+	color: var(--ink-2);
+}
+
+.edu strong {
+	color: var(--ink);
+}

@@ -8,7 +8,7 @@ export const SITE = {
 
 	hero: {
 		headline: "Product team lead.",
-		lead: "I lead teams that ship products, from payments and APIs to Web3, and I build my own on the side.",
+		lead: "I lead a team of developers shipping products, from payments and APIs to Web3, and I build my own on the side.",
 	},
 
 	// Lines in the hero's API-response panel: [key, value]
@@ -22,11 +22,11 @@ export const SITE = {
 	proof: [
 		{
 			name: "Palimart",
-			text: "Owned the e-commerce backend for three years.",
+			text: "Built the e-commerce backend, 2021 to 2024.",
 		},
 		{
 			name: "CloseCarbon",
-			text: "Smart contracts tied into a Web2 backend.",
+			text: "Hyperledger contracts tied into a Python backend.",
 		},
 		{
 			name: "JointEarn",
@@ -90,24 +90,42 @@ export const SITE = {
 	},
 
 	work: {
-		title: "Selected work",
+		title: "Experience",
 		items: [
 			{
-				name: "Palimart",
-				tag: "C2C and B2C e-commerce",
-				role: "Backend owner for three years",
-				outcome: null,
-			},
-			{
-				name: "CloseCarbon",
-				tag: "Carbon emissions tracking",
-				role: "Built the smart contracts and integrated them with the backend and APIs",
-				outcome: null,
-			},
-			{
 				name: "JointEarn",
-				tag: "Product team",
-				role: "Product Team Lead since October 2026",
+				tag: "Digital entertainment, social engagement, and e-commerce platform. 2025 to now.",
+				role: "Backend engineer, then full stack, now Product Team Lead. I oversee the developers, track progress, and make sure deliverables ship. I still own delivery of the React frontend and the Node.js/TypeScript backend.",
+				outcome: "The backend is the system of record for user activity, engagement, and transactions.",
+			},
+			{
+				name: "Maxxed Technical Systems",
+				tag: "Enterprise SaaS platform. 2024 to 2025.",
+				role: "Built backend services and data access layers in Node.js and Python on PostgreSQL.",
+				outcome: "Cut response times by about 25% by optimizing SQL queries and reporting views.",
+			},
+			{
+				name: "CloseCarbon (Netzence)",
+				tag: "Carbon emissions verification platform. 2024 to 2025, contract.",
+				role: "Built smart contracts on Hyperledger and integrated them with a Python (FastAPI) backend and APIs that take in data from an embedded tracking device.",
+				outcome: "Auditable emissions records for an ESG compliance platform.",
+			},
+			{
+				name: "Cruva (formerly UpTk)",
+				tag: "E-commerce marketplace. 2024, contract.",
+				role: "Built Vue.js buyer and merchant workflows, and deployed backend services on AWS.",
+				outcome: "A marketplace with 2,000+ users and about $10,000 in monthly transactions.",
+			},
+			{
+				name: "Palimart",
+				tag: "E-commerce retail platform. 2021 to 2024.",
+				role: "Backend engineer, then full stack. Built the catalog, order, and payment systems as the platform grew to multi-vendor, then rebuilt the frontend in Next.js.",
+				outcome: "APIs serving web and mobile clients with thousands of daily transactions.",
+			},
+			{
+				name: "GirlLEAD Talent Accelerator",
+				tag: "Non-profit, volunteer. 2025 to now.",
+				role: "Designed the backend architecture for internal platforms. Wrote the product requirements, engineering guidelines, and infrastructure migration plan, and mentor junior developers.",
 				outcome: null,
 			},
 		],
@@ -120,7 +138,7 @@ export const SITE = {
 
 	leadership: {
 		title: "How I lead",
-		text: "My background is backend engineering, so I scope products with the technical reality in mind. Now I lead the product and the people building it.",
+		text: "My background is backend engineering, so I scope products with the technical reality in mind. At JointEarn I now lead the developers building the product: I review their code, track progress against goals, and keep delivery on schedule.",
 		principles: [
 			"Start from the user's problem, not the feature list.",
 			"Ship small and show progress every week.",
@@ -137,9 +155,14 @@ export const SITE = {
 		skills: [
 			{
 				group: "Backend",
-				items: ["TypeScript and NestJS", "Python and FastAPI"],
+				items: [
+					"Node.js, TypeScript, and NestJS",
+					"Python and FastAPI",
+					"Java and Spring Boot",
+				],
 			},
-			{ group: "Data", items: ["PostgreSQL", "Redis"] },
+			{ group: "Frontend", items: ["React", "Next.js", "Vue.js"] },
+			{ group: "Data", items: ["PostgreSQL", "MongoDB", "MySQL", "Redis"] },
 			{
 				group: "Cloud",
 				items: [
@@ -152,8 +175,22 @@ export const SITE = {
 				group: "Web3",
 				items: ["Solidity on Polygon", "Hyperledger"],
 			},
-			{ group: "AI", items: ["Claude API integration"] },
+			{
+				group: "AI",
+				items: [
+					"Claude API integration",
+					"AI-assisted development with Cursor, Claude Code, and GitHub Copilot, with code review and tests on everything it writes",
+				],
+			},
 		],
+		education: {
+			degree: "BSc Mathematics, Federal University Oye-Ekiti, Nigeria (2013 to 2017)",
+			certs: [
+				"Python 3 Programming Specialization, University of Michigan",
+				"Java Programming and Software Engineering Fundamentals, Duke University",
+				"Blockchain, University at Buffalo",
+			],
+		},
 	},
 
 	// Set to { quote, name, role } to show a testimonial; null hides it.
