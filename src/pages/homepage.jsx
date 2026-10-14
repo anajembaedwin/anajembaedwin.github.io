@@ -13,10 +13,10 @@ import Marquee from "../site/Marquee";
 import Testimonials from "../site/Testimonials";
 
 import INFO from "../data/user";
-import { SITE } from "../data/site";
-import PRODUCTS from "../data/products";
+import { useI18n, fmt } from "../i18n";
 
 const Homepage = () => {
+	const { site: SITE, ui, products: PRODUCTS } = useI18n();
 	useEffect(() => {
 		if (!window.location.hash) {
 			window.scrollTo(0, 0);
@@ -56,7 +56,7 @@ const Homepage = () => {
 	return (
 		<Layout current="home">
 			<Helmet>
-				<title>{`${SITE.name} | ${SITE.role}`}</title>
+				<title>{`${SITE.name} | ${SITE.response[0][1]}`}</title>
 			</Helmet>
 
 			<section className="hero">
@@ -67,10 +67,10 @@ const Homepage = () => {
 						<p className="hero__lead">{SITE.hero.lead}</p>
 						<div className="hero__actions">
 							<a className="btn btn--hot" href="#contact" data-react="🚀,✨,💜">
-								Hire me
+								{ui.hire}
 							</a>
 							<Link className="btn btn--ghost" to="/products">
-								See my products
+								{ui.seeProducts}
 							</Link>
 						</div>
 					</div>
@@ -78,7 +78,7 @@ const Homepage = () => {
 				</div>
 			</section>
 
-			<section className="proof" aria-label="Where I've worked">
+			<section className="proof" aria-label={ui.proofLabel}>
 				<div className="wrap proof__grid">
 					{SITE.proof.map((item) => (
 						<div className="proof__item" key={item.name}>
@@ -123,7 +123,7 @@ const Homepage = () => {
 					<ol className="steps">
 						{SITE.process.steps.map((step, i) => (
 							<li className="step" key={step.title}>
-								<div className="step__label">Step {i + 1}</div>
+								<div className="step__label">{ui.step} {i + 1}</div>
 								<div className="step__title">{step.title}</div>
 								<div className="step__text">{step.text}</div>
 							</li>
@@ -153,12 +153,12 @@ const Homepage = () => {
 									)}
 								</div>
 								<div>
-									<div className="work__label">What I did</div>
+									<div className="work__label">{ui.whatIDid}</div>
 									{item.role}
 								</div>
 								{item.outcome && (
 									<div>
-										<div className="work__label">Outcome</div>
+										<div className="work__label">{ui.outcome}</div>
 										{item.outcome}
 									</div>
 								)}
@@ -166,12 +166,14 @@ const Homepage = () => {
 						))}
 					</div>
 					<p className="work__more">
-						Code samples are on{" "}
-						<Link to="/projects">the projects page</Link> and{" "}
-						<a href={INFO.socials.github} target="_blank" rel="noreferrer">
-							GitHub
-						</a>
-						.
+						{fmt(ui.codeSamples, {
+							projects: <Link to="/projects">{ui.projectsLink}</Link>,
+							github: (
+								<a href={INFO.socials.github} target="_blank" rel="noreferrer">
+									GitHub
+								</a>
+							),
+						})}
 					</p>
 				</div>
 			</section>
@@ -195,8 +197,8 @@ const Homepage = () => {
 				<section className="section" id="products">
 					<div className="wrap" data-reveal>
 						<div className="section-head">
-							<h2 className="section-title">Products I build</h2>
-							<Link to="/products">All products</Link>
+							<h2 className="section-title">{ui.productsTitle}</h2>
+							<Link to="/products">{ui.allProducts}</Link>
 						</div>
 						<div className="product-grid">
 							{PRODUCTS.map((product) => (
@@ -205,7 +207,7 @@ const Homepage = () => {
 									<h3>{product.name}</h3>
 									<p>{product.pitch}</p>
 									<Link to={`/products/${product.slug}`}>
-										View {product.name}
+										{fmt(ui.viewProduct, { name: product.name })}
 									</Link>
 								</article>
 							))}
@@ -247,10 +249,10 @@ const Homepage = () => {
 							))}
 						</dl>
 						<p className="prose edu">
-							<strong>Education.</strong> {SITE.about.education.degree}
+							<strong>{ui.education}</strong> {SITE.about.education.degree}
 						</p>
 						<p className="prose edu">
-							<strong>Certifications.</strong>{" "}
+							<strong>{ui.certifications}</strong>{" "}
 							{SITE.about.education.certs.join("; ")}.
 						</p>
 					</div>
@@ -275,17 +277,20 @@ const Homepage = () => {
 							</dl>
 						)}
 						<p className="contact__alt">
-							Prefer to write directly?{" "}
-							<a href={`mailto:${INFO.main.email}`}>{INFO.main.email}</a>{" "}
-							or{" "}
-							<a
-								href={INFO.socials.linkedin}
-								target="_blank"
-								rel="noreferrer"
-							>
-								LinkedIn
-							</a>
-							.
+							{fmt(ui.contactAlt, {
+								email: (
+									<a href={`mailto:${INFO.main.email}`}>{INFO.main.email}</a>
+								),
+								linkedin: (
+									<a
+										href={INFO.socials.linkedin}
+										target="_blank"
+										rel="noreferrer"
+									>
+										LinkedIn
+									</a>
+								),
+							})}
 						</p>
 					</div>
 					<div className="contact__card">

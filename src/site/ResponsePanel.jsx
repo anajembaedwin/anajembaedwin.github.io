@@ -2,7 +2,10 @@ import React from "react";
 
 // The hero's API-response panel. Lines fade in one after another on first
 // load (and not at all for people who prefer reduced motion).
+import { useI18n } from "../i18n";
+
 const ResponsePanel = ({ lines }) => {
+	const { ui } = useI18n();
 	const rows = [
 		{ key: "req", node: <span className="resp__dim">GET /edwin</span> },
 		{
@@ -27,7 +30,7 @@ const ResponsePanel = ({ lines }) => {
 	];
 
 	return (
-		<div className="resp" role="group" aria-label="Profile summary">
+		<div className="resp" role="group" aria-label={ui.respLabel}>
 			{rows.map((row, i) => (
 				<div className="resp__line" style={{ "--i": i }} key={row.key}>
 					{row.node}
