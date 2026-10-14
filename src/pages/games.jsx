@@ -86,7 +86,13 @@ const Games = () => {
 								</div>
 								<h3>{info(game.slug).name}</h3>
 								<p>{info(game.slug).pitch}</p>
-								<Link to={`/contact?topic=${game.slug}`}>{t.notify}</Link>
+								{game.play ? (
+									<Link className="btn btn--hot" to={game.play}>
+										{t.play}
+									</Link>
+								) : (
+									<Link to={`/contact?topic=${game.slug}`}>{t.notify}</Link>
+								)}
 							</article>
 						))}
 					</div>
