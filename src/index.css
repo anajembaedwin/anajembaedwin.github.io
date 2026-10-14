@@ -1,14 +1,87 @@
-@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Roboto:wght@500&display=swap");
-@import "./data/styles.css";
+:root {
+	--cobalt: #2b44e6;
+	--cobalt-deep: #1f33b5;
+	--cobalt-tint: #e4e8fb;
+	--cobalt-text: #dde2ff;
+	--tangerine: #ff6a3d;
+	--tangerine-hover: #ff7d56;
+	--tangerine-ink: #3b1203;
+	--tangerine-sub: #5a2308;
+	--indigo: #1c2033;
+	--indigo-line: #343a5c;
+	--lilac: #c9ccf0;
+	--lilac-dim: #9fa6d8;
+	--status: #7bd88f;
+	--blueprint: #eaf0f4;
+	--blueprint-line: #b9c9d6;
+	--blueprint-ink: #1f3a52;
+	--blueprint-sub: #3e6280;
+	--ink: #14161c;
+	--ink-2: #4a5060;
+	--line: #d8dbe2;
+	--paper: #ffffff;
+	--wash: #f6f7fa;
+
+	--font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+	--font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI",
+		sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+
+	--maxw: 1080px;
+	--gutter: 24px;
+	--radius: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
 
 body {
 	margin: 0;
-	font-family: var(--primary-font);
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-		monospace;
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	font-weight: 600;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: var(--cobalt);
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+:focus-visible {
+	outline: 3px solid var(--cobalt);
+	outline-offset: 3px;
 }
