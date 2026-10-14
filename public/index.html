@@ -4,8 +4,38 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#000000" />
-		<title>Reactfolio</title>
+		<meta name="theme-color" content="#2B44E6" />
+		<meta
+			name="description"
+			content="Edwin Anajemba is a product team lead and engineer building payments, APIs, and Web3 products. Available for select freelance projects."
+		/>
+		<title>Edwin Anajemba | Product Team Lead</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<script>
+			// Single-page-app deep links on GitHub Pages: restore the path that
+			// 404.html packed into the query string.
+			(function (l) {
+				if (l.search[1] === "/") {
+					var decoded = l.search
+						.slice(1)
+						.split("&")
+						.map(function (s) {
+							return s.replace(/~and~/g, "&");
+						})
+						.join("?");
+					window.history.replaceState(
+						null,
+						null,
+						l.pathname.slice(0, -1) + decoded + l.hash
+					);
+				}
+			})(window.location);
+		</script>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>
