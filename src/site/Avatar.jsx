@@ -1,24 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const QUIPS = [
-	"It works on my machine.",
-	"Have you tried turning it off and on again?",
-	"Ship it.",
-	"I read the logs so you don't have to.",
-	"Always have a rollback plan.",
-	"Let's build something.",
-	"Production is just staging with users.",
-];
+import { useI18n } from "../i18n";
 
 // Cartoon portrait. The pupils follow the cursor, the eyes blink now and
 // then, and clicking him makes him say something.
 const Avatar = () => {
+	const { ui } = useI18n();
+	const QUIPS = ui.quips;
 	const ref = useRef(null);
 	const [p, setP] = useState({ x: 0, y: 0 });
 	const [quip, setQuip] = useState(null);
 	const [blinkDelay] = useState(() => `${(Math.random() * 4).toFixed(2)}s`);
 	const timer = useRef(null);
-	const next = useRef(Math.floor(Math.random() * QUIPS.length));
+	const next = useRef(Math.floor(Math.random() * 7));
 
 	useEffect(() => {
 		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -60,7 +54,7 @@ const Avatar = () => {
 			className="avatar about__photo"
 			onClick={talk}
 			data-react="👋,✨,🚀"
-			aria-label="Edwin's cartoon portrait. Press to hear him say something."
+			aria-label={ui.avatarLabel}
 		>
 			{quip && (
 				<span className="avatar__bubble" role="status">
@@ -73,7 +67,7 @@ const Avatar = () => {
 				role="img"
 				aria-labelledby="avatar-title"
 			>
-				<title id="avatar-title">Cartoon portrait of Edwin Anajemba: short hair, full beard, black-framed glasses and a patterned shirt.</title>
+				<title id="avatar-title">{ui.avatarTitle}</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#6b4cff"/><stop offset=".55" stopColor="#ff5c7a"/><stop offset="1" stopColor="#ffb84d"/></linearGradient>
 <clipPath id="frame"><rect x="45" y="45" width="900" height="915" rx="90"/></clipPath>

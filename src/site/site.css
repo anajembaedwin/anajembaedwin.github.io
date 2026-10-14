@@ -56,46 +56,78 @@
 	position: sticky;
 	top: 0;
 	z-index: 40;
-	background: var(--night);
+	height: var(--header-h);
+	padding: 10px 0 0;
+	background: transparent;
 	color: #ffffff;
-	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.site-header.is-scrolled {
+.site-header__pill {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 8px 20px;
+	padding: 10px 14px 10px 26px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.07);
+	overflow: hidden;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.site-header.is-scrolled .site-header__pill {
 	background: rgba(21, 16, 42, 0.86);
-	-webkit-backdrop-filter: blur(14px);
-	backdrop-filter: blur(14px);
-	box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.7);
-}
-
-.site-header__row {
-	transition: padding 0.3s ease;
-}
-
-.site-header.is-scrolled .site-header__row {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	-webkit-backdrop-filter: blur(16px);
+	backdrop-filter: blur(16px);
+	border-color: rgba(255, 255, 255, 0.18);
+	box-shadow: 0 18px 36px -20px rgba(0, 0, 0, 0.75);
 }
 
 .progress {
 	position: absolute;
-	left: 0;
-	right: 0;
+	left: 26px;
+	right: 26px;
 	bottom: 0;
 	height: 3px;
+	border-radius: 3px;
 	background: var(--grad);
 	transform-origin: left;
 	transform: scaleX(0);
 }
 
-.site-header__row {
+.lang {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 12px 24px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	gap: 2px;
+	padding: 3px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.lang button {
+	min-width: 36px;
+	min-height: 32px;
+	padding: 4px 8px;
+	border: 0;
+	border-radius: 999px;
+	background: transparent;
+	color: var(--on-night);
+	font: 600 0.78rem/1 var(--font-body);
+	letter-spacing: 0.04em;
+	cursor: pointer;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang button:hover {
+	background: rgba(255, 255, 255, 0.16);
+	color: #ffffff;
+}
+
+.lang button[aria-pressed="true"] {
+	background: #ffffff;
+	color: var(--ink);
 }
 
 .brand {
@@ -187,7 +219,8 @@
 		transparent 70%
 	);
 	color: #ffffff;
-	padding: 36px 0 120px;
+	margin-top: calc(-1 * var(--header-h));
+	padding: calc(var(--header-h) + 36px) 0 120px;
 	clip-path: ellipse(135% 100% at 50% 0%);
 }
 
@@ -882,7 +915,8 @@
 	overflow: hidden;
 	background: var(--night);
 	color: #ffffff;
-	padding: 28px 0 90px;
+	margin-top: calc(-1 * var(--header-h));
+	padding: calc(var(--header-h) + 28px) 0 90px;
 	clip-path: ellipse(140% 100% at 50% 0%);
 }
 

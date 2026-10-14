@@ -23,6 +23,7 @@
 	--font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
 
 	--maxw: 1080px;
+	--header-h: 72px;
 	--gutter: 24px;
 	--radius: 22px;
 }

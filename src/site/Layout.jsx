@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import INFO from "../data/user";
-import { SITE } from "../data/site";
+import { useI18n, LANGS } from "../i18n";
 import { installReactions } from "./reactions";
 
 const Layout = ({ children, current }) => {
+	const { lang, setLang, site, ui } = useI18n();
+
 	useEffect(() => installReactions(), []);
 
 	// Keep the header pinned, and show how far down the page you are.
@@ -35,32 +37,48 @@ const Layout = ({ children, current }) => {
 	return (
 		<React.Fragment>
 			<a className="skip-link" href="#main">
-				Skip to content
+				{ui.skip}
 			</a>
 
 			<header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
-				<div className="wrap site-header__row">
-					<Link className="brand" to="/">
-						{SITE.name}
-					</Link>
-					<nav className="nav" aria-label="Main">
-						<a href="/#services">Services</a>
-						<a href="/#work">Work</a>
-						<Link
-							to="/products"
-							aria-current={current === "products" ? "page" : undefined}
-						>
-							Products
+				<div className="wrap">
+					<div className="site-header__pill">
+						<Link className="brand" to="/">
+							{site.name}
 						</Link>
-						<a href="/#about">About</a>
-						<a href="/#contact">Contact</a>
-					</nav>
+						<nav className="nav" aria-label={ui.nav.label}>
+							<a href="/#services">{ui.nav.services}</a>
+							<a href="/#work">{ui.nav.work}</a>
+							<Link
+								to="/products"
+								aria-current={current === "products" ? "page" : undefined}
+							>
+								{ui.nav.products}
+							</Link>
+							<a href="/#about">{ui.nav.about}</a>
+							<a href="/#contact">{ui.nav.contact}</a>
+						</nav>
+						<div className="lang" role="group" aria-label={ui.langLabel}>
+							{LANGS.map((item) => (
+								<button
+									type="button"
+									key={item.code}
+									lang={item.code}
+									title={item.name}
+									aria-pressed={item.code === lang}
+									onClick={() => setLang(item.code)}
+								>
+									{item.label}
+								</button>
+							))}
+						</div>
+						<div
+							className="progress"
+							aria-hidden="true"
+							style={{ transform: `scaleX(${progress})` }}
+						/>
+					</div>
 				</div>
-				<div
-					className="progress"
-					aria-hidden="true"
-					style={{ transform: `scaleX(${progress})` }}
-				/>
 			</header>
 
 			<main id="main">{children}</main>
@@ -68,27 +86,21 @@ const Layout = ({ children, current }) => {
 			<footer className="site-footer">
 				<div className="wrap site-footer__row">
 					<div>
-						<div className="site-footer__name">{SITE.name}</div>
-						<div className="site-footer__sub">
-							Product team lead. Web and infrastructure engineer, based in Africa.
-						</div>
+						<div className="site-footer__name">{site.name}</div>
+						<div className="site-footer__sub">{ui.footerSub}</div>
 					</div>
 					<div className="site-footer__links">
 						<a href={INFO.socials.github} target="_blank" rel="noreferrer">
-							GitHub
+							{ui.footerLinks.github}
 						</a>
-						<a
-							href={INFO.socials.linkedin}
-							target="_blank"
-							rel="noreferrer"
-						>
-							LinkedIn
+						<a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">
+							{ui.footerLinks.linkedin}
 						</a>
-						<a href={`mailto:${INFO.main.email}`}>Email</a>
+						<a href={`mailto:${INFO.main.email}`}>{ui.footerLinks.email}</a>
 					</div>
 				</div>
 				<div className="wrap site-footer__copy">
-					© {new Date().getFullYear()} {SITE.name}
+					© {new Date().getFullYear()} {site.name}
 				</div>
 			</footer>
 		</React.Fragment>
