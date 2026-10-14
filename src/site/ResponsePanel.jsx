@@ -36,6 +36,7 @@ const COMMANDS = [
 	"open",
 	"lang",
 	"curl",
+	"guide",
 	"clear",
 ];
 const SECTIONS = {
@@ -222,6 +223,11 @@ const ResponsePanel = ({ lines }) => {
 			}
 			case "curl":
 				return json;
+			case "guide": {
+				const want = arg === "off" ? "off" : "on";
+				window.dispatchEvent(new CustomEvent("guide:set", { detail: want }));
+				return [line(want === "off" ? T.guideOff : T.guideOn)];
+			}
 			case "date":
 				return [line(new Date().toString())];
 			case "echo":

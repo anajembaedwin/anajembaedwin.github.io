@@ -6,6 +6,7 @@ import { useI18n, LANGS } from "../i18n";
 import { installReactions } from "./reactions";
 import PlayLayer from "./PlayLayer";
 import TinyPeople from "./TinyPeople";
+import Guide from "./Guide";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
@@ -124,6 +125,7 @@ const Layout = ({ children, current }) => {
 
 			<PlayLayer />
 			<TinyPeople />
+			<Guide />
 
 			<footer className="site-footer">
 				<div className="wrap site-footer__row">

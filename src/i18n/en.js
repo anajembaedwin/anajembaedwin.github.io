@@ -110,6 +110,8 @@ const en = {
 		  "themeUsage": "usage: theme <{c}>",
 		  "exitLabel": "Take the blue pill (Esc)"
 		 },
+		 "guideOn": "Pip is back.",
+		 "guideOff": "Pip has gone to rest. Type guide to bring them back.",
 		 "cmds": {
 		  "help": "show this list",
 		  "whoami": "who I am",
@@ -124,6 +126,7 @@ const en = {
 		  "cat": "read a file, e.g. cat about.md",
 		  "open": "jump to a section, e.g. open work",
 		  "lang": "switch language, e.g. lang fr",
+		  "guide": "bring Pip, the guide, back or send them away: guide on|off",
 		  "curl": "print the API response again",
 		  "clear": "clear the screen"
 		 }
@@ -179,6 +182,64 @@ const en = {
 				"Your email app should open with the message filled in. If it didn't, email {email}.",
 			failed: "That didn't send. Email me at {email} instead.",
 			subject: "{type}: message from {name}",
+		},
+		guide: {
+		 "label": "Guide",
+		 "open": "Pip, the guide. Open the menu.",
+		 "show": "Bring the guide back",
+		 "close": "Close",
+		 "hide": "Send Pip away",
+		 "tipsOn": "Turn tips on",
+		 "tipsOff": "Stop tips",
+		 "yes": "Yes",
+		 "no": "No thanks",
+		 "notNow": "Not now",
+		 "next": "Next",
+		 "stop": "Stop",
+		 "finish": "Finish",
+		 "thanks": "Thanks",
+		 "go": "Take me there",
+		 "play": "Play",
+		 "back": "I'm back!",
+		 "intro": "Hi, I'm Pip, your guide. Want a 30-second tour?",
+		 "menu": {
+		  "title": "What would you like to do?",
+		  "tour": "Take the tour",
+		  "work": "See the experience",
+		  "contact": "Contact Edwin",
+		  "game": "Play Tiny Wars"
+		 },
+		 "tour": [
+		  {
+		   "id": "services",
+		   "text": "These are the services on offer, from leading a product build to cloud infrastructure."
+		  },
+		  {
+		   "id": "work",
+		   "text": "Experience, with what was built and the result of each."
+		  },
+		  {
+		   "id": "about",
+		   "text": "Edwin's stack and background. Click his portrait to ask him questions."
+		  },
+		  {
+		   "id": "contact",
+		   "text": "Say what you want built, your timeline and your budget range, and you'll get a reply."
+		  }
+		 ],
+		 "tourDone": "That's the tour. Tap me any time you need something.",
+		 "tips": {
+		  "services": "It looks like you're checking the services. Want me to take you to the contact form?",
+		  "work": "Curious how Edwin leads a team? The section just below explains it.",
+		  "about": "Try clicking Edwin's portrait. He answers questions.",
+		  "contact": "Tip: mention your timeline and budget range so the reply is useful.",
+		  "form": "Writing a message? Say what you want built and when you need it.",
+		  "terminal": "That terminal is real. Type help to see what it can do.",
+		  "products": "Each product has its own page, with its status.",
+		  "projects": "These are open-source projects. Each one links to GitHub.",
+		  "games": "Tiny Wars is playable. Want to try a battle?",
+		  "village": "Tap a tiny person. They might get a name and a job, or not."
+		 }
 		},
 		playPage: {
 		 "title": "Tiny Wars",
