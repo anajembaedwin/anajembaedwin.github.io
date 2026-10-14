@@ -15,6 +15,7 @@ const pt = {
 			work: "Percurso",
 			products: "Produtos",
 			games: "Jogos",
+			code: "Código",
 			about: "Sobre",
 			contact: "Contacto",
 		},
