@@ -7,7 +7,6 @@ import ResponsePanel from "../site/ResponsePanel";
 import Diagram from "../site/Diagram";
 import StatusChip from "../site/StatusChip";
 import ContactForm from "../site/ContactForm";
-import AboutSide from "../site/AboutSide";
 import Floaters from "../site/Floaters";
 import Marquee from "../site/Marquee";
 import Testimonials from "../site/Testimonials";
@@ -63,14 +62,19 @@ const Homepage = () => {
 				<Floaters />
 				<div className="wrap hero__grid">
 					<div>
+						<p className="hero__kicker">{SITE.name}</p>
 						<h1 className="hero__title">{SITE.hero.headline}</h1>
 						<p className="hero__lead">{SITE.hero.lead}</p>
+						<p className="hero__avail">
+							<span aria-hidden="true" />
+							{ui.openToContracts}
+						</p>
 						<div className="hero__actions">
 							<a className="btn btn--hot" href="#contact" data-react="🚀,✨,💜">
 								{ui.hire}
 							</a>
-							<Link className="btn btn--ghost" to="/products">
-								{ui.seeProducts}
+							<Link className="btn btn--ghost" to="/about">
+								{ui.aboutMe}
 							</Link>
 						</div>
 					</div>
@@ -231,31 +235,14 @@ const Homepage = () => {
 			</section>
 
 			<section className="section" id="about">
-				<div className="wrap about" data-reveal>
-					<AboutSide />
+				<div className="wrap about-teaser" data-reveal>
 					<div>
 						<h2 className="section-title">{SITE.about.title}</h2>
-						{SITE.about.text.map((paragraph) => (
-							<p className="prose" key={paragraph}>
-								{paragraph}
-							</p>
-						))}
-						<dl className="skills">
-							{SITE.about.skills.map((skill) => (
-								<div className="skills__row" key={skill.group}>
-									<dt>{skill.group}</dt>
-									<dd>{skill.items.join(", ")}</dd>
-								</div>
-							))}
-						</dl>
-						<p className="prose edu">
-							<strong>{ui.education}</strong> {SITE.about.education.degree}
-						</p>
-						<p className="prose edu">
-							<strong>{ui.certifications}</strong>{" "}
-							{SITE.about.education.certs.join("; ")}.
-						</p>
+						<p className="prose">{SITE.about.text[0]}</p>
 					</div>
+					<Link className="btn btn--hot" to="/about">
+						{ui.aboutMe}
+					</Link>
 				</div>
 			</section>
 

@@ -23,7 +23,9 @@ const en = {
 		footerSub:
 			"Product team lead. Web and infrastructure engineer, based in Africa.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "Email" },
-		hire: "Hire me",
+		hire: "Hire me for a contract",
+		aboutMe: "About me",
+		openToContracts: "Open to contracts",
 		seeProducts: "See my products",
 		proofLabel: "Where I've worked",
 		marquee: "Technologies I work with",
@@ -220,7 +222,7 @@ const en = {
 		  },
 		  {
 		   "id": "about",
-		   "text": "Edwin's stack and background. Click his portrait to ask him questions."
+		   "text": "A short bio. The About page has his full stack, and a portrait that answers questions."
 		  },
 		  {
 		   "id": "contact",
@@ -231,7 +233,7 @@ const en = {
 		 "tips": {
 		  "services": "It looks like you're checking the services. Want me to take you to the contact form?",
 		  "work": "Curious how Edwin leads a team? The section just below explains it.",
-		  "about": "Try clicking Edwin's portrait. He answers questions.",
+		  "about": "The About page has a portrait that answers questions.",
 		  "contact": "Tip: mention your timeline and budget range so the reply is useful.",
 		  "form": "Writing a message? Say what you want built and when you need it.",
 		  "terminal": "That terminal is real. Type help to see what it can do.",
