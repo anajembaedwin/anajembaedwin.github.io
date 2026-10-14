@@ -692,6 +692,7 @@ export const start = (canvas, api) => {
 
 	// ---- input ----
 	const onClick = (event) => {
+		if (event.target.closest && event.target.closest("[data-guide]")) return;
 		const sx = window.scrollX;
 		const sy = window.scrollY;
 		const px = event.clientX + sx;
