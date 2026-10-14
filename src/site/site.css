@@ -3832,3 +3832,30 @@ body {
 	object-fit: contain;
 	object-position: left center;
 }
+
+/* live visitor and player stats */
+.live-badge {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px 18px;
+	margin-bottom: 14px;
+	color: var(--on-night-dim);
+	font-size: 0.9rem;
+}
+.live-badge strong { color: var(--on-night); }
+.live-badge__dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--mint);
+	box-shadow: 0 0 0 0 rgba(63, 224, 181, 0.6);
+	animation: live-pulse 1.8s infinite;
+}
+@keyframes live-pulse {
+	70% { box-shadow: 0 0 0 8px rgba(63, 224, 181, 0); }
+	100% { box-shadow: 0 0 0 0 rgba(63, 224, 181, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.live-badge__dot { animation: none; }
+}

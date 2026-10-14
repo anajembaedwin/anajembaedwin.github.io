@@ -6,6 +6,7 @@ import Layout from "../site/Layout";
 import { Pip } from "../site/Guide";
 import { todays, dayKey } from "../game/bugs";
 import { useI18n } from "../i18n";
+import { trackPlay } from "../live/stats";
 
 const read = (k) => {
 	try {
@@ -66,6 +67,7 @@ const BugHunt = () => {
 
 	const start = () => {
 		setStarted(true);
+		trackPlay("daily-bug-hunt", "start");
 		setSay(T.go);
 		pose("wave");
 	};
@@ -105,6 +107,7 @@ const BugHunt = () => {
 			if (streak.last === yesterday()) n = streak.n + 1;
 			else if (streak.last === today) n = streak.n;
 			const ns = { n, last: today };
+			trackPlay("daily-bug-hunt", "finish", score);
 			write(`bughunt:${today}`, result);
 			write("bughunt:streak", ns);
 			setStreak(ns);

@@ -18,6 +18,7 @@ const es = {
 			about: "Sobre mí",
 			contact: "Contacto",
 		},
+		liveStats: {"online": "en línea", "playing": "jugando", "visits": "visitas hoy", "plays": "partidas hoy", "note": "Anónimo. Sin cookies, no se guarda ninguna IP."},
 		footerSub:
 			"Ingeniero de producto y líder de equipo. Web e infraestructura, con base en África.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "Correo" },

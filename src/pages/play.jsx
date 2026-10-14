@@ -22,6 +22,7 @@ import { drawBattle, GLYPH } from "../game/draw";
 import { cleanName, fetchWar, hasServer, loadProfile, saveProfile, submitResult } from "../game/profile";
 
 import { useI18n } from "../i18n";
+import { trackPlay } from "../live/stats";
 
 const sideColor = (id) => SIDES.find((s) => s.id === id).color;
 const fmt = (text, map) =>
@@ -243,11 +244,13 @@ const Play = () => {
 		const others = SIDES.filter((s) => s.id !== next.side);
 		setEnemy(others[Math.floor(Math.random() * others.length)].id);
 		setResult(null);
+		trackPlay("tiny-wars", "start");
 		setPhase("battle");
 	};
 
 	const onDone = useCallback(
 		async (score) => {
+			trackPlay("tiny-wars", "finish", score.glory);
 			const next = {
 				...profile,
 				glory: profile.glory + score.glory,
