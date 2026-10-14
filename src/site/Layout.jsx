@@ -10,10 +10,33 @@ import Guide from "./Guide";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
-	const { pathname, hash } = useLocation();
+	const { pathname, hash, key } = useLocation();
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => installReactions(), []);
+
+	// Section links ("/#work") work from every page: wait for the page to
+	// render, then scroll to the section. Clicking the same link again scrolls again.
+	useEffect(() => {
+		if (!hash) return undefined;
+		const id = decodeURIComponent(hash.slice(1));
+		let tries = 0;
+		let timer;
+		const go = () => {
+			const el = document.getElementById(id);
+			if (el) {
+				el.scrollIntoView({
+					behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+					block: "start",
+				});
+			} else if (tries < 25) {
+				tries += 1;
+				timer = setTimeout(go, 60);
+			}
+		};
+		timer = setTimeout(go, 30);
+		return () => clearTimeout(timer);
+	}, [pathname, hash, key]);
 
 	// Keep the header pinned, and show how far down the page you are.
 	const [scrolled, setScrolled] = useState(false);
@@ -96,8 +119,12 @@ const Layout = ({ children, current }) => {
 							}}
 						>
 						<nav className="nav" aria-label={ui.nav.label}>
-							<a href="/#services">{ui.nav.services}</a>
-							<a href="/#work">{ui.nav.work}</a>
+							<Link to="/#services" onClick={closeMenu}>
+								{ui.nav.services}
+							</Link>
+							<Link to="/#work" onClick={closeMenu}>
+								{ui.nav.work}
+							</Link>
 							<Link
 								to="/products"
 								aria-current={current === "products" ? "page" : undefined}
@@ -113,7 +140,9 @@ const Layout = ({ children, current }) => {
 							<Link to="/about" aria-current={current === "about" ? "page" : undefined}>
 								{ui.nav.about}
 							</Link>
-							<a href="/#contact">{ui.nav.contact}</a>
+							<Link to="/#contact" onClick={closeMenu}>
+								{ui.nav.contact}
+							</Link>
 						</nav>
 						<div className="lang" role="group" aria-label={ui.langLabel}>
 							{LANGS.map((item) => (

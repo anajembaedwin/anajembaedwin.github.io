@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import { Link } from "react-router-dom";
 import { useI18n } from "../i18n";
 import { burst } from "./reactions";
 import Avatar from "./Avatar";
@@ -111,9 +112,9 @@ const AboutSide = () => {
 							</span>
 							<span>{answer.text.slice(0, answer.shown)}</span>
 							{answer.cta && answer.shown >= answer.text.length && (
-								<a className="ask__cta" href="/#contact">
+								<Link className="ask__cta" to="/#contact">
 									{ask.cta}
-								</a>
+								</Link>
 							)}
 						</React.Fragment>
 					) : (
