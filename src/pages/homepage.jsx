@@ -104,6 +104,16 @@ const Homepage = () => {
 								<div>
 									<h3 className="work__name">{item.name}</h3>
 									<div className="work__tag">{item.tag}</div>
+									{item.link && (
+										<a
+											className="work__link"
+											href={item.link.url}
+											target="_blank"
+											rel="noreferrer"
+										>
+											{item.link.label}
+										</a>
+									)}
 								</div>
 								<div>
 									<div className="work__label">What I did</div>
