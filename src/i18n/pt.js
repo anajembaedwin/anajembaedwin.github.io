@@ -3,6 +3,7 @@ const pt = {
 	name: "Português",
 	ui: {
 		langLabel: "Idioma",
+		menu: "Menu",
 		skip: "Saltar para o conteúdo",
 		nav: {
 			label: "Principal",
