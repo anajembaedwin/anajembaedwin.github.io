@@ -15,9 +15,13 @@ const BEAT_MS = 20000;
 const POLL_MS = 15000;
 
 const rpc = async (fn, args) => {
+	// Legacy anon keys are JWTs and also go in Authorization; the newer
+	// "sb_publishable_..." keys are sent as the apikey header only.
+	const headers = { apikey: KEY, "Content-Type": "application/json" };
+	if (KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${KEY}`;
 	const res = await fetch(`${URL}/rest/v1/rpc/${fn}`, {
 		method: "POST",
-		headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
+		headers,
 		body: JSON.stringify(args),
 		keepalive: true,
 	});
