@@ -17,6 +17,7 @@ const en = {
 			work: "Work",
 			products: "Products",
 			games: "Games",
+			code: "Code",
 			about: "About",
 			contact: "Contact",
 		},

@@ -139,6 +139,9 @@ const Layout = ({ children, current }) => {
 							>
 								{ui.nav.games}
 							</Link>
+							<Link to="/projects" aria-current={current === "projects" ? "page" : undefined} onClick={closeMenu}>
+								{ui.nav.code}
+							</Link>
 							<Link to="/about" aria-current={current === "about" ? "page" : undefined}>
 								{ui.nav.about}
 							</Link>

@@ -15,6 +15,7 @@ const fr = {
 			work: "Parcours",
 			products: "Produits",
 			games: "Jeux",
+			code: "Code",
 			about: "À propos",
 			contact: "Contact",
 		},

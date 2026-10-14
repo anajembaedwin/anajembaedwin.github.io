@@ -15,6 +15,7 @@ const es = {
 			work: "Trayectoria",
 			products: "Productos",
 			games: "Juegos",
+			code: "Código",
 			about: "Sobre mí",
 			contact: "Contacto",
 		},
