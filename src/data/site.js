@@ -99,6 +99,7 @@ export const SITE = {
 				tag: "Digital entertainment, social engagement, and e-commerce platform. 2025 to now.",
 				role: "Backend engineer, then full stack, now Product Team Lead. I oversee the developers, track progress, and make sure deliverables ship. I still own delivery of the React frontend and the Node.js/TypeScript backend.",
 				outcome: "The backend is the system of record for user activity, engagement, and transactions.",
+				link: { url: "https://www.jointearn.com", label: "jointearn.com" },
 			},
 			{
 				name: "Maxxed Technical Systems",
@@ -111,6 +112,7 @@ export const SITE = {
 				tag: "Carbon emissions verification platform. 2024 to 2025, contract.",
 				role: "Built smart contracts on Hyperledger and integrated them with a Python (FastAPI) backend and APIs that take in data from an embedded tracking device.",
 				outcome: "Auditable emissions records for an ESG compliance platform.",
+				link: { url: "https://netzence.com/closecarbon/", label: "netzence.com/closecarbon" },
 			},
 			{
 				name: "Cruva (formerly UpTk)",
@@ -136,6 +138,7 @@ export const SITE = {
 				tag: "Non-profit, volunteer. 2025 to now. Live.",
 				role: "Designed the backend architecture for internal platforms. Wrote the product requirements, engineering guidelines, and infrastructure migration plan, and mentor junior developers.",
 				outcome: null,
+				link: { url: "https://thegirlleadproject.org", label: "thegirlleadproject.org" },
 			},
 		],
 	},

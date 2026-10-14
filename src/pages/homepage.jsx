@@ -12,6 +12,7 @@ import Marquee from "../site/Marquee";
 import Testimonials from "../site/Testimonials";
 
 import INFO from "../data/user";
+import LIVE from "../data/live";
 import { useI18n, fmt } from "../i18n";
 
 const Homepage = () => {
@@ -178,6 +179,25 @@ const Homepage = () => {
 							),
 						})}
 					</p>
+				</div>
+			</section>
+
+			<section className="section section--wash" id="live">
+				<div className="wrap" data-reveal>
+					<h2 className="section-title">{ui.liveTitle}</h2>
+					<p className="section-lede">{ui.liveLede}</p>
+					<div className="product-grid">
+						{LIVE.map((item) => (
+							<article className="product-card" key={item.id}>
+								<StatusChip status="live" />
+								<h3>{item.name}</h3>
+								<p>{ui.liveItems[item.id]}</p>
+								<a href={item.url} target="_blank" rel="noreferrer">
+									{ui.visitSite} ↗
+								</a>
+							</article>
+						))}
+					</div>
 				</div>
 			</section>
 
