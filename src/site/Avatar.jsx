@@ -4,7 +4,7 @@ import { useI18n } from "../i18n";
 
 // Cartoon portrait. The pupils follow the cursor, the eyes blink now and
 // then, and clicking him makes him say something.
-const Avatar = ({ talking = false }) => {
+const Avatar = ({ talking = false, onAsk }) => {
 	const { ui } = useI18n();
 	const QUIPS = ui.quips;
 	const ref = useRef(null);
@@ -42,6 +42,10 @@ const Avatar = ({ talking = false }) => {
 	useEffect(() => () => clearTimeout(timer.current), []);
 
 	const talk = () => {
+		if (onAsk) {
+			onAsk();
+			return;
+		}
 		next.current = (next.current + 1) % QUIPS.length;
 		setQuip(QUIPS[next.current]);
 		clearTimeout(timer.current);
