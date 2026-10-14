@@ -6,6 +6,10 @@ const en = {
 	ui: {
 		langLabel: "Language",
 		menu: "Menu",
+		reset: "Reset the world",
+		worldReset: "World reset",
+		dragHint: "Psst… try dragging the cards",
+		dragHintTouch: "Psst… press and hold a card to move it",
 		skip: "Skip to content",
 		nav: {
 			label: "Main",
