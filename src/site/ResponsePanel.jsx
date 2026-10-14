@@ -196,7 +196,7 @@ const ResponsePanel = ({ lines }) => {
 			}
 			case "open": {
 				if (!arg) return [line(T.openUsage)];
-				if (arg === "products" || arg === "projects" || arg === "contact") {
+				if (arg === "products" || arg === "projects" || arg === "contact" || arg === "about") {
 					if (arg === "contact" && document.getElementById("contact")) {
 						document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 					} else {
@@ -204,7 +204,7 @@ const ResponsePanel = ({ lines }) => {
 					}
 					return [line(T.opening.replace("{x}", arg))];
 				}
-				if (SECTIONS[arg]) {
+				if (SECTIONS[arg] && arg !== "about") {
 					const el = document.getElementById(SECTIONS[arg]);
 					if (el) el.scrollIntoView({ behavior: "smooth" });
 					return [line(T.opening.replace("{x}", arg))];

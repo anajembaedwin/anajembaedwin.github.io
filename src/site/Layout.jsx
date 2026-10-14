@@ -94,7 +94,9 @@ const Layout = ({ children, current }) => {
 							>
 								{ui.nav.games}
 							</Link>
-							<a href="/#about">{ui.nav.about}</a>
+							<Link to="/about" aria-current={current === "about" ? "page" : undefined}>
+								{ui.nav.about}
+							</Link>
 							<a href="/#contact">{ui.nav.contact}</a>
 						</nav>
 						<div className="lang" role="group" aria-label={ui.langLabel}>
