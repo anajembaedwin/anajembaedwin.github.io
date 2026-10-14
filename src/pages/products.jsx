@@ -5,10 +5,12 @@ import { Helmet } from "react-helmet";
 import Layout from "../site/Layout";
 import StatusChip from "../site/StatusChip";
 
-import { SITE } from "../data/site";
-import PRODUCTS from "../data/products";
+import { useI18n, fmt } from "../i18n";
 
 const Products = () => {
+	const { site, ui, products } = useI18n();
+	const t = ui.productsPage;
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -16,39 +18,34 @@ const Products = () => {
 	return (
 		<Layout current="products">
 			<Helmet>
-				<title>{`Products | ${SITE.name}`}</title>
-				<meta
-					name="description"
-					content="Software products built by Edwin Anajemba, with their status and links."
-				/>
+				<title>{`${ui.nav.products} | ${site.name}`}</title>
+				<meta name="description" content={t.metaDesc} />
 			</Helmet>
 
 			<section className="page-hero">
 				<div className="wrap">
-					<h1 className="page-hero__title">Products I build</h1>
-					<p className="page-hero__lead">
-						Each product stands on its own. Open one to see what it does, who
-						it's for, and where it is today.
-					</p>
+					<h1 className="page-hero__title">{t.title}</h1>
+					<p className="page-hero__lead">{t.lead}</p>
 				</div>
 			</section>
 
 			<section className="section">
 				<div className="wrap">
-					{PRODUCTS.length === 0 ? (
+					{products.length === 0 ? (
 						<p className="prose">
-							Products will appear here as they launch.{" "}
-							<a href="/#contact">Get in touch</a> to hear first.
+							{fmt(t.empty, {
+								link: <a href="/#contact">{t.getInTouch}</a>,
+							})}
 						</p>
 					) : (
 						<div className="product-grid">
-							{PRODUCTS.map((product) => (
+							{products.map((product) => (
 								<article className="product-card" key={product.slug}>
 									<StatusChip status={product.status} />
 									<h2>{product.name}</h2>
 									<p>{product.pitch}</p>
 									<Link to={`/products/${product.slug}`}>
-										View {product.name}
+										{fmt(ui.viewProduct, { name: product.name })}
 									</Link>
 								</article>
 							))}

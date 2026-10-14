@@ -3,26 +3,29 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Layout from "../site/Layout";
+import { useI18n } from "../i18n";
 
-const Notfound = () => (
-	<Layout>
-		<Helmet>
-			<title>Page not found | Edwin Anajemba</title>
-		</Helmet>
-		<section className="page-hero">
-			<div className="wrap">
-				<h1 className="page-hero__title">Page not found</h1>
-				<p className="page-hero__lead">
-					That page doesn't exist or has moved.
-				</p>
-				<div className="hero__actions">
-					<Link className="btn btn--hot" to="/">
-						Back to home
-					</Link>
+const Notfound = () => {
+	const { site, ui } = useI18n();
+	const t = ui.notFound;
+	return (
+		<Layout>
+			<Helmet>
+				<title>{`${t.tab} | ${site.name}`}</title>
+			</Helmet>
+			<section className="page-hero">
+				<div className="wrap">
+					<h1 className="page-hero__title">{t.title}</h1>
+					<p className="page-hero__lead">{t.lead}</p>
+					<div className="hero__actions">
+						<Link className="btn btn--hot" to="/">
+							{t.back}
+						</Link>
+					</div>
 				</div>
-			</div>
-		</section>
-	</Layout>
-);
+			</section>
+		</Layout>
+	);
+};
 
 export default Notfound;

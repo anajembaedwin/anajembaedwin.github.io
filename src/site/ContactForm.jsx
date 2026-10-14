@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import INFO from "../data/user";
-import { SITE } from "../data/site";
+import { useI18n, fmt, fmtText } from "../i18n";
 
 // Web3Forms access key. It is designed to be public in client-side code.
 // Put it in .env.local as REACT_APP_WEB3FORMS_KEY before building.
@@ -9,12 +9,14 @@ import { SITE } from "../data/site";
 const ACCESS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const ContactForm = ({ defaultType, defaultMessage }) => {
-	const types = SITE.contact.collabTypes;
+const ContactForm = ({ defaultTypeIndex, defaultMessage }) => {
+	const { lang, site, ui } = useI18n();
+	const f = ui.form;
+	const types = site.contact.collabTypes;
 	const [values, setValues] = useState({
 		name: "",
 		email: "",
-		type: defaultType || types[0],
+		typeIndex: defaultTypeIndex || 0,
 		message: defaultMessage || "",
 		botcheck: "",
 	});
@@ -30,14 +32,14 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 
 	const validate = () => {
 		const next = {};
-		if (!values.name.trim()) next.name = "Enter your name.";
+		if (!values.name.trim()) next.name = f.errName;
 		if (!values.email.trim()) {
-			next.email = "Enter your email address.";
+			next.email = f.errEmail;
 		} else if (!EMAIL_PATTERN.test(values.email.trim())) {
-			next.email = "Enter a valid email address, like name@company.com.";
+			next.email = f.errEmailInvalid;
 		}
 		if (!values.message.trim()) {
-			next.message = "Tell me a little about what you need.";
+			next.message = f.errMessage;
 		}
 		return next;
 	};
@@ -49,7 +51,11 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 		if (Object.keys(found).length > 0) return;
 
 		if (!ACCESS_KEY) {
-			const subject = `${values.type}: message from ${values.name.trim()}`;
+			const typeLabel = types[values.typeIndex] || types[0];
+			const subject = fmtText(f.subject, {
+				type: typeLabel,
+				name: values.name.trim(),
+			});
 			const body = `${values.message.trim()}\n\n${values.name.trim()}\n${values.email.trim()}`;
 			window.location.href = `mailto:${INFO.main.email}?subject=${encodeURIComponent(
 				subject
@@ -68,11 +74,15 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 				},
 				body: JSON.stringify({
 					access_key: ACCESS_KEY,
-					subject: `${values.type}: message from ${values.name.trim()}`,
+					subject: fmtText(f.subject, {
+						type: types[values.typeIndex] || types[0],
+						name: values.name.trim(),
+					}),
 					from_name: values.name.trim(),
 					name: values.name.trim(),
 					email: values.email.trim(),
-					collaboration_type: values.type,
+					collaboration_type: types[values.typeIndex] || types[0],
+					language: lang,
 					message: values.message.trim(),
 					botcheck: values.botcheck,
 				}),
@@ -87,8 +97,13 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 	if (status === "sent") {
 		return (
 			<div className="form-result" role="status">
-				<h3>Message sent</h3>
-				<p>Thanks, {values.name.trim()}. I'll reply to {values.email.trim()}.</p>
+				<h3>{f.sentTitle}</h3>
+				<p>
+					{fmtText(f.sentBody, {
+						name: values.name.trim(),
+						email: values.email.trim(),
+					})}
+				</p>
 			</div>
 		);
 	}
@@ -96,7 +111,7 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 	return (
 		<form className="form" onSubmit={submit} noValidate>
 			<div className="field">
-				<label htmlFor="cf-name">Name</label>
+				<label htmlFor="cf-name">{f.name}</label>
 				<input
 					id="cf-name"
 					type="text"
@@ -114,12 +129,12 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 			</div>
 
 			<div className="field">
-				<label htmlFor="cf-email">Email</label>
+				<label htmlFor="cf-email">{f.email}</label>
 				<input
 					id="cf-email"
 					type="email"
 					autoComplete="email"
-					placeholder="name@company.com"
+					placeholder={f.emailPlaceholder}
 					value={values.email}
 					onChange={update("email")}
 					aria-invalid={errors.email ? "true" : undefined}
@@ -133,10 +148,16 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 			</div>
 
 			<div className="field">
-				<label htmlFor="cf-type">What do you need?</label>
-				<select id="cf-type" value={values.type} onChange={update("type")}>
-					{types.map((type) => (
-						<option key={type} value={type}>
+				<label htmlFor="cf-type">{f.type}</label>
+				<select
+					id="cf-type"
+					value={values.typeIndex}
+					onChange={(event) =>
+						setValues({ ...values, typeIndex: Number(event.target.value) })
+					}
+				>
+					{types.map((type, i) => (
+						<option key={type} value={i}>
 							{type}
 						</option>
 					))}
@@ -144,11 +165,11 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 			</div>
 
 			<div className="field">
-				<label htmlFor="cf-message">Message</label>
+				<label htmlFor="cf-message">{f.message}</label>
 				<textarea
 					id="cf-message"
 					rows="5"
-					placeholder="What you're building, your timeline, and your budget range"
+					placeholder={f.messagePlaceholder}
 					value={values.message}
 					onChange={update("message")}
 					aria-invalid={errors.message ? "true" : undefined}
@@ -182,17 +203,19 @@ const ContactForm = ({ defaultType, defaultMessage }) => {
 				type="submit"
 				disabled={status === "sending"}
 			>
-				{status === "sending" ? "Sending…" : "Send message"}
+				{status === "sending" ? f.sending : f.send}
 			</button>
 
 			<div className="form__note" role="status">
 				{status === "mailto" &&
-					`Your email app should open with the message filled in. If it didn't, email ${INFO.main.email}.`}
+					fmtText(f.mailtoNote, { email: INFO.main.email })}
 				{status === "error" && (
 					<span>
-						That didn't send. Email me at{" "}
-						<a href={`mailto:${INFO.main.email}`}>{INFO.main.email}</a>{" "}
-						instead.
+						{fmt(f.failed, {
+							email: (
+								<a href={`mailto:${INFO.main.email}`}>{INFO.main.email}</a>
+							),
+						})}
 					</span>
 				)}
 			</div>

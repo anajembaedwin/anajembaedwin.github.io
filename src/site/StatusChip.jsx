@@ -1,12 +1,15 @@
 import React from "react";
 
-import { STATUS_LABEL } from "../data/products";
+import { useI18n } from "../i18n";
 
-const StatusChip = ({ status }) => (
-	<span className={`chip chip--${status}`}>
-		<span className="chip__dot" aria-hidden="true" />
-		{STATUS_LABEL[status] || status}
-	</span>
-);
+const StatusChip = ({ status }) => {
+	const { ui } = useI18n();
+	return (
+		<span className={`chip chip--${status}`}>
+			<span className="chip__dot" aria-hidden="true" />
+			{ui.status[status] || status}
+		</span>
+	);
+};
 
 export default StatusChip;

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 
+import { useI18n } from "../i18n";
+
 const REACTIONS = ["👏", "🔥", "🚀"];
 
 const Card = ({ item }) => {
+	const { ui } = useI18n();
 	const [counts, setCounts] = useState({});
 	const add = (emoji) =>
 		setCounts((prev) => ({ ...prev, [emoji]: (prev[emoji] || 0) + 1 }));
@@ -16,7 +19,7 @@ const Card = ({ item }) => {
 				<strong>{item.name}</strong>
 				<span>{item.role}</span>
 			</figcaption>
-			<div className="testi__react" role="group" aria-label="React to this">
+			<div className="testi__react" role="group" aria-label={ui.reactTo}>
 				{REACTIONS.map((emoji) => (
 					<button
 						type="button"
@@ -26,7 +29,9 @@ const Card = ({ item }) => {
 					>
 						<span aria-hidden="true">{emoji}</span>
 						{counts[emoji] ? <span>{counts[emoji]}</span> : null}
-						<span className="sr-only">react {emoji}</span>
+						<span className="sr-only">
+							{ui.react} {emoji}
+						</span>
 					</button>
 				))}
 			</div>
@@ -35,11 +40,12 @@ const Card = ({ item }) => {
 };
 
 const Testimonials = ({ items }) => {
+	const { ui } = useI18n();
 	if (!items || !items.length) return null;
 	return (
 		<section className="section section--wash" id="kind-words">
 			<div className="wrap" data-reveal>
-				<h2 className="section-title">Kind words</h2>
+				<h2 className="section-title">{ui.kindWords}</h2>
 				<div className="testi-grid">
 					{items.map((item) => (
 						<Card item={item} key={item.name} />

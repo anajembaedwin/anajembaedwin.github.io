@@ -6,11 +6,12 @@ import Layout from "../site/Layout";
 import StatusChip from "../site/StatusChip";
 import Notfound from "./404";
 
-import { SITE } from "../data/site";
-import PRODUCTS from "../data/products";
+import { useI18n, fmtText } from "../i18n";
 
 const ProductDetail = () => {
 	const { slug } = useParams();
+	const { site: SITE, ui, products: PRODUCTS } = useI18n();
+	const t = ui.productDetail;
 	const product = PRODUCTS.find((item) => item.slug === slug);
 
 	useEffect(() => {
@@ -33,7 +34,7 @@ const ProductDetail = () => {
 			<section className="page-hero">
 				<div className="wrap">
 					<Link className="page-hero__back" to="/products">
-						All products
+						{ui.allProducts}
 					</Link>
 					<StatusChip status={product.status} />
 					<h1 className="page-hero__title">{product.name}</h1>
@@ -46,15 +47,15 @@ const ProductDetail = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								Open product
+								{t.openProduct}
 							</a>
 						) : (
 							<Link className="btn btn--hot" to={notify}>
-								Get notified
+								{t.getNotified}
 							</Link>
 						)}
 						<Link className="btn btn--ghost" to={notify}>
-							Ask a question
+							{t.askQuestion}
 						</Link>
 					</div>
 				</div>
@@ -64,13 +65,13 @@ const ProductDetail = () => {
 				<div className="wrap product-detail">
 					{product.audience && (
 						<div>
-							<h2 className="section-title">Who it's for</h2>
+							<h2 className="section-title">{t.whoFor}</h2>
 							<p className="prose">{product.audience}</p>
 						</div>
 					)}
 					{product.highlights && product.highlights.length > 0 && (
 						<div>
-							<h2 className="section-title">What it does</h2>
+							<h2 className="section-title">{t.whatItDoes}</h2>
 							<ul className="principles">
 								{product.highlights.map((line) => (
 									<li key={line}>{line}</li>
@@ -82,7 +83,7 @@ const ProductDetail = () => {
 						<img
 							className="product-detail__shot"
 							src={`${process.env.PUBLIC_URL}${product.screenshot}`}
-							alt={`${product.name} screenshot`}
+							alt={fmtText(t.screenshot, { name: product.name })}
 						/>
 					)}
 				</div>

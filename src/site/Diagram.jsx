@@ -1,16 +1,17 @@
 import React from "react";
 
-const Diagram = () => (
+import { useI18n } from "../i18n";
+
+const Diagram = () => {
+	const { ui } = useI18n();
+	return (
 	<svg
 		className="diagram"
 		viewBox="0 0 620 120"
 		role="img"
 		aria-labelledby="diagram-title"
 	>
-		<title id="diagram-title">
-			A client calls an API. The API uses a queue and a Postgres database,
-			and both connect to Polygon.
-		</title>
+		<title id="diagram-title">{ui.diagramTitle}</title>
 		<g className="diagram__lines">
 			<rect x="6" y="40" width="96" height="40" rx="12" />
 			<rect x="170" y="40" width="96" height="40" rx="12" />
@@ -27,6 +28,7 @@ const Diagram = () => (
 			<text x="562" y="64">Polygon</text>
 		</g>
 	</svg>
-);
+	);
+};
 
 export default Diagram;

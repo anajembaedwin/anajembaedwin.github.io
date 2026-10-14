@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useI18n } from "../i18n";
+
 const ITEMS = [
 	"TypeScript",
 	"Node.js",
@@ -27,13 +29,16 @@ const Row = ({ hidden }) => (
 	</ul>
 );
 
-const Marquee = () => (
-	<section className="marquee" aria-label="Technologies I work with">
+const Marquee = () => {
+	const { ui } = useI18n();
+	return (
+	<section className="marquee" aria-label={ui.marquee}>
 		<div className="marquee__track">
 			<Row />
 			<Row hidden />
 		</div>
 	</section>
-);
+	);
+};
 
 export default Marquee;

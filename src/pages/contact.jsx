@@ -6,10 +6,11 @@ import Layout from "../site/Layout";
 import ContactForm from "../site/ContactForm";
 
 import INFO from "../data/user";
-import { SITE } from "../data/site";
-import PRODUCTS from "../data/products";
+import { useI18n, fmt, fmtText } from "../i18n";
 
 const Contact = () => {
+	const { site: SITE, ui, products: PRODUCTS } = useI18n();
+	const t = ui.contactPage;
 	const [params] = useSearchParams();
 	const topic = params.get("topic");
 	const product = PRODUCTS.find((item) => item.slug === topic);
@@ -18,26 +19,25 @@ const Contact = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const fallbackType = SITE.contact.collabTypes[SITE.contact.collabTypes.length - 1];
+	const fallbackIndex = SITE.contact.collabTypes.length - 1;
 
 	return (
 		<Layout current="contact">
 			<Helmet>
-				<title>{`Contact | ${SITE.name}`}</title>
-				<meta
-					name="description"
-					content="Get in touch with Edwin Anajemba about freelance projects, product leadership, or collaborations."
-				/>
+				<title>{`${t.tab} | ${SITE.name}`}</title>
+				<meta name="description" content={t.metaDesc} />
 			</Helmet>
 
 			<section className="page-hero">
 				<div className="wrap">
 					<h1 className="page-hero__title">
-						{product ? `About ${product.name}` : SITE.contact.title}
+						{product
+							? fmtText(t.aboutProduct, { name: product.name })
+							: SITE.contact.title}
 					</h1>
 					<p className="page-hero__lead">
 						{product
-							? "Leave your details and I'll let you know how it's going."
+							? t.productLead
 							: SITE.contact.lede}
 					</p>
 				</div>
@@ -47,16 +47,19 @@ const Contact = () => {
 				<div className="wrap two-col">
 					<div className="contact__card contact__card--plain">
 						<ContactForm
-							defaultType={product ? fallbackType : undefined}
+							defaultTypeIndex={product ? fallbackIndex : undefined}
 							defaultMessage={
-								product ? `I'd like to hear about ${product.name}.` : ""
+								product ? fmtText(t.productMessage, { name: product.name }) : ""
 							}
 						/>
 					</div>
 					<div>
 						<p className="prose">
-							You can also write directly:{" "}
-							<a href={`mailto:${INFO.main.email}`}>{INFO.main.email}</a>
+							{fmt(t.alt, {
+								email: (
+									<a href={`mailto:${INFO.main.email}`}>{INFO.main.email}</a>
+								),
+							})}
 						</p>
 						<p className="prose">
 							<a href={INFO.socials.linkedin} target="_blank" rel="noreferrer">

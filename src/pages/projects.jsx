@@ -3,10 +3,11 @@ import { Helmet } from "react-helmet";
 
 import Layout from "../site/Layout";
 
-import INFO from "../data/user";
-import { SITE } from "../data/site";
+import { useI18n } from "../i18n";
 
 const Projects = () => {
+	const { site: SITE, ui, projects } = useI18n();
+	const t = ui.projectsPage;
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -14,27 +15,24 @@ const Projects = () => {
 	return (
 		<Layout current="projects">
 			<Helmet>
-				<title>{`Code | ${SITE.name}`}</title>
+				<title>{`${t.tab} | ${SITE.name}`}</title>
 				<meta
 					name="description"
-					content="Open-source projects by Edwin Anajemba: booking platforms, e-commerce backends, and productivity tools."
+					content={t.metaDesc}
 				/>
 			</Helmet>
 
 			<section className="page-hero">
 				<div className="wrap">
-					<h1 className="page-hero__title">Code on GitHub</h1>
-					<p className="page-hero__lead">
-						Open-source projects: booking platforms, e-commerce backends, and
-						tools.
-					</p>
+					<h1 className="page-hero__title">{t.title}</h1>
+					<p className="page-hero__lead">{t.lead}</p>
 				</div>
 			</section>
 
 			<section className="section">
 				<div className="wrap">
 					<ul className="repo-list">
-						{INFO.projects.map((project) => (
+						{projects.map((project) => (
 							<li className="repo" key={project.link}>
 								<div>
 									<h2 className="repo__title">{project.title}</h2>
@@ -43,7 +41,7 @@ const Projects = () => {
 								<div className="repo__side">
 									<span className="repo__tech">{project.tech}</span>
 									<a href={project.link} target="_blank" rel="noreferrer">
-										View code
+										{t.viewCode}
 									</a>
 								</div>
 							</li>
