@@ -14,6 +14,7 @@ const pt = {
 			services: "Serviços",
 			work: "Percurso",
 			products: "Produtos",
+			games: "Jogos",
 			about: "Sobre",
 			contact: "Contacto",
 		},
@@ -144,7 +145,7 @@ const pt = {
 		],
 		diagramTitle:
 			"Um cliente chama uma API. A API usa uma fila e uma base de dados Postgres, e ambas ligam-se à Polygon.",
-		status: { live: "Ativo", beta: "Beta", building: "Em construção" },
+		status: { live: "Ativo", beta: "Beta", building: "Em construção", soon: "Em breve" },
 		form: {
 			name: "Nome",
 			email: "E-mail",
@@ -166,6 +167,50 @@ const pt = {
 				"A sua aplicação de e-mail deve abrir com a mensagem preenchida. Se não abrir, escreva para {email}.",
 			failed: "Não foi possível enviar. Escreva-me antes para {email}.",
 			subject: "{type}: mensagem de {name}",
+		},
+		gamesPage: {
+		 "title": "Jogos",
+		 "lead": "Pequenos jogos online, construídos um de cada vez. O primeiro está a caminho e os outros estão na fila.",
+		 "metaDesc": "Jogos online de Edwin Anajemba. O Tiny Wars está a caminho, com mais na fila.",
+		 "nowTitle": "A caminho",
+		 "nextTitle": "Na fila",
+		 "notify": "Avisar-me",
+		 "follow": "Acompanhar o progresso",
+		 "peek": "Conhecer a gente miúda",
+		 "play": "Jogar",
+		 "tags": {
+		  "realtime": "Tempo real",
+		  "daily": "Diário",
+		  "solo": "Solo + classificação",
+		  "canvas": "Tela partilhada",
+		  "live": "Evento ao vivo"
+		 },
+		 "items": {
+		  "tiny-wars": {
+		   "name": "Tiny Wars",
+		   "pitch": "Um mundo partilhado de gente miúda. Escolha vermelho, azul ou verde, crie uma personagem e lute a guerra semanal pelo seu lado."
+		  },
+		  "daily-bug-hunt": {
+		   "name": "Daily Bug Hunt",
+		   "pitch": "Um enigma de programação por dia, igual para todos. Encontre o bug, mantenha a sequência e partilhe o resultado."
+		  },
+		  "code-race": {
+		   "name": "Code Race",
+		   "pitch": "Corra ao vivo contra outras pessoas em excertos de código reais e suba na classificação."
+		  },
+		  "tiny-kingdom": {
+		   "name": "Tiny Kingdom",
+		   "pitch": "Toque para fazer crescer uma aldeia que rende mesmo quando está fora. Troque com amigos e chegue ao topo."
+		  },
+		  "pixel-canvas": {
+		   "name": "Pixel Canvas",
+		   "pitch": "Uma tela enorme, um píxel de cada vez. Junte-se a uma equipa e conquiste território."
+		  },
+		  "quiz-night": {
+		   "name": "Quiz Night",
+		   "pitch": "Um quiz semanal ao vivo com rondas africanas e de tecnologia, classificação e prémios financiados por patrocinadores."
+		  }
+		 }
 		},
 		productsPage: {
 			title: "Produtos que construo",

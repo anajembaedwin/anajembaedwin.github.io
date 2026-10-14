@@ -16,6 +16,7 @@ const en = {
 			services: "Services",
 			work: "Work",
 			products: "Products",
+			games: "Games",
 			about: "About",
 			contact: "Contact",
 		},
@@ -145,7 +146,7 @@ const en = {
 		],
 		diagramTitle:
 			"A client calls an API. The API uses a queue and a Postgres database, and both connect to Polygon.",
-		status: { live: "Live", beta: "Beta", building: "Building" },
+		status: { live: "Live", beta: "Beta", building: "Building", soon: "Coming soon" },
 		form: {
 			name: "Name",
 			email: "Email",
@@ -166,6 +167,50 @@ const en = {
 				"Your email app should open with the message filled in. If it didn't, email {email}.",
 			failed: "That didn't send. Email me at {email} instead.",
 			subject: "{type}: message from {name}",
+		},
+		gamesPage: {
+		 "title": "Games",
+		 "lead": "Small online games, built one at a time. The first is in the works, and the rest are lined up.",
+		 "metaDesc": "Online games by Edwin Anajemba. Tiny Wars is in the works, with more lined up.",
+		 "nowTitle": "In the works",
+		 "nextTitle": "Lined up next",
+		 "notify": "Notify me",
+		 "follow": "Follow progress",
+		 "peek": "Meet the tiny people",
+		 "play": "Play now",
+		 "tags": {
+		  "realtime": "Realtime",
+		  "daily": "Daily",
+		  "solo": "Solo + leaderboard",
+		  "canvas": "Shared canvas",
+		  "live": "Live event"
+		 },
+		 "items": {
+		  "tiny-wars": {
+		   "name": "Tiny Wars",
+		   "pitch": "One shared world of tiny people. Pick red, blue or green, build a character, and fight the weekly war for your side."
+		  },
+		  "daily-bug-hunt": {
+		   "name": "Daily Bug Hunt",
+		   "pitch": "One developer puzzle a day, the same for everyone. Find the bug, keep your streak, share your result."
+		  },
+		  "code-race": {
+		   "name": "Code Race",
+		   "pitch": "Race other people live on real code snippets, and climb the ranks."
+		  },
+		  "tiny-kingdom": {
+		   "name": "Tiny Kingdom",
+		   "pitch": "Tap to grow a village that keeps earning while you're away. Trade with friends and top the board."
+		  },
+		  "pixel-canvas": {
+		   "name": "Pixel Canvas",
+		   "pitch": "One huge canvas, one pixel at a time. Join a team and take territory."
+		  },
+		  "quiz-night": {
+		   "name": "Quiz Night",
+		   "pitch": "A live weekly quiz with African and tech rounds, a leaderboard and sponsor-funded prizes."
+		  }
+		 }
 		},
 		productsPage: {
 			title: "Products I build",
