@@ -127,6 +127,9 @@ const Layout = ({ children, current }) => {
 							<Link to="/#work" onClick={closeMenu}>
 								{ui.nav.work}
 							</Link>
+							<Link to="/#contact" onClick={closeMenu}>
+								{ui.nav.contact}
+							</Link>
 							<Link
 								to="/products"
 								aria-current={current === "products" ? "page" : undefined}
@@ -144,9 +147,6 @@ const Layout = ({ children, current }) => {
 							</Link>
 							<Link to="/about" aria-current={current === "about" ? "page" : undefined}>
 								{ui.nav.about}
-							</Link>
-							<Link to="/#contact" onClick={closeMenu}>
-								{ui.nav.contact}
 							</Link>
 						</nav>
 						<div className="lang" role="group" aria-label={ui.langLabel}>
