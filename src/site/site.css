@@ -3838,24 +3838,68 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 6px 18px;
-	margin-bottom: 14px;
+	gap: 8px 22px;
+	margin-bottom: 16px;
 	color: var(--on-night-dim);
 	font-size: 0.9rem;
 }
-.live-badge strong { color: var(--on-night); }
+.live-badge__tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--mint);
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
 .live-badge__dot {
-	width: 9px;
-	height: 9px;
+	flex: none;
+	width: 8px;
+	height: 8px;
 	border-radius: 50%;
 	background: var(--mint);
 	box-shadow: 0 0 0 0 rgba(63, 224, 181, 0.6);
 	animation: live-pulse 1.8s infinite;
 }
+.live-stat strong {
+	color: var(--on-night);
+	font-weight: 800;
+}
+.live-stat em {
+	font-style: normal;
+	margin-left: 6px;
+}
 @keyframes live-pulse {
-	70% { box-shadow: 0 0 0 8px rgba(63, 224, 181, 0); }
+	70% { box-shadow: 0 0 0 7px rgba(63, 224, 181, 0); }
 	100% { box-shadow: 0 0 0 0 rgba(63, 224, 181, 0); }
 }
 @media (prefers-reduced-motion: reduce) {
 	.live-badge__dot { animation: none; }
+}
+
+/* phones: a tidy two-column panel, and room at the bottom for the floating
+   Tiny people bar and Pip */
+@media (max-width: 640px) {
+	.live-badge {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 12px 10px;
+		padding: 14px 16px;
+		border: 1px solid var(--night-line);
+		border-radius: 16px;
+		background: rgba(255, 255, 255, 0.04);
+	}
+	.live-badge__tag { grid-column: 1 / -1; }
+	.live-stat strong {
+		display: block;
+		font-size: 1.5rem;
+		line-height: 1.1;
+	}
+	.live-stat em {
+		display: block;
+		margin: 2px 0 0;
+		font-size: 0.78rem;
+	}
+	.site-footer { padding-bottom: 120px; }
 }

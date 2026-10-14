@@ -18,7 +18,7 @@ const fr = {
 			about: "À propos",
 			contact: "Contact",
 		},
-		liveStats: {"online": "en ligne", "playing": "en jeu", "visits": "visites aujourd'hui", "plays": "parties aujourd'hui", "note": "Anonyme. Pas de cookies, aucune adresse IP stockée."},
+		liveStats: {"live": "En direct", "online": "en ligne", "playing": "en jeu", "visits": "visites aujourd'hui", "plays": "parties aujourd'hui", "note": "Anonyme. Pas de cookies, aucune adresse IP stockée."},
 		footerSub:
 			"Ingénieur produit et responsable d'équipe. Web et infrastructure, basé en Afrique.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" },

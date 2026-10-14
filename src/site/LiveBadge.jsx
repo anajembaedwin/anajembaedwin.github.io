@@ -10,26 +10,24 @@ const LiveBadge = () => {
 	const stats = useLiveStats();
 	if (!stats) return null;
 	const T = ui.liveStats;
-	const online = Math.max(1, stats.online || 0);
+	const items = [
+		[Math.max(1, stats.online || 0), T.online],
+		stats.playing > 0 ? [stats.playing, T.playing] : null,
+		[stats.visits || 0, T.visits],
+		stats.plays > 0 ? [stats.plays, T.plays] : null,
+	].filter(Boolean);
 	return (
 		<div className="live-badge" title={T.note}>
-			<span className="live-badge__dot" aria-hidden="true" />
-			<span>
-				<strong>{online}</strong> {T.online}
+			<span className="live-badge__tag">
+				<span className="live-badge__dot" aria-hidden="true" />
+				{T.live}
 			</span>
-			{stats.playing > 0 && (
-				<span>
-					<strong>{stats.playing}</strong> {T.playing}
+			{items.map(([n, label]) => (
+				<span className="live-stat" key={label}>
+					<strong>{n}</strong>
+					<em>{label}</em>
 				</span>
-			)}
-			<span>
-				<strong>{stats.visits || 0}</strong> {T.visits}
-			</span>
-			{stats.plays > 0 && (
-				<span>
-					<strong>{stats.plays}</strong> {T.plays}
-				</span>
-			)}
+			))}
 		</div>
 	);
 };
