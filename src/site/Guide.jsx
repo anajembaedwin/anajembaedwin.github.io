@@ -29,7 +29,7 @@ const reduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matc
 const MAX_TIPS = 8;
 const GAP_MS = 25000;
 
-const Pip = ({ mood, look, talking }) => (
+export const Pip = ({ mood, look, talking }) => (
 	<svg
 		className={`pip pip--${mood}${talking ? " is-talking" : ""}`}
 		viewBox="0 0 110 140"
