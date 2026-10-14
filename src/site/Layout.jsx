@@ -7,6 +7,8 @@ import { installReactions } from "./reactions";
 import PlayLayer from "./PlayLayer";
 import TinyPeople from "./TinyPeople";
 import Guide from "./Guide";
+import LiveBadge from "./LiveBadge";
+import { useLiveHeartbeat } from "../live/stats";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
@@ -14,6 +16,7 @@ const Layout = ({ children, current }) => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => installReactions(), []);
+	useLiveHeartbeat(pathname);
 
 	// Section links ("/#work") work from every page: wait for the page to
 	// render, then scroll to the section. Clicking the same link again scrolls again.
@@ -191,6 +194,7 @@ const Layout = ({ children, current }) => {
 					</div>
 				</div>
 				<div className="wrap site-footer__copy">
+					<LiveBadge />
 					© {new Date().getFullYear()} {site.name}
 				</div>
 			</footer>
