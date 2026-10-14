@@ -7,7 +7,6 @@ import { installReactions } from "./reactions";
 import PlayLayer from "./PlayLayer";
 import TinyPeople from "./TinyPeople";
 import Guide from "./Guide";
-import LiveBadge from "./LiveBadge";
 import { useLiveHeartbeat } from "../live/stats";
 
 const Layout = ({ children, current }) => {
@@ -194,7 +193,6 @@ const Layout = ({ children, current }) => {
 					</div>
 				</div>
 				<div className="wrap site-footer__copy">
-					<LiveBadge />
 					© {new Date().getFullYear()} {site.name}
 				</div>
 			</footer>
