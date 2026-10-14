@@ -185,10 +185,10 @@ const Homepage = () => {
 				<div className="wrap about">
 					<img
 						className="about__photo"
-						src={`${process.env.PUBLIC_URL}/edwin-photo-update.jpg`}
-						alt="Edwin Anajemba"
+						src={`${process.env.PUBLIC_URL}/edwin-cartoon.svg`}
+						alt="Cartoon portrait of Edwin Anajemba"
 						width="320"
-						height="380"
+						height="325"
 					/>
 					<div>
 						<h2 className="section-title">{SITE.about.title}</h2>
