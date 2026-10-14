@@ -489,6 +489,7 @@ const pt = {
 			metaDesc:
 				"Contacte Edwin Anajemba para projetos freelance, liderança de produto ou colaborações.",
 			aboutProduct: "Sobre {name}",
+			backTo: "Voltar a {name}",
 			productLead:
 				"Deixe os seus dados e eu avisarei sobre o andamento.",
 			alt: "Também pode escrever diretamente: {email}",

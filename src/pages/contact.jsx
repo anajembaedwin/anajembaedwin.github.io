@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Layout from "../site/Layout";
@@ -23,10 +23,12 @@ const Contact = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	const backTo = product ? (game ? "/games" : `/products/${product.slug}`) : null;
+
 	const fallbackIndex = SITE.contact.collabTypes.length - 1;
 
 	return (
-		<Layout current="contact">
+		<Layout current={product ? (game ? "games" : "products") : "contact"}>
 			<Helmet>
 				<title>{`${t.tab} | ${SITE.name}`}</title>
 				<meta name="description" content={t.metaDesc} />
@@ -34,6 +36,11 @@ const Contact = () => {
 
 			<section className="page-hero">
 				<div className="wrap">
+					{backTo && (
+						<Link className="page-hero__back" to={backTo}>
+							{fmtText(t.backTo, { name: product.name })}
+						</Link>
+					)}
 					<h1 className="page-hero__title">
 						{product
 							? fmtText(t.aboutProduct, { name: product.name })
@@ -58,6 +65,11 @@ const Contact = () => {
 						/>
 					</div>
 					<div>
+						{backTo && (
+							<p className="prose">
+								<Link to={backTo}>{fmtText(t.backTo, { name: product.name })}</Link>
+							</p>
+						)}
 						<p className="prose">
 							{fmt(t.alt, {
 								email: (

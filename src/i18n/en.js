@@ -488,6 +488,7 @@ const en = {
 			metaDesc:
 				"Get in touch with Edwin Anajemba about freelance projects, product leadership, or collaborations.",
 			aboutProduct: "About {name}",
+			backTo: "Back to {name}",
 			productLead: "Leave your details and I'll let you know how it's going.",
 			alt: "You can also write directly: {email}",
 			productMessage: "I'd like to hear about {name}.",
