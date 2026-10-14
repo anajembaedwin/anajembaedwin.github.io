@@ -7,8 +7,8 @@ export const SITE = {
 	company: "JointEarn",
 
 	hero: {
-		headline: "Product team lead.",
-		lead: "I lead engineering teams and build the web platforms and cloud infrastructure behind products, from payments to Web3.",
+		headline: "Product engineer.",
+		lead: "I lead the product team at JointEarn and build the web platforms and cloud infrastructure behind products, from payments to Web3.",
 	},
 
 	// Lines in the hero's API-response panel: [key, value]

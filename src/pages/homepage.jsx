@@ -55,7 +55,7 @@ const Homepage = () => {
 	return (
 		<Layout current="home">
 			<Helmet>
-				<title>{`${SITE.name} | ${SITE.response[0][1]}`}</title>
+				<title>{`${SITE.name} | ${SITE.hero.headline.replace(/\.$/, "")}`}</title>
 			</Helmet>
 
 			<section className="hero">

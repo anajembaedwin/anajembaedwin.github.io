@@ -19,7 +19,7 @@ const fr = {
 			contact: "Contact",
 		},
 		footerSub:
-			"Responsable d'équipe produit. Ingénieur web et infrastructure, basé en Afrique.",
+			"Ingénieur produit et responsable d'équipe. Web et infrastructure, basé en Afrique.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" },
 		hire: "Me confier un contrat",
 		aboutMe: "À propos de moi",
@@ -507,8 +507,8 @@ const fr = {
 	},
 	site: {
 		hero: {
-			headline: "Responsable d'équipe produit.",
-			lead: "Je dirige des équipes d'ingénieurs et je construis les plateformes web et l'infrastructure cloud derrière les produits, des paiements au Web3.",
+			headline: "Ingénieur produit.",
+			lead: "Je dirige l'équipe produit chez JointEarn et je construis les plateformes web et l'infrastructure cloud derrière les produits, des paiements au Web3.",
 		},
 		response: [
 			["role", "Responsable d'équipe produit"],

@@ -19,7 +19,7 @@ const pt = {
 			contact: "Contacto",
 		},
 		footerSub:
-			"Responsável de equipa de produto. Engenheiro web e de infraestrutura, a trabalhar a partir de África.",
+			"Engenheiro de produto e líder de equipa. Web e infraestrutura, a trabalhar a partir de África.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" },
 		hire: "Contrate-me para um projeto",
 		aboutMe: "Sobre mim",
@@ -507,8 +507,8 @@ const pt = {
 	},
 	site: {
 		hero: {
-			headline: "Responsável de equipa de produto.",
-			lead: "Lidero equipas de engenharia e construo as plataformas web e a infraestrutura cloud por trás dos produtos, dos pagamentos à Web3.",
+			headline: "Engenheiro de produto.",
+			lead: "Lidero a equipa de produto na JointEarn e construo as plataformas web e a infraestrutura cloud por trás dos produtos, dos pagamentos à Web3.",
 		},
 		response: [
 			["role", "Responsável de equipa de produto"],
