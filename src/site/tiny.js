@@ -11,7 +11,7 @@
 // Nothing here touches the layout and the canvas ignores pointer events.
 
 const BARRIERS =
-	".step, .service, .work__row, .proof__item, .product-card, .game-card, .game-feature, .principles li, .testi, .contact__card, .avatar, .repo, .btn, .term, .marquee, .diagram-scroll, .ask, .skills, .hero__title, .hero__lead, .section-title, form";
+	".step, .service, .work__row, .proof__item, .product-card, .game-card, .game-feature, .principles li, .testi, .contact__card, .avatar, .repo, .btn, .term, .marquee, .diagram-scroll, .ask, .skills, .village-prop, .cast-card, .hero__title, .hero__lead, .section-title, form";
 
 export const SIDES = [
 	{ id: "red", color: "#ff4d6d" },
@@ -25,7 +25,7 @@ const NAMES = [
 	"Zuri", "Tayo", "Chidi", "Efe", "Kira", "Obi",
 ];
 // glyph, hat colour, extra hp, damage, reach (px), speed
-const ROLES = [
+export const ROLES = [
 	{ hat: "#c9c9d8", hp: 3, dmg: 1.6, range: 12, speed: 1 },
 	{ hat: "#7a4cff", hp: 0, dmg: 1.3, range: 62, speed: 0.9 },
 	{ hat: "#fff2cc", hp: 0, dmg: 0.8, range: 12, speed: 1 },
@@ -35,7 +35,7 @@ const ROLES = [
 	{ hat: "#2fb36b", hp: 0, dmg: 0.7, range: 12, speed: 1 },
 	{ hat: "#3b7d4a", hp: 1, dmg: 1.1, range: 72, speed: 1.05 },
 ];
-const GLYPHS = ["⚔️", "🧙", "🥖", "🛠️", "🌾", "🎻", "💰", "🏹"];
+export const GLYPHS = ["⚔️", "🧙", "🥖", "🛠️", "🌾", "🎻", "💰", "🏹"];
 const CHORES = ["🔨", "🌱", "📖", "☕", "🍎"];
 
 const SC = 1.45; // drawing scale
@@ -77,7 +77,8 @@ export const start = (canvas, api) => {
 	const target = () => {
 		const per = small() ? 170 : 110;
 		const max = small() ? 30 : 56;
-		return Math.max(10, Math.min(max, Math.round(w.docH / per)));
+		const floor = document.querySelector(".village-stage") ? (small() ? 16 : 26) : 10;
+		return Math.max(floor, Math.min(max, Math.round(w.docH / per)));
 	};
 
 	// ---- walls ----
@@ -271,7 +272,28 @@ export const start = (canvas, api) => {
 		return "rest";
 	};
 
+	// On the village page the people mostly stay inside the village.
+	const stageSpot = () => {
+		const el = document.querySelector(".village-stage");
+		if (!el) return null;
+		const r = el.getBoundingClientRect();
+		if (r.width < 40) return null;
+		for (let i = 0; i < 14; i += 1) {
+			const x = r.left + window.scrollX + rand(14, r.width - 14);
+			const y = r.top + window.scrollY + rand(24, r.height - 10);
+			if (free(x, y)) return { x, y };
+		}
+		return null;
+	};
+
 	const newGoal = (p) => {
+		if (Math.random() < 0.85) {
+			const home = stageSpot();
+			if (home) {
+				p.goal = home;
+				return;
+			}
+		}
 		const activity = Math.random() < 0.35 ? "chat" : null;
 		if (activity) {
 			const f = nearestFriend(p, 260);
@@ -422,7 +444,8 @@ export const start = (canvas, api) => {
 		const a = eligible.splice(Math.floor(Math.random() * eligible.length), 1)[0];
 		const b = pick(eligible);
 		const cy = window.scrollY + window.innerHeight * rand(0.35, 0.65);
-		const spot = freeSpot(w.docW / 2, cy, Math.min(240, w.docW / 2 - 20));
+		const spot =
+			stageSpot() || freeSpot(w.docW / 2, cy, Math.min(240, w.docW / 2 - 20));
 		if (!spot) return;
 		w.war = { a, b, until: w.time + 26, spot };
 		w.people.forEach((p) => {
@@ -731,7 +754,7 @@ export const start = (canvas, api) => {
 	// first residents
 	refreshRects();
 	const n = Math.min(target(), small() ? 18 : 30);
-	for (let i = 0; i < n; i += 1) spawn(i % SIDES.length);
+	for (let i = 0; i < n; i += 1) spawn(i % SIDES.length, stageSpot());
 	raf = requestAnimationFrame(frame);
 
 	return () => {

@@ -168,6 +168,71 @@ const pt = {
 			failed: "Não foi possível enviar. Escreva-me antes para {email}.",
 			subject: "{type}: mensagem de {name}",
 		},
+		villagePage: {
+		 "title": "Tiny Wars: a aldeia",
+		 "lead": "É aqui que vive a gente miúda. Veja-os trabalhar, discutir e ir para a guerra, e conheça o elenco.",
+		 "metaDesc": "A aldeia do Tiny Wars: conheça a gente miúda e as personagens do jogo.",
+		 "stageTitle": "A aldeia",
+		 "stageLabel": "Uma aldeia com casas e árvores onde pequenas pessoas passeiam.",
+		 "stageHint": "Toque num aldeão para lhe dar um nome e uma profissão, ou acabar com ele. Estão escondidos? Use o botão em baixo à esquerda para os trazer de volta.",
+		 "castTitle": "O elenco",
+		 "castLead": "Oito personagens vivem aqui hoje. Toque em alguém na aldeia e pode tornar-se uma delas.",
+		 "stats": {
+		  "hp": "PV",
+		  "power": "Força",
+		  "reach": "Alcance",
+		  "speed": "Velocidade"
+		 },
+		 "melee": "Corpo a corpo",
+		 "ranged": "À distância",
+		 "roles": [
+		  {
+		   "name": "Cavaleiro",
+		   "blurb": "Firme e resistente. Lidera a carga quando soa a corneta de guerra."
+		  },
+		  {
+		   "name": "Mago",
+		   "blurb": "Fulmina inimigos ao longe e é frágil de perto."
+		  },
+		  {
+		   "name": "Padeiro",
+		   "blurb": "Acorda antes do amanhecer e luta com o rolo da massa se o provocarem."
+		  },
+		  {
+		   "name": "Construtor",
+		   "blurb": "Levanta muros e arranja telhados. Surpreendentemente robusto."
+		  },
+		  {
+		   "name": "Agricultor",
+		   "blurb": "Mantém a aldeia alimentada. Não veio para lutar."
+		  },
+		  {
+		   "name": "Bardo",
+		   "blurb": "Ágil, com uma canção para cada ocasião."
+		  },
+		  {
+		   "name": "Mercador",
+		   "blurb": "Sabe o preço de tudo, até da paz."
+		  },
+		  {
+		   "name": "Arqueiro",
+		   "blurb": "Mantém a distância e a mão firme."
+		  }
+		 ],
+		 "lockedTitle": "Ainda por vir",
+		 "lockedLead": "Mais personagens a caminho. Algumas não são o que espera.",
+		 "locked": [
+		  "Curandeiro",
+		  "Gatuno",
+		  "Xamã",
+		  "Domador de dragões",
+		  "Robô",
+		  "Ninja"
+		 ],
+		 "lockedBadge": "Em breve",
+		 "follow": "Acompanhar o progresso",
+		 "back": "Voltar aos jogos"
+		},
 		gamesPage: {
 		 "title": "Jogos",
 		 "lead": "Pequenos jogos online, construídos um de cada vez. O primeiro está a caminho e os outros estão na fila.",

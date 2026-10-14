@@ -168,6 +168,71 @@ const en = {
 			failed: "That didn't send. Email me at {email} instead.",
 			subject: "{type}: message from {name}",
 		},
+		villagePage: {
+		 "title": "Tiny Wars: the village",
+		 "lead": "This is where the tiny people live. Watch them work, argue and go to war, then meet the cast.",
+		 "metaDesc": "The Tiny Wars village: meet the tiny people and the characters of the game.",
+		 "stageTitle": "The village",
+		 "stageLabel": "A village with houses and trees where tiny people wander.",
+		 "stageHint": "Tap a villager to give them a name and a job, or end them. Hiding? Use the chip at bottom left to bring them back.",
+		 "castTitle": "The cast",
+		 "castLead": "Eight characters live here today. Tap anyone in the village and they might become one of them.",
+		 "stats": {
+		  "hp": "HP",
+		  "power": "Power",
+		  "reach": "Reach",
+		  "speed": "Speed"
+		 },
+		 "melee": "Melee",
+		 "ranged": "Ranged",
+		 "roles": [
+		  {
+		   "name": "Knight",
+		   "blurb": "Tough and steady. Leads the charge when the war horn sounds."
+		  },
+		  {
+		   "name": "Wizard",
+		   "blurb": "Zaps enemies from a distance, and is fragile up close."
+		  },
+		  {
+		   "name": "Baker",
+		   "blurb": "Up before dawn, and fights with a rolling pin if pushed."
+		  },
+		  {
+		   "name": "Builder",
+		   "blurb": "Raises walls and mends roofs. Surprisingly sturdy."
+		  },
+		  {
+		   "name": "Farmer",
+		   "blurb": "Keeps the village fed. Not here for a fight."
+		  },
+		  {
+		   "name": "Bard",
+		   "blurb": "Quick on their feet, with a song for every occasion."
+		  },
+		  {
+		   "name": "Merchant",
+		   "blurb": "Knows the price of everything, including peace."
+		  },
+		  {
+		   "name": "Archer",
+		   "blurb": "Keeps their distance and a steady hand."
+		  }
+		 ],
+		 "lockedTitle": "Still to come",
+		 "lockedLead": "More characters are on their way. Some are not what you'd expect.",
+		 "locked": [
+		  "Healer",
+		  "Rogue",
+		  "Shaman",
+		  "Dragon Tamer",
+		  "Robot",
+		  "Ninja"
+		 ],
+		 "lockedBadge": "Coming soon",
+		 "follow": "Follow progress",
+		 "back": "Back to games"
+		},
 		gamesPage: {
 		 "title": "Games",
 		 "lead": "Small online games, built one at a time. The first is in the works, and the rest are lined up.",
