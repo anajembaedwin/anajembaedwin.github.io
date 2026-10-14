@@ -18,7 +18,7 @@ const pt = {
 			about: "Sobre",
 			contact: "Contacto",
 		},
-		liveStats: {"online": "online agora", "playing": "a jogar", "visits": "visitas hoje", "plays": "partidas hoje", "note": "Anónimo. Sem cookies, nenhum IP guardado."},
+		liveStats: {"live": "Ao vivo", "online": "online agora", "playing": "a jogar", "visits": "visitas hoje", "plays": "partidas hoje", "note": "Anónimo. Sem cookies, nenhum IP guardado."},
 		footerSub:
 			"Engenheiro de produto e líder de equipa. Web e infraestrutura, a trabalhar a partir de África.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" },
