@@ -109,6 +109,8 @@ const pt = {
 		  "themeUsage": "uso: theme <{c}>",
 		  "exitLabel": "Tomar a pílula azul (Esc)"
 		 },
+		 "guideOn": "O Pip voltou.",
+		 "guideOff": "O Pip foi descansar. Escreva guide para o chamar de volta.",
 		 "cmds": {
 		  "help": "mostrar esta lista",
 		  "whoami": "quem sou",
@@ -123,6 +125,7 @@ const pt = {
 		  "cat": "ler um ficheiro, ex. cat about.md",
 		  "open": "ir para uma secção, ex. open work",
 		  "lang": "mudar de idioma, ex. lang pt",
+		  "guide": "chamar ou mandar embora o Pip, o guia: guide on|off",
 		  "curl": "mostrar de novo a resposta da API",
 		  "clear": "limpar o ecrã"
 		 }
@@ -179,6 +182,64 @@ const pt = {
 				"A sua aplicação de e-mail deve abrir com a mensagem preenchida. Se não abrir, escreva para {email}.",
 			failed: "Não foi possível enviar. Escreva-me antes para {email}.",
 			subject: "{type}: mensagem de {name}",
+		},
+		guide: {
+		 "label": "Guia",
+		 "open": "Pip, o guia. Abrir o menu.",
+		 "show": "Chamar o guia de volta",
+		 "close": "Fechar",
+		 "hide": "Mandar o Pip embora",
+		 "tipsOn": "Ligar as dicas",
+		 "tipsOff": "Parar as dicas",
+		 "yes": "Sim",
+		 "no": "Não, obrigado",
+		 "notNow": "Agora não",
+		 "next": "Seguinte",
+		 "stop": "Parar",
+		 "finish": "Concluir",
+		 "thanks": "Obrigado",
+		 "go": "Levar-me lá",
+		 "play": "Jogar",
+		 "back": "Voltei!",
+		 "intro": "Olá, sou o Pip, o seu guia. Quer uma visita de 30 segundos?",
+		 "menu": {
+		  "title": "O que gostaria de fazer?",
+		  "tour": "Fazer a visita",
+		  "work": "Ver a experiência",
+		  "contact": "Contactar o Edwin",
+		  "game": "Jogar Tiny Wars"
+		 },
+		 "tour": [
+		  {
+		   "id": "services",
+		   "text": "Estes são os serviços oferecidos, desde liderar um produto até à infraestrutura cloud."
+		  },
+		  {
+		   "id": "work",
+		   "text": "A experiência, com o que foi construído e o resultado de cada projeto."
+		  },
+		  {
+		   "id": "about",
+		   "text": "A stack e o percurso do Edwin. Clique no retrato dele para lhe fazer perguntas."
+		  },
+		  {
+		   "id": "contact",
+		   "text": "Diga o que quer construir, o prazo e o orçamento, e terá resposta."
+		  }
+		 ],
+		 "tourDone": "Esta foi a visita. Toque em mim sempre que precisar.",
+		 "tips": {
+		  "services": "Parece que está a ver os serviços. Quer que o leve ao formulário de contacto?",
+		  "work": "Curioso sobre como o Edwin lidera uma equipa? A secção logo abaixo explica.",
+		  "about": "Experimente clicar no retrato do Edwin. Ele responde a perguntas.",
+		  "contact": "Dica: indique o prazo e o orçamento para a resposta ser útil.",
+		  "form": "A escrever uma mensagem? Diga o que quer construir e para quando.",
+		  "terminal": "Aquele terminal é real. Escreva help para ver o que faz.",
+		  "products": "Cada produto tem a sua página, com o estado.",
+		  "projects": "Estes são projetos open source. Cada um liga ao GitHub.",
+		  "games": "O Tiny Wars já se joga. Quer experimentar uma batalha?",
+		  "village": "Toque numa pessoa miúda. Pode ganhar nome e profissão, ou não."
+		 }
 		},
 		playPage: {
 		 "title": "Tiny Wars",
