@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import INFO from "../data/user";
 import { useI18n, LANGS } from "../i18n";
 import { installReactions } from "./reactions";
+import PlayLayer from "./PlayLayer";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
@@ -113,6 +114,8 @@ const Layout = ({ children, current }) => {
 			</header>
 
 			<main id="main">{children}</main>
+
+			<PlayLayer />
 
 			<footer className="site-footer">
 				<div className="wrap site-footer__row">

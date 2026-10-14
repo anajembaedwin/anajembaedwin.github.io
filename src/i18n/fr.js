@@ -4,6 +4,10 @@ const fr = {
 	ui: {
 		langLabel: "Langue",
 		menu: "Menu",
+		reset: "Réinitialiser le monde",
+		worldReset: "Monde réinitialisé",
+		dragHint: "Psst… essayez de déplacer les cartes",
+		dragHintTouch: "Psst… maintenez une carte appuyée pour la déplacer",
 		skip: "Aller au contenu",
 		nav: {
 			label: "Principal",

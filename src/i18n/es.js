@@ -4,6 +4,10 @@ const es = {
 	ui: {
 		langLabel: "Idioma",
 		menu: "Menú",
+		reset: "Reiniciar el mundo",
+		worldReset: "Mundo reiniciado",
+		dragHint: "Psst… prueba a arrastrar las tarjetas",
+		dragHintTouch: "Psst… mantén pulsada una tarjeta para moverla",
 		skip: "Saltar al contenido",
 		nav: {
 			label: "Principal",
