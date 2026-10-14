@@ -43,6 +43,40 @@ const es = {
 			"Retrato de dibujos animados de Edwin. Pulsa para oírle decir algo.",
 		avatarTitle:
 			"Retrato de dibujos animados de Edwin Anajemba: pelo corto, barba completa, gafas de montura negra y camisa estampada.",
+		tiny: {
+		 "label": "Gente diminuta",
+		 "scoreLabel": "Gente diminuta por bando, y los caídos",
+		 "fallen": "Caídos",
+		 "hint": "Aquí vive gente diminuta. Toca a alguien para darle un personaje… o acabar con él. Arrastra una tarjeta para cortarles el paso.",
+		 "joined": "{name} ({role}) se une a la historia.",
+		 "fellNamed": "{name} ({role}) ha caído. 🪦",
+		 "fell": "Una personita {side} ha caído. 🪦",
+		 "squashed": "Una personita {side} fue aplastada por una tarjeta. 🪦",
+		 "war": "¡Guerra! {a} contra {b} ⚔️",
+		 "roles": [
+		  "Caballero",
+		  "Mago",
+		  "Panadero",
+		  "Constructor",
+		  "Granjero",
+		  "Bardo",
+		  "Mercader",
+		  "Arquero"
+		 ],
+		 "sides": {
+		  "red": "rojo",
+		  "blue": "azul",
+		  "green": "verde"
+		 },
+		 "lines": [
+		  "¡Ahora no, estoy ocupado!",
+		  "¡Por el reino!",
+		  "¡Cuidado con las tarjetas!",
+		  "¿Eso es un despliegue?",
+		  "Necesito un café.",
+		  "¿Has probado a apagarlo y volverlo a encender?"
+		 ]
+		},
 		term: {
 		 "title": "edwin@portfolio: ~",
 		 "hint": "Escribe help para ver lo que sé hacer.",
