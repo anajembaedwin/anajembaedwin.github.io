@@ -8,13 +8,14 @@ export const SITE = {
 
 	hero: {
 		headline: "Product team lead.",
-		lead: "I lead a team of developers shipping products, from payments and APIs to Web3, and I build my own on the side.",
+		lead: "I lead engineering teams and build the web platforms and cloud infrastructure behind products, from payments to Web3.",
 	},
 
 	// Lines in the hero's API-response panel: [key, value]
 	response: [
 		["role", "Product Team Lead"],
 		["company", "JointEarn"],
+		["focus", "web + infrastructure"],
 		["experience", "5+ years"],
 		["open_to", "freelance"],
 	],
@@ -40,39 +41,40 @@ export const SITE = {
 		items: [
 			{
 				title: "Lead a product build",
-				text: "I run the work end to end: scope, roadmap, delivery, and the team doing it.",
+				text: "I take a product from scope to production: the architecture, the team, delivery, and the infrastructure it runs on.",
 				included: [
 					"Product scope and roadmap",
+					"Architecture and technical direction",
 					"Sprint planning and weekly demos",
-					"Hands-on technical direction",
 					"Handover and documentation",
 				],
 			},
 			{
-				title: "APIs and backends",
-				text: "TypeScript/NestJS and Python/FastAPI services on PostgreSQL, Redis, and AWS.",
+				title: "Web platforms and APIs",
+				text: "React and Next.js frontends with Node.js/TypeScript and Python backends on PostgreSQL.",
 				included: [
+					"Web apps in React and Next.js",
 					"REST API design and build",
 					"Database schema and migrations",
-					"Docker and CI/CD with GitHub Actions",
-					"Deployment to AWS",
+					"Third-party integrations and webhooks",
 				],
 			},
 			{
-				title: "Payments and e-commerce",
-				text: "Checkout, wallets, and order flows for products that handle real money.",
+				title: "Cloud and infrastructure",
+				text: "AWS, Docker, and CI/CD pipelines that make releases routine and production observable.",
 				included: [
-					"Payment provider integration",
-					"Order and inventory flows",
-					"Webhooks and retry handling",
+					"AWS deployments: App Runner, ECR, S3, RDS, SES",
+					"Docker and GitHub Actions pipelines",
+					"Monitoring for latency and reliability",
+					"Environment setup and migration plans",
 				],
 			},
 			{
-				title: "Web3 and AI features",
-				text: "Solidity contracts on Polygon, and Claude-powered features inside your product.",
+				title: "Payments, Web3, and AI",
+				text: "Checkout and payment flows, Solidity contracts on Polygon, and Claude-powered features.",
 				included: [
-					"Smart contract development",
-					"Contract integration with your Web2 backend",
+					"Payment provider integration and webhook retries",
+					"Smart contracts integrated with your Web2 backend",
 					"LLM features built on the Claude API",
 				],
 			},
@@ -145,18 +147,18 @@ export const SITE = {
 
 	leadership: {
 		title: "How I lead",
-		text: "My background is backend engineering, so I scope products with the technical reality in mind. At JointEarn I now lead the developers building the product: I review their code, track progress against goals, and keep delivery on schedule.",
+		text: "I lead engineering at JointEarn: architecture, code review, delivery, and the production platform the team ships on. I came up through backend work, so I make product and infrastructure decisions together: what we build, how it is deployed, and how it stays up.",
 		principles: [
-			"Start from the user's problem, not the feature list.",
-			"Ship small and show progress every week.",
-			"Write decisions down so the team never waits on me.",
+			"Own the architecture, and write the decisions down.",
+			"Ship in small steps that are easy to roll back.",
+			"Treat deployment and monitoring as part of the feature.",
 		],
 	},
 
 	about: {
 		title: "About me",
 		text: [
-			"I'm a product team lead and engineer with 5+ years of experience building payments, e-commerce, and Web3 systems.",
+			"I'm a product team lead and engineer with 5+ years of experience building web platforms and the cloud infrastructure behind them, across payments, e-commerce, and Web3.",
 			"I'm based in Africa and work with teams anywhere. Outside my job I run BeezyLabs Technology Solutions, where I build and ship my own software products.",
 		],
 		skills: [
@@ -200,8 +202,9 @@ export const SITE = {
 		},
 	},
 
-	// Set to { quote, name, role } to show a testimonial; null hides it.
-	testimonial: null,
+	// Add real quotes as { quote, name, role }. The "Kind words" section only
+	// appears when this list has entries.
+	testimonials: [],
 
 	contact: {
 		title: "Have something to build?",
