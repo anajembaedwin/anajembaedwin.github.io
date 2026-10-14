@@ -38,7 +38,7 @@ const Layout = ({ children, current }) => {
 					<div>
 						<div className="site-footer__name">{SITE.name}</div>
 						<div className="site-footer__sub">
-							Product team lead and engineer, based in Lagos.
+							Product team lead and engineer, based in Africa.
 						</div>
 					</div>
 					<div className="site-footer__links">

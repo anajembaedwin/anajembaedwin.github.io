@@ -1,26 +1,21 @@
 :root {
-	--cobalt: #2b44e6;
-	--cobalt-deep: #1f33b5;
-	--cobalt-tint: #e4e8fb;
-	--cobalt-text: #dde2ff;
-	--tangerine: #ff6a3d;
-	--tangerine-hover: #ff7d56;
-	--tangerine-ink: #3b1203;
-	--tangerine-sub: #5a2308;
-	--indigo: #1c2033;
-	--indigo-line: #343a5c;
-	--lilac: #c9ccf0;
-	--lilac-dim: #9fa6d8;
-	--status: #7bd88f;
-	--blueprint: #eaf0f4;
-	--blueprint-line: #b9c9d6;
-	--blueprint-ink: #1f3a52;
-	--blueprint-sub: #3e6280;
-	--ink: #14161c;
-	--ink-2: #4a5060;
-	--line: #d8dbe2;
-	--paper: #ffffff;
-	--wash: #f6f7fa;
+	--night: #15102a;
+	--night-line: #342b5c;
+	--on-night: #e6e0ff;
+	--on-night-dim: #a99fd2;
+	--violet: #6b4cff;
+	--violet-deep: #4a30d4;
+	--violet-tint: #e9e4ff;
+	--coral: #ff5c7a;
+	--saffron: #ffb84d;
+	--mint: #3fe0b5;
+	--grad: linear-gradient(110deg, #6b4cff 0%, #ff5c7a 55%, #ffb84d 100%);
+	--grad-warm: linear-gradient(110deg, #ff7a95 0%, #ffb84d 100%);
+	--ink: #17122b;
+	--ink-2: #554e66;
+	--line: #e6ddd1;
+	--paper: #fffdf9;
+	--wash: #f6f1ea;
 
 	--font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
 	--font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI",
@@ -29,7 +24,7 @@
 
 	--maxw: 1080px;
 	--gutter: 24px;
-	--radius: 10px;
+	--radius: 22px;
 }
 
 *,
@@ -73,7 +68,7 @@ p {
 }
 
 a {
-	color: var(--cobalt);
+	color: var(--violet-deep);
 }
 
 img {
@@ -82,6 +77,6 @@ img {
 }
 
 :focus-visible {
-	outline: 3px solid var(--cobalt);
+	outline: 3px solid var(--violet-deep);
 	outline-offset: 3px;
 }
