@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import INFO from "../data/user";
 import { useI18n, LANGS } from "../i18n";
@@ -10,6 +10,7 @@ import Guide from "./Guide";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
+	const { pathname, hash } = useLocation();
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => installReactions(), []);
@@ -59,7 +60,22 @@ const Layout = ({ children, current }) => {
 			<header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
 				<div className="wrap">
 					<div className="site-header__pill">
-						<Link className="brand" to="/" onClick={closeMenu}>
+						<Link
+							className="brand"
+							to="/"
+							onClick={(event) => {
+								closeMenu();
+								// Already on the home page: the router does nothing, so scroll up ourselves.
+								if (pathname === "/") {
+									event.preventDefault();
+									if (hash) window.history.replaceState(null, "", "/");
+									window.scrollTo({
+										top: 0,
+										behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+									});
+								}
+							}}
+						>
 							{site.name}
 						</Link>
 						<button
