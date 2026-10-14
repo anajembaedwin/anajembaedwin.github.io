@@ -3,6 +3,7 @@ const fr = {
 	name: "Français",
 	ui: {
 		langLabel: "Langue",
+		menu: "Menu",
 		skip: "Aller au contenu",
 		nav: {
 			label: "Principal",

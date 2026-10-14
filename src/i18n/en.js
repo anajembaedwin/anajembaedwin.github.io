@@ -5,6 +5,7 @@ const en = {
 	name: "English",
 	ui: {
 		langLabel: "Language",
+		menu: "Menu",
 		skip: "Skip to content",
 		nav: {
 			label: "Main",

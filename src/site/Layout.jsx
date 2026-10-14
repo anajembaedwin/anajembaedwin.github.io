@@ -7,6 +7,7 @@ import { installReactions } from "./reactions";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => installReactions(), []);
 
@@ -34,6 +35,18 @@ const Layout = ({ children, current }) => {
 		};
 	}, []);
 
+	// Close the mobile menu with Escape.
+	useEffect(() => {
+		if (!menuOpen) return undefined;
+		const onKey = (event) => {
+			if (event.key === "Escape") setMenuOpen(false);
+		};
+		document.addEventListener("keydown", onKey);
+		return () => document.removeEventListener("keydown", onKey);
+	}, [menuOpen]);
+
+	const closeMenu = () => setMenuOpen(false);
+
 	return (
 		<React.Fragment>
 			<a className="skip-link" href="#main">
@@ -43,9 +56,26 @@ const Layout = ({ children, current }) => {
 			<header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
 				<div className="wrap">
 					<div className="site-header__pill">
-						<Link className="brand" to="/">
+						<Link className="brand" to="/" onClick={closeMenu}>
 							{site.name}
 						</Link>
+						<button
+							type="button"
+							className="nav-toggle"
+							aria-expanded={menuOpen}
+							aria-controls="site-menu"
+							aria-label={ui.menu}
+							onClick={() => setMenuOpen(!menuOpen)}
+						>
+							<span aria-hidden="true" />
+						</button>
+						<div
+							className={`site-header__menu${menuOpen ? " is-open" : ""}`}
+							id="site-menu"
+							onClick={(event) => {
+								if (event.target.closest("a")) closeMenu();
+							}}
+						>
 						<nav className="nav" aria-label={ui.nav.label}>
 							<a href="/#services">{ui.nav.services}</a>
 							<a href="/#work">{ui.nav.work}</a>
@@ -71,6 +101,7 @@ const Layout = ({ children, current }) => {
 									{item.label}
 								</button>
 							))}
+						</div>
 						</div>
 						<div
 							className="progress"
