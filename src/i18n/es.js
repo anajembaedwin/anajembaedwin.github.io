@@ -97,6 +97,18 @@ const es = {
 		 "rm": "Permiso denegado. Quiero a mis archivos.",
 		 "exit": "No hay escapatoria, solo /contact.",
 		 "notFound": "comando no encontrado: {cmd}. Escribe help.",
+		 "matrix": {
+		  "wake": "Despierta, Neo...",
+		  "follow": "La Matrix te tiene...",
+		  "rabbit": "Sigue al conejo blanco.",
+		  "inside": "Estás dentro. Prueba: theme red | blue | violet | amber | green. Escribe exit (o pulsa Esc) para tomar la pastilla azul.",
+		  "out": "Tomaste la pastilla azul. La historia termina. Despiertas y crees lo que quieras creer.",
+		  "already": "Ya estás dentro.",
+		  "hint": "Despierta, Neo... La Matrix te tiene. Prueba: red pill",
+		  "themeSet": "Lluvia en {c}.",
+		  "themeUsage": "uso: theme <{c}>",
+		  "exitLabel": "Tomar la pastilla azul (Esc)"
+		 },
 		 "cmds": {
 		  "help": "mostrar esta lista",
 		  "whoami": "quién soy",
