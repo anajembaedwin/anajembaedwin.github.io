@@ -44,6 +44,40 @@ const en = {
 		avatarLabel: "Edwin's cartoon portrait. Press to hear him say something.",
 		avatarTitle:
 			"Cartoon portrait of Edwin Anajemba: short hair, full beard, black-framed glasses and a patterned shirt.",
+		tiny: {
+		 "label": "Tiny people",
+		 "scoreLabel": "Tiny people by side, and the fallen",
+		 "fallen": "Fallen",
+		 "hint": "Tiny people live here. Tap one to give them a character… or end them. Drag a card to block their way.",
+		 "joined": "{name} the {role} joined the story.",
+		 "fellNamed": "{name} the {role} has fallen. 🪦",
+		 "fell": "A tiny {side} person fell. 🪦",
+		 "squashed": "A tiny {side} person was squashed by a card. 🪦",
+		 "war": "War! {a} against {b} ⚔️",
+		 "roles": [
+		  "Knight",
+		  "Wizard",
+		  "Baker",
+		  "Builder",
+		  "Farmer",
+		  "Bard",
+		  "Merchant",
+		  "Archer"
+		 ],
+		 "sides": {
+		  "red": "red",
+		  "blue": "blue",
+		  "green": "green"
+		 },
+		 "lines": [
+		  "Not now, I'm busy!",
+		  "For the realm!",
+		  "Mind the cards!",
+		  "Is that a deploy?",
+		  "I need a coffee.",
+		  "Have you tried turning it off and on again?"
+		 ]
+		},
 		term: {
 		 "title": "edwin@portfolio: ~",
 		 "hint": "Type help to see what I can do.",

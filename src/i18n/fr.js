@@ -43,6 +43,40 @@ const fr = {
 			"Portrait en dessin animé d'Edwin. Appuyez pour l'entendre dire quelque chose.",
 		avatarTitle:
 			"Portrait en dessin animé d'Edwin Anajemba : cheveux courts, barbe fournie, lunettes à monture noire et chemise à motifs.",
+		tiny: {
+		 "label": "Petits gens",
+		 "scoreLabel": "Petits gens par camp, et les tombés",
+		 "fallen": "Tombés",
+		 "hint": "De petits gens vivent ici. Touchez-en un pour lui donner un personnage… ou l'achever. Déplacez une carte pour leur barrer la route.",
+		 "joined": "{name} ({role}) rejoint l'histoire.",
+		 "fellNamed": "{name} ({role}) est tombé. 🪦",
+		 "fell": "Un petit personnage {side} est tombé. 🪦",
+		 "squashed": "Un petit personnage {side} a été écrasé par une carte. 🪦",
+		 "war": "Guerre ! {a} contre {b} ⚔️",
+		 "roles": [
+		  "Chevalier",
+		  "Mage",
+		  "Boulanger",
+		  "Bâtisseur",
+		  "Fermier",
+		  "Barde",
+		  "Marchand",
+		  "Archer"
+		 ],
+		 "sides": {
+		  "red": "rouge",
+		  "blue": "bleu",
+		  "green": "vert"
+		 },
+		 "lines": [
+		  "Pas maintenant, je suis occupé !",
+		  "Pour le royaume !",
+		  "Attention aux cartes !",
+		  "C'est un déploiement ?",
+		  "Il me faut un café.",
+		  "Avez-vous essayé de l'éteindre et de le rallumer ?"
+		 ]
+		},
 		term: {
 		 "title": "edwin@portfolio: ~",
 		 "hint": "Tapez help pour voir ce que je sais faire.",

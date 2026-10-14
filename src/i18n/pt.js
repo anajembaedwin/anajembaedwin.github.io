@@ -43,6 +43,40 @@ const pt = {
 			"Retrato em desenho animado do Edwin. Prima para o ouvir dizer algo.",
 		avatarTitle:
 			"Retrato em desenho animado de Edwin Anajemba: cabelo curto, barba cheia, óculos de armação preta e camisa estampada.",
+		tiny: {
+		 "label": "Gente miúda",
+		 "scoreLabel": "Gente miúda por lado, e os caídos",
+		 "fallen": "Caídos",
+		 "hint": "Vive aqui gente miúda. Toque em alguém para lhe dar uma personagem… ou acabar com ela. Arraste um cartão para lhes barrar o caminho.",
+		 "joined": "{name} ({role}) juntou-se à história.",
+		 "fellNamed": "{name} ({role}) caiu. 🪦",
+		 "fell": "Uma pessoa miúda {side} caiu. 🪦",
+		 "squashed": "Uma pessoa miúda {side} foi esmagada por um cartão. 🪦",
+		 "war": "Guerra! {a} contra {b} ⚔️",
+		 "roles": [
+		  "Cavaleiro",
+		  "Mago",
+		  "Padeiro",
+		  "Construtor",
+		  "Agricultor",
+		  "Bardo",
+		  "Mercador",
+		  "Arqueiro"
+		 ],
+		 "sides": {
+		  "red": "vermelho",
+		  "blue": "azul",
+		  "green": "verde"
+		 },
+		 "lines": [
+		  "Agora não, estou ocupado!",
+		  "Pelo reino!",
+		  "Cuidado com os cartões!",
+		  "Isso é um deploy?",
+		  "Preciso de um café.",
+		  "Já tentou desligar e voltar a ligar?"
+		 ]
+		},
 		term: {
 		 "title": "edwin@portfolio: ~",
 		 "hint": "Escreva help para ver o que sei fazer.",
