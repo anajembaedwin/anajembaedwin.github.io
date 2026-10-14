@@ -62,7 +62,6 @@ const Homepage = () => {
 				<Floaters />
 				<div className="wrap hero__grid">
 					<div>
-						<p className="hero__kicker">{SITE.name}</p>
 						<h1 className="hero__title">{SITE.hero.headline}</h1>
 						<p className="hero__lead">{SITE.hero.lead}</p>
 						<p className="hero__avail">
