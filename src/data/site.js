@@ -132,7 +132,7 @@ export const SITE = {
 		title: "About me",
 		text: [
 			"I'm a product team lead and engineer with 5+ years of experience building payments, e-commerce, and Web3 systems.",
-			"I'm based in Lagos and work with teams anywhere. Outside my job I run BeezyLabs Technology Solutions, where I build and ship my own software products.",
+			"I'm based in Africa and work with teams anywhere. Outside my job I run BeezyLabs Technology Solutions, where I build and ship my own software products.",
 		],
 		skills: [
 			{
