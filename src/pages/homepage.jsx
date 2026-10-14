@@ -7,6 +7,10 @@ import ResponsePanel from "../site/ResponsePanel";
 import Diagram from "../site/Diagram";
 import StatusChip from "../site/StatusChip";
 import ContactForm from "../site/ContactForm";
+import Avatar from "../site/Avatar";
+import Floaters from "../site/Floaters";
+import Marquee from "../site/Marquee";
+import Testimonials from "../site/Testimonials";
 
 import INFO from "../data/user";
 import { SITE } from "../data/site";
@@ -19,6 +23,36 @@ const Homepage = () => {
 		}
 	}, []);
 
+	// Fade sections in as they scroll into view.
+	useEffect(() => {
+		if (
+			window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+			!("IntersectionObserver" in window)
+		) {
+			return undefined;
+		}
+		const root = document.documentElement;
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add("is-in");
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
+		);
+		document
+			.querySelectorAll("[data-reveal]")
+			.forEach((el) => observer.observe(el));
+		root.classList.add("reveal-ready");
+		return () => {
+			observer.disconnect();
+			root.classList.remove("reveal-ready");
+		};
+	}, []);
+
 	return (
 		<Layout current="home">
 			<Helmet>
@@ -26,12 +60,13 @@ const Homepage = () => {
 			</Helmet>
 
 			<section className="hero">
+				<Floaters />
 				<div className="wrap hero__grid">
 					<div>
 						<h1 className="hero__title">{SITE.hero.headline}</h1>
 						<p className="hero__lead">{SITE.hero.lead}</p>
 						<div className="hero__actions">
-							<a className="btn btn--hot" href="#contact">
+							<a className="btn btn--hot" href="#contact" data-react="🚀,✨,💜">
 								Hire me
 							</a>
 							<Link className="btn btn--ghost" to="/products">
@@ -54,8 +89,10 @@ const Homepage = () => {
 				</div>
 			</section>
 
+			<Marquee />
+
 			<section className="section" id="services">
-				<div className="wrap">
+				<div className="wrap" data-reveal>
 					<h2 className="section-title">{SITE.services.title}</h2>
 					<p className="section-lede">{SITE.services.lede}</p>
 					<div className="services">
@@ -81,7 +118,7 @@ const Homepage = () => {
 			</section>
 
 			<section className="section section--wash">
-				<div className="wrap">
+				<div className="wrap" data-reveal>
 					<h2 className="section-title">{SITE.process.title}</h2>
 					<ol className="steps">
 						{SITE.process.steps.map((step, i) => (
@@ -96,7 +133,7 @@ const Homepage = () => {
 			</section>
 
 			<section className="section" id="work">
-				<div className="wrap">
+				<div className="wrap" data-reveal>
 					<h2 className="section-title">{SITE.work.title}</h2>
 					<div className="work">
 						{SITE.work.items.map((item) => (
@@ -140,7 +177,7 @@ const Homepage = () => {
 			</section>
 
 			<section className="section section--blueprint">
-				<div className="wrap">
+				<div className="wrap" data-reveal>
 					<h2 className="section-title">{SITE.diagram.title}</h2>
 					<p className="section-lede">{SITE.diagram.lede}</p>
 					<div
@@ -156,7 +193,7 @@ const Homepage = () => {
 
 			{PRODUCTS.length > 0 && (
 				<section className="section" id="products">
-					<div className="wrap">
+					<div className="wrap" data-reveal>
 						<div className="section-head">
 							<h2 className="section-title">Products I build</h2>
 							<Link to="/products">All products</Link>
@@ -178,7 +215,7 @@ const Homepage = () => {
 			)}
 
 			<section className="section section--wash">
-				<div className="wrap two-col">
+				<div className="wrap two-col" data-reveal>
 					<div>
 						<h2 className="section-title">{SITE.leadership.title}</h2>
 						<p className="prose">{SITE.leadership.text}</p>
@@ -192,14 +229,8 @@ const Homepage = () => {
 			</section>
 
 			<section className="section" id="about">
-				<div className="wrap about">
-					<img
-						className="about__photo"
-						src={`${process.env.PUBLIC_URL}/edwin-cartoon.svg`}
-						alt="Cartoon portrait of Edwin Anajemba"
-						width="320"
-						height="325"
-					/>
+				<div className="wrap about" data-reveal>
+					<Avatar />
 					<div>
 						<h2 className="section-title">{SITE.about.title}</h2>
 						{SITE.about.text.map((paragraph) => (
@@ -226,21 +257,10 @@ const Homepage = () => {
 				</div>
 			</section>
 
-			{SITE.testimonial && (
-				<section className="section section--wash">
-					<div className="wrap">
-						<blockquote className="quote">
-							<p>{SITE.testimonial.quote}</p>
-							<footer>
-								{SITE.testimonial.name}, {SITE.testimonial.role}
-							</footer>
-						</blockquote>
-					</div>
-				</section>
-			)}
+			<Testimonials items={SITE.testimonials} />
 
 			<section className="contact" id="contact">
-				<div className="wrap two-col">
+				<div className="wrap two-col" data-reveal>
 					<div>
 						<h2 className="contact__title">{SITE.contact.title}</h2>
 						<p className="contact__lede">{SITE.contact.lede}</p>
