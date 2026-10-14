@@ -123,8 +123,15 @@ export const SITE = {
 				outcome: "APIs serving web and mobile clients with thousands of daily transactions.",
 			},
 			{
+				name: "Eyemark",
+				tag: "Nigeria's federal project-tracking platform. Client project, live.",
+				role: "Worked on the platform's web app, which lets citizens follow government projects and report progress.",
+				outcome: null,
+				link: { url: "https://www.eyemark.ng", label: "eyemark.ng" },
+			},
+			{
 				name: "GirlLEAD Talent Accelerator",
-				tag: "Non-profit, volunteer. 2025 to now.",
+				tag: "Non-profit, volunteer. 2025 to now. Live.",
 				role: "Designed the backend architecture for internal platforms. Wrote the product requirements, engineering guidelines, and infrastructure migration plan, and mentor junior developers.",
 				outcome: null,
 			},

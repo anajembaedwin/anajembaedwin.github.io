@@ -1041,3 +1041,9 @@
 .edu strong {
 	color: var(--ink);
 }
+
+.work__link {
+	display: inline-block;
+	margin-top: 4px;
+	font-weight: 500;
+}
