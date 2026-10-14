@@ -1851,3 +1851,151 @@ body.is-dragging * {
 		bottom: 74px;
 	}
 }
+
+/* ---------- about: ask-me panel + talking portrait ---------- */
+
+.about__side {
+	display: grid;
+	gap: 22px;
+	min-width: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.avatar.is-talking svg {
+		animation: talk-bob 0.5s ease-in-out infinite alternate;
+	}
+
+	.avatar.is-talking .avatar__mouth {
+		transform-box: fill-box;
+		transform-origin: 50% 0;
+		animation: talk-mouth 0.2s ease-in-out infinite alternate;
+	}
+}
+
+@keyframes talk-bob {
+	from {
+		transform: rotate(-1.4deg) translateY(0);
+	}
+	to {
+		transform: rotate(1.4deg) translateY(-4px);
+	}
+}
+
+@keyframes talk-mouth {
+	from {
+		transform: scaleY(0.55);
+	}
+	to {
+		transform: scaleY(1.45);
+	}
+}
+
+.ask {
+	padding: 18px;
+	border-radius: 24px;
+	background: var(--night);
+	color: var(--on-night);
+	border: 1px solid var(--night-line);
+}
+
+.ask__title {
+	font-size: 1.05rem;
+	margin: 0 0 12px;
+	color: #ffffff;
+}
+
+.ask__chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.ask__chip {
+	padding: 7px 12px;
+	border: 1.5px solid var(--night-line);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--on-night);
+	font: 500 0.85rem/1.2 var(--font-body);
+	cursor: pointer;
+	transition: background 0.15s ease, border-color 0.15s ease, transform 0.2s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.ask__chip:hover {
+	background: var(--violet);
+	border-color: var(--violet);
+	color: #ffffff;
+	transform: translateY(-2px) rotate(-1.5deg);
+}
+
+.ask__chip:focus-visible,
+.ask__form input:focus-visible,
+.ask__form button:focus-visible,
+.ask__cta:focus-visible {
+	outline-color: var(--saffron);
+}
+
+.ask__answer {
+	margin-top: 14px;
+	min-height: 5.6em;
+	padding: 12px 14px;
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.07);
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+.ask__emoji {
+	display: inline-block;
+	margin-right: 8px;
+	font-size: 1.2rem;
+	vertical-align: -2px;
+}
+
+.ask__idle {
+	color: var(--on-night-dim);
+}
+
+.ask__cta {
+	display: inline-block;
+	margin-left: 8px;
+	color: var(--saffron);
+	font-weight: 700;
+}
+
+.ask__form {
+	display: flex;
+	gap: 8px;
+	margin-top: 12px;
+}
+
+.ask__form input {
+	flex: 1;
+	min-width: 0;
+	padding: 10px 14px;
+	border: 1.5px solid var(--night-line);
+	border-radius: 999px;
+	background: transparent;
+	color: #ffffff;
+	font: 0.9rem var(--font-body);
+}
+
+.ask__form input::placeholder {
+	color: var(--on-night-dim);
+}
+
+.ask__form button {
+	padding: 0 16px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--saffron);
+	color: var(--ink);
+	font: 700 0.9rem var(--font-body);
+	cursor: pointer;
+}
+
+@media (max-width: 820px) {
+	.about__side {
+		max-width: 480px;
+	}
+}

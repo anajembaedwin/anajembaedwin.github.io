@@ -4,7 +4,7 @@ import { useI18n } from "../i18n";
 
 // Cartoon portrait. The pupils follow the cursor, the eyes blink now and
 // then, and clicking him makes him say something.
-const Avatar = () => {
+const Avatar = ({ talking = false }) => {
 	const { ui } = useI18n();
 	const QUIPS = ui.quips;
 	const ref = useRef(null);
@@ -51,7 +51,7 @@ const Avatar = () => {
 	return (
 		<button
 			type="button"
-			className="avatar about__photo"
+			className={`avatar about__photo${talking ? " is-talking" : ""}`}
 			onClick={talk}
 			data-react="👋,✨,🚀"
 			aria-label={ui.avatarLabel}
@@ -111,8 +111,10 @@ const Avatar = () => {
 <ellipse cx="480" cy="418" rx="11" ry="7" fill="#17111a"/><ellipse cx="544" cy="418" rx="11" ry="7" fill="#17111a"/>
 
 <path d="M420 484 C460 452 486 466 506 474 C530 466 558 452 596 484 C572 494 540 488 506 494 C474 488 446 494 420 484 Z" fill="#1d1519" stroke="#17111a" strokeWidth="6" strokeLinejoin="round"/>
+<g className="avatar__mouth">
 <path d="M434 508 C462 494 486 500 506 508 C530 498 556 494 584 508 C570 538 536 548 506 548 C476 548 448 538 434 508 Z" fill="#b86f60" stroke="#17111a" strokeWidth="7" strokeLinejoin="round"/>
 <path d="M440 512 C480 520 532 520 578 512" fill="none" stroke="#17111a" strokeWidth="6" strokeLinecap="round"/>
+</g>
 
 <use href="#eye"/><use href="#eye" transform="translate(1018 0) scale(-1 1)"/>
 
