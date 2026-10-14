@@ -19,7 +19,7 @@ const es = {
 			contact: "Contacto",
 		},
 		footerSub:
-			"Líder de equipo de producto. Ingeniero web y de infraestructura, con base en África.",
+			"Ingeniero de producto y líder de equipo. Web e infraestructura, con base en África.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "Correo" },
 		hire: "Contrátame para un proyecto",
 		aboutMe: "Sobre mí",
@@ -506,8 +506,8 @@ const es = {
 	},
 	site: {
 		hero: {
-			headline: "Líder de equipo de producto.",
-			lead: "Lidero equipos de ingeniería y construyo las plataformas web y la infraestructura en la nube detrás de los productos, desde pagos hasta Web3.",
+			headline: "Ingeniero de producto.",
+			lead: "Lidero el equipo de producto en JointEarn y construyo las plataformas web y la infraestructura en la nube detrás de los productos, desde pagos hasta Web3.",
 		},
 		response: [
 			["role", "Líder de equipo de producto"],
