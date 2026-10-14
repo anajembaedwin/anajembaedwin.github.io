@@ -3823,3 +3823,12 @@ body {
 	background: var(--saffron);
 	color: #17122b;
 }
+
+.live__logo {
+	display: block;
+	max-width: 150px;
+	max-height: 44px;
+	margin: 0 0 14px;
+	object-fit: contain;
+	object-position: left center;
+}
