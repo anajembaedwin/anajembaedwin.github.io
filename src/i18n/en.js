@@ -44,6 +44,23 @@ const en = {
 		avatarLabel: "Edwin's cartoon portrait. Press to hear him say something.",
 		avatarTitle:
 			"Cartoon portrait of Edwin Anajemba: short hair, full beard, black-framed glasses and a patterned shirt.",
+		ask: {
+			title: "Ask me anything",
+			idle: "Pick a question, or type your own.",
+			placeholder: "Type a question…",
+			send: "Ask",
+			cta: "Contact me",
+			fallback: "Good question, and I don't have a ready answer. Send me a message and I'll reply properly.",
+			items: [
+			{ q: "What do you do?", a: "I'm the Product Team Lead at JointEarn. I lead the developers, review code, and own the web platform and the infrastructure it ships on.", emoji: "🚀", keys: ["do", "work", "job", "role", "lead"] },
+			{ q: "What's your stack?", a: "TypeScript with NestJS, Python with FastAPI, React and Next.js, PostgreSQL, and AWS with Docker and GitHub Actions. I also write Solidity on Polygon.", emoji: "🛠️", keys: ["stack", "tech", "skill", "language", "tools", "use"] },
+			{ q: "Where are you based?", a: "In Africa, working with teams anywhere.", emoji: "🌍", keys: ["where", "based", "live", "location", "country", "timezone"] },
+			{ q: "How do you lead?", a: "I write architecture decisions down, ship in small steps that are easy to roll back, and treat deployment and monitoring as part of the feature.", emoji: "🧭", keys: ["lead", "manage", "team", "style"] },
+			{ q: "What else are you building?", a: "Outside my job I run BeezyLabs Technology Solutions and build my own software products. Have a look at the Products page.", emoji: "🧪", keys: ["building", "product", "side", "project", "beezy"] },
+			{ q: "Are you available?", a: "I'm open to freelance work. Tell me what it is, your timeline, and your budget range.", emoji: "📬", keys: ["available", "hire", "freelance", "contact", "reach", "email", "work", "with"], cta: true },
+			{ q: "Fun fact?", a: "I studied Mathematics before moving into software. That's probably why I like tests and clean rollbacks.", emoji: "🎲", keys: ["fun", "fact", "study", "degree", "math", "education", "hobby"] },
+			],
+		},
 		quips: [
 			"It works on my machine.",
 			"Have you tried turning it off and on again?",

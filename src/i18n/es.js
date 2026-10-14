@@ -43,6 +43,23 @@ const es = {
 			"Retrato de dibujos animados de Edwin. Pulsa para oírle decir algo.",
 		avatarTitle:
 			"Retrato de dibujos animados de Edwin Anajemba: pelo corto, barba completa, gafas de montura negra y camisa estampada.",
+		ask: {
+			title: "Pregúntame lo que quieras",
+			idle: "Elige una pregunta o escribe la tuya.",
+			placeholder: "Escribe una pregunta…",
+			send: "Enviar",
+			cta: "Contactar",
+			fallback: "Buena pregunta, pero no tengo una respuesta preparada. Escríbeme y te respondo como se debe.",
+			items: [
+			{ q: "¿A qué te dedicas?", a: "Soy Product Team Lead en JointEarn. Dirijo a los desarrolladores, reviso código y soy responsable de la plataforma web y de la infraestructura en la que corre.", emoji: "🚀", keys: ["dedicas", "trabajo", "puesto", "rol", "lider"] },
+			{ q: "¿Cuál es tu stack?", a: "TypeScript con NestJS, Python con FastAPI, React y Next.js, PostgreSQL, y AWS con Docker y GitHub Actions. También escribo Solidity en Polygon.", emoji: "🛠️", keys: ["stack", "tecnologia", "habilidad", "lenguaje", "herramienta", "usas"] },
+			{ q: "¿Dónde vives?", a: "En África, trabajando con equipos de cualquier lugar.", emoji: "🌍", keys: ["donde", "vives", "basado", "lugar", "pais", "zona"] },
+			{ q: "¿Cómo lideras?", a: "Dejo por escrito las decisiones de arquitectura, entrego en pasos pequeños fáciles de revertir y trato el despliegue y la monitorización como parte de la funcionalidad.", emoji: "🧭", keys: ["lider", "gestion", "equipo", "estilo"] },
+			{ q: "¿Qué más estás construyendo?", a: "Fuera de mi trabajo dirijo BeezyLabs Technology Solutions y creo mis propios productos. Mira la página de Productos.", emoji: "🧪", keys: ["constru", "producto", "proyecto", "beezy"] },
+			{ q: "¿Estás disponible?", a: "Estoy abierto a trabajo freelance. Cuéntame qué es, tu plazo y tu presupuesto.", emoji: "📬", keys: ["disponible", "contratar", "freelance", "contacto", "email", "trabajar"], cta: true },
+			{ q: "¿Un dato curioso?", a: "Estudié Matemáticas antes de pasar al software. Quizá por eso me gustan las pruebas y los retrocesos limpios.", emoji: "🎲", keys: ["curioso", "estudio", "carrera", "matematicas", "formacion", "hobby"] },
+			],
+		},
 		quips: [
 			"En mi máquina funciona.",
 			"¿Has probado a apagarlo y volver a encenderlo?",

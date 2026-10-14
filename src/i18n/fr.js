@@ -43,6 +43,23 @@ const fr = {
 			"Portrait en dessin animé d'Edwin. Appuyez pour l'entendre dire quelque chose.",
 		avatarTitle:
 			"Portrait en dessin animé d'Edwin Anajemba : cheveux courts, barbe fournie, lunettes à monture noire et chemise à motifs.",
+		ask: {
+			title: "Posez-moi une question",
+			idle: "Choisissez une question, ou écrivez la vôtre.",
+			placeholder: "Écrivez une question…",
+			send: "Envoyer",
+			cta: "Me contacter",
+			fallback: "Bonne question, mais je n'ai pas de réponse toute prête. Écrivez-moi et je vous répondrai sérieusement.",
+			items: [
+			{ q: "Que faites-vous ?", a: "Je suis Product Team Lead chez JointEarn. Je dirige les développeurs, je relis le code et je suis responsable de la plateforme web et de l'infrastructure sur laquelle elle tourne.", emoji: "🚀", keys: ["faites", "travail", "poste", "role", "dirig", "metier"] },
+			{ q: "Quelle est votre stack ?", a: "TypeScript avec NestJS, Python avec FastAPI, React et Next.js, PostgreSQL, et AWS avec Docker et GitHub Actions. J'écris aussi du Solidity sur Polygon.", emoji: "🛠️", keys: ["stack", "tech", "competence", "langage", "outil", "utilis"] },
+			{ q: "Où êtes-vous basé ?", a: "En Afrique, et je travaille avec des équipes partout.", emoji: "🌍", keys: ["ou", "base", "vivez", "lieu", "pays", "fuseau"] },
+			{ q: "Comment dirigez-vous ?", a: "Je documente les décisions d'architecture, je livre par petites étapes faciles à annuler, et je traite le déploiement et la supervision comme une partie de la fonctionnalité.", emoji: "🧭", keys: ["dirig", "manag", "equipe", "style"] },
+			{ q: "Que construisez-vous d'autre ?", a: "En dehors de mon poste, je dirige BeezyLabs Technology Solutions et je crée mes propres produits. Regardez la page Produits.", emoji: "🧪", keys: ["construi", "produit", "projet", "beezy"] },
+			{ q: "Êtes-vous disponible ?", a: "Je suis ouvert aux missions freelance. Dites-moi de quoi il s'agit, votre calendrier et votre budget.", emoji: "📬", keys: ["disponible", "embauch", "freelance", "contact", "joindre", "email", "travailler"], cta: true },
+			{ q: "Une anecdote ?", a: "J'ai étudié les mathématiques avant de passer au logiciel. C'est sans doute pour ça que j'aime les tests et les retours arrière propres.", emoji: "🎲", keys: ["anecdote", "etude", "diplome", "math", "formation", "loisir"] },
+			],
+		},
 		quips: [
 			"Ça marche sur ma machine.",
 			"Avez-vous essayé de l'éteindre et de le rallumer ?",
