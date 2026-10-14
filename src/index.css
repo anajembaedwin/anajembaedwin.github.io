@@ -35,7 +35,7 @@
 
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: 16px;
+	scroll-padding-top: 84px;
 }
 
 @media (prefers-reduced-motion: reduce) {
