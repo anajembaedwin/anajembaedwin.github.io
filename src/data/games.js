@@ -7,7 +7,7 @@
 // play:   set a route (for example "/play/tiny-wars") once a game can be played
 
 const GAMES = [
-	{ slug: "tiny-wars", emoji: "⚔️", status: "building", tag: "realtime", tone: ["#6b4cff", "#ff5c7a"], play: "" },
+	{ slug: "tiny-wars", emoji: "⚔️", status: "beta", tag: "realtime", tone: ["#6b4cff", "#ff5c7a"], play: "/games/tiny-wars/play" },
 	{ slug: "daily-bug-hunt", emoji: "🐛", status: "soon", tag: "daily", tone: ["#3fe0b5", "#4d8cff"], play: "" },
 	{ slug: "code-race", emoji: "⌨️", status: "soon", tag: "realtime", tone: ["#4d8cff", "#6b4cff"], play: "" },
 	{ slug: "tiny-kingdom", emoji: "🏰", status: "soon", tag: "solo", tone: ["#ffb84d", "#ff5c7a"], play: "" },

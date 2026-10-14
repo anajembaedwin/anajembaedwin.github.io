@@ -168,6 +168,74 @@ const en = {
 			failed: "That didn't send. Email me at {email} instead.",
 			subject: "{type}: message from {name}",
 		},
+		playPage: {
+		 "title": "Tiny Wars",
+		 "lead": "Defend your castle and break theirs. Three minutes a battle, and every battle adds glory to your side.",
+		 "metaDesc": "Play Tiny Wars: a three-minute castle battle. Pick a side and fight in the weekly war.",
+		 "canvasLabel": "The battlefield: your castle on the left, the enemy castle on the right, with tiny troops marching between them.",
+		 "quit": "Leave battle",
+		 "lobby": {
+		  "nameLabel": "Your name",
+		  "namePlaceholder": "Tiny Commander",
+		  "sideLabel": "Pick your side",
+		  "diffLabel": "Difficulty",
+		  "diff": {
+		   "easy": "Easy",
+		   "normal": "Normal",
+		   "hard": "Hard"
+		  },
+		  "start": "Start battle"
+		 },
+		 "how": {
+		  "title": "How to play",
+		  "steps": [
+		   "Spend gold on troops. Your gold grows by itself.",
+		   "Knights beat wizards and bakers up close, archers shoot knights from afar, wizards crush crowds, and bakers heal the army.",
+		   "Blow the war horn to rush your army forward. Break their castle, or have the stronger one when time runs out."
+		  ],
+		  "keys": "Keys: 1 to 4 send troops, H blows the horn."
+		 },
+		 "hud": {
+		  "gold": "Gold",
+		  "horn": "War horn",
+		  "time": "Time left",
+		  "you": "You",
+		  "enemy": "Enemy",
+		  "ready": "Ready"
+		 },
+		 "units": {
+		  "knight": "Knight",
+		  "archer": "Archer",
+		  "wizard": "Wizard",
+		  "baker": "Baker"
+		 },
+		 "result": {
+		  "win": "Victory!",
+		  "lose": "Defeat",
+		  "draw": "A draw",
+		  "glory": "Glory earned: {n}",
+		  "kills": "Enemy troops beaten: {n}",
+		  "castle": "Your castle stands at {n}%",
+		  "time": "Battle length: {n} seconds",
+		  "offline": "Practice mode: your glory is saved on this device. It joins the shared war once the war server is switched on.",
+		  "sending": "Adding your glory to the war…",
+		  "sent": "Your glory was added to the weekly war.",
+		  "failed": "Couldn't reach the war server. Your glory is saved on this device.",
+		  "locked": "You're locked to your first side this week, so this glory went to it.",
+		  "slow": "Too many battles too fast. This one only counts on this device.",
+		  "record": "Your record: {w} wins in {b} battles, {g} glory.",
+		  "again": "Fight again",
+		  "change": "Change side"
+		 },
+		 "war": {
+		  "title": "The weekly war",
+		  "lead": "Every battle adds glory to your side. The board resets every Monday.",
+		  "offline": "Practice mode for now: the shared scoreboard appears once the war server is switched on.",
+		  "next": "Next: live battles against other players.",
+		  "village": "Visit the village",
+		  "back": "Back to games"
+		 }
+		},
 		villagePage: {
 		 "title": "Tiny Wars: the village",
 		 "lead": "This is where the tiny people live. Watch them work, argue and go to war, then meet the cast.",
