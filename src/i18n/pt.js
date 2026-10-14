@@ -4,6 +4,10 @@ const pt = {
 	ui: {
 		langLabel: "Idioma",
 		menu: "Menu",
+		reset: "Repor o mundo",
+		worldReset: "Mundo reposto",
+		dragHint: "Psst… experimente arrastar os cartões",
+		dragHintTouch: "Psst… prima e mantenha um cartão para o mover",
 		skip: "Saltar para o conteúdo",
 		nav: {
 			label: "Principal",
