@@ -59,6 +59,8 @@ const en = {
 			{ q: "What else are you building?", a: "Outside my job I run BeezyLabs Technology Solutions and build my own software products. Have a look at the Products page.", emoji: "🧪", keys: ["building", "product", "side", "project", "beezy"] },
 			{ q: "Are you available?", a: "I'm open to freelance work. Tell me what it is, your timeline, and your budget range.", emoji: "📬", keys: ["available", "hire", "freelance", "contact", "reach", "email", "work", "with"], cta: true },
 			{ q: "Fun fact?", a: "I studied Mathematics before moving into software. That's probably why I like tests and clean rollbacks.", emoji: "🎲", keys: ["fun", "fact", "study", "degree", "math", "education", "hobby"] },
+			{ q: "How experienced are you?", a: "5+ years building web platforms and the cloud infrastructure behind them, across payments, e-commerce, and Web3.", emoji: "📈", keys: ["experience", "experienced", "years", "long", "senior", "old", "since", "career"] },
+			{ q: "How do we work together?", a: "We agree the goal and what done means. I build with weekly demos so there are no surprises, then we deploy, monitor, and hand over.", emoji: "🤝", keys: ["together", "process", "start", "timeline", "method", "demo", "steps"] },
 			],
 		},
 		quips: [

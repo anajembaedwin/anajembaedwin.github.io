@@ -58,6 +58,8 @@ const fr = {
 			{ q: "Que construisez-vous d'autre ?", a: "En dehors de mon poste, je dirige BeezyLabs Technology Solutions et je crée mes propres produits. Regardez la page Produits.", emoji: "🧪", keys: ["construi", "produit", "projet", "beezy"] },
 			{ q: "Êtes-vous disponible ?", a: "Je suis ouvert aux missions freelance. Dites-moi de quoi il s'agit, votre calendrier et votre budget.", emoji: "📬", keys: ["disponible", "embauch", "freelance", "contact", "joindre", "email", "travailler"], cta: true },
 			{ q: "Une anecdote ?", a: "J'ai étudié les mathématiques avant de passer au logiciel. C'est sans doute pour ça que j'aime les tests et les retours arrière propres.", emoji: "🎲", keys: ["anecdote", "etude", "diplome", "math", "formation", "loisir"] },
+			{ q: "Quelle est votre expérience ?", a: "Plus de 5 ans à construire des plateformes web et l'infrastructure cloud qui les soutient, dans les paiements, l'e-commerce et le Web3.", emoji: "📈", keys: ["experience", "annee", "ans", "longtemps", "senior", "carriere", "depuis"] },
+			{ q: "Comment travaille-t-on ensemble ?", a: "On définit l'objectif et ce que « terminé » veut dire. Je construis avec des démos hebdomadaires, sans surprise, puis on déploie, on supervise et je transmets.", emoji: "🤝", keys: ["ensemble", "processus", "demarr", "calendrier", "methode", "demo", "etape"] },
 			],
 		},
 		quips: [
