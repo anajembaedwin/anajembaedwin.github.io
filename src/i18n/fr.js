@@ -168,6 +168,71 @@ const fr = {
 			failed: "L'envoi a échoué. Écrivez-moi plutôt à {email}.",
 			subject: "{type} : message de {name}",
 		},
+		villagePage: {
+		 "title": "Tiny Wars : le village",
+		 "lead": "C'est ici que vivent les petits gens. Regardez-les travailler, se disputer et partir en guerre, puis rencontrez la distribution.",
+		 "metaDesc": "Le village de Tiny Wars : rencontrez les petits gens et les personnages du jeu.",
+		 "stageTitle": "Le village",
+		 "stageLabel": "Un village avec des maisons et des arbres où errent de petits personnages.",
+		 "stageHint": "Touchez un villageois pour lui donner un nom et un métier, ou l'achever. Ils se cachent ? Utilisez la pastille en bas à gauche pour les rappeler.",
+		 "castTitle": "La distribution",
+		 "castLead": "Huit personnages vivent ici aujourd'hui. Touchez quelqu'un dans le village et il pourrait en devenir un.",
+		 "stats": {
+		  "hp": "PV",
+		  "power": "Force",
+		  "reach": "Portée",
+		  "speed": "Vitesse"
+		 },
+		 "melee": "Corps à corps",
+		 "ranged": "Distance",
+		 "roles": [
+		  {
+		   "name": "Chevalier",
+		   "blurb": "Solide et posé. Mène la charge quand le cor de guerre sonne."
+		  },
+		  {
+		   "name": "Mage",
+		   "blurb": "Foudroie les ennemis de loin, fragile de près."
+		  },
+		  {
+		   "name": "Boulanger",
+		   "blurb": "Debout avant l'aube, il se bat au rouleau à pâtisserie si on le pousse."
+		  },
+		  {
+		   "name": "Bâtisseur",
+		   "blurb": "Élève des murs et répare les toits. Étonnamment robuste."
+		  },
+		  {
+		   "name": "Fermier",
+		   "blurb": "Nourrit le village. Pas là pour se battre."
+		  },
+		  {
+		   "name": "Barde",
+		   "blurb": "Vif, avec une chanson pour chaque occasion."
+		  },
+		  {
+		   "name": "Marchand",
+		   "blurb": "Connaît le prix de tout, même celui de la paix."
+		  },
+		  {
+		   "name": "Archer",
+		   "blurb": "Garde ses distances et la main sûre."
+		  }
+		 ],
+		 "lockedTitle": "À venir",
+		 "lockedLead": "D'autres personnages arrivent. Certains vous surprendront.",
+		 "locked": [
+		  "Soigneur",
+		  "Voleur",
+		  "Chaman",
+		  "Dompteur de dragons",
+		  "Robot",
+		  "Ninja"
+		 ],
+		 "lockedBadge": "Bientôt",
+		 "follow": "Suivre l'avancement",
+		 "back": "Retour aux jeux"
+		},
 		gamesPage: {
 		 "title": "Jeux",
 		 "lead": "De petits jeux en ligne, construits un par un. Le premier est en cours, les autres sont prévus.",

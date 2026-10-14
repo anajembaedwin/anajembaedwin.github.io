@@ -61,7 +61,7 @@ const Games = () => {
 										{t.play}
 									</Link>
 								) : (
-									<Link className="btn btn--hot" to="/">
+									<Link className="btn btn--hot" to="/games/tiny-wars">
 										{t.peek}
 									</Link>
 								)}

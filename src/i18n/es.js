@@ -167,6 +167,71 @@ const es = {
 			failed: "No se pudo enviar. Escríbeme mejor a {email}.",
 			subject: "{type}: mensaje de {name}",
 		},
+		villagePage: {
+		 "title": "Tiny Wars: la aldea",
+		 "lead": "Aquí vive la gente diminuta. Míralos trabajar, discutir e ir a la guerra, y conoce al reparto.",
+		 "metaDesc": "La aldea de Tiny Wars: conoce a la gente diminuta y a los personajes del juego.",
+		 "stageTitle": "La aldea",
+		 "stageLabel": "Una aldea con casas y árboles donde pasean personitas.",
+		 "stageHint": "Toca a un aldeano para darle un nombre y un oficio, o acabar con él. ¿Se esconden? Usa el botón de abajo a la izquierda para traerlos de vuelta.",
+		 "castTitle": "El reparto",
+		 "castLead": "Ocho personajes viven aquí hoy. Toca a alguien en la aldea y quizá se convierta en uno de ellos.",
+		 "stats": {
+		  "hp": "PV",
+		  "power": "Fuerza",
+		  "reach": "Alcance",
+		  "speed": "Velocidad"
+		 },
+		 "melee": "Cuerpo a cuerpo",
+		 "ranged": "A distancia",
+		 "roles": [
+		  {
+		   "name": "Caballero",
+		   "blurb": "Firme y resistente. Lidera la carga cuando suena el cuerno de guerra."
+		  },
+		  {
+		   "name": "Mago",
+		   "blurb": "Fulmina enemigos a distancia y es frágil de cerca."
+		  },
+		  {
+		   "name": "Panadero",
+		   "blurb": "Se levanta antes del alba y pelea con el rodillo si lo provocan."
+		  },
+		  {
+		   "name": "Constructor",
+		   "blurb": "Levanta muros y arregla tejados. Sorprendentemente duro."
+		  },
+		  {
+		   "name": "Granjero",
+		   "blurb": "Mantiene alimentada la aldea. No viene a pelear."
+		  },
+		  {
+		   "name": "Bardo",
+		   "blurb": "Ágil, con una canción para cada ocasión."
+		  },
+		  {
+		   "name": "Mercader",
+		   "blurb": "Sabe el precio de todo, hasta el de la paz."
+		  },
+		  {
+		   "name": "Arquero",
+		   "blurb": "Mantiene la distancia y el pulso firme."
+		  }
+		 ],
+		 "lockedTitle": "Por llegar",
+		 "lockedLead": "Vienen más personajes. Algunos no son lo que esperas.",
+		 "locked": [
+		  "Sanador",
+		  "Pícaro",
+		  "Chamán",
+		  "Domador de dragones",
+		  "Robot",
+		  "Ninja"
+		 ],
+		 "lockedBadge": "Próximamente",
+		 "follow": "Seguir el progreso",
+		 "back": "Volver a los juegos"
+		},
 		gamesPage: {
 		 "title": "Juegos",
 		 "lead": "Pequeños juegos en línea, construidos uno a uno. El primero está en marcha y los demás están en cola.",

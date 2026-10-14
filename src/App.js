@@ -6,6 +6,7 @@ import Homepage from "./pages/homepage";
 import Products from "./pages/products";
 import ProductDetail from "./pages/productDetail";
 import Games from "./pages/games";
+import Village from "./pages/village";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
@@ -27,6 +28,7 @@ function App() {
 				<Route path="/products" element={<Products />} />
 				<Route path="/products/:slug" element={<ProductDetail />} />
 				<Route path="/games" element={<Games />} />
+				<Route path="/games/tiny-wars" element={<Village />} />
 				<Route path="/projects" element={<Projects />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="*" element={<Notfound />} />
