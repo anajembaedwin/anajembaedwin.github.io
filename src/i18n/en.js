@@ -21,7 +21,7 @@ const en = {
 			contact: "Contact",
 		},
 		footerSub:
-			"Product team lead. Web and infrastructure engineer, based in Africa.",
+			"Product engineer and team lead. Web and infrastructure, based in Africa.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "Email" },
 		hire: "Hire me for a contract",
 		aboutMe: "About me",
