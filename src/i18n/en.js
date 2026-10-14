@@ -486,10 +486,10 @@ const en = {
 		projectsPage: {
 			tab: "Code",
 			title: "Code on GitHub",
-			lead: "Open-source projects: booking platforms, e-commerce backends, and tools.",
+			lead: "Selected projects: microservices, real-time apps, auth, finance APIs, ML and smart contracts.",
 			viewCode: "View code",
 			metaDesc:
-				"Open-source projects by Edwin Anajemba: booking platforms, e-commerce backends, and productivity tools.",
+				"Selected code by Edwin Anajemba: NestJS microservices, real-time apps, auth, finance APIs, machine learning and Solidity contracts.",
 		},
 		contactPage: {
 			tab: "Contact",
