@@ -98,6 +98,18 @@ const en = {
 		 "rm": "Permission denied. I like my files.",
 		 "exit": "There is no escape, only /contact.",
 		 "notFound": "command not found: {cmd}. Type help.",
+		 "matrix": {
+		  "wake": "Wake up, Neo...",
+		  "follow": "The Matrix has you...",
+		  "rabbit": "Follow the white rabbit.",
+		  "inside": "You're inside. Try: theme red | blue | violet | amber | green. Type exit (or press Esc) to take the blue pill.",
+		  "out": "You took the blue pill. The story ends. You wake up and believe whatever you want to believe.",
+		  "already": "You're already inside.",
+		  "hint": "Wake up, Neo... The Matrix has you. Try: red pill",
+		  "themeSet": "Rain set to {c}.",
+		  "themeUsage": "usage: theme <{c}>",
+		  "exitLabel": "Take the blue pill (Esc)"
+		 },
 		 "cmds": {
 		  "help": "show this list",
 		  "whoami": "who I am",

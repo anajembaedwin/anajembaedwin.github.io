@@ -1,14 +1,26 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 
 import INFO from "../data/user";
 import { useI18n, LANGS } from "../i18n";
+import MatrixRain from "./MatrixRain";
 
 // The hero panel is a small working terminal. It starts by printing the
 // "GET /edwin" response, then accepts commands. Everything is a written
 // answer from the site's own data; nothing is sent anywhere.
 
 const FILES = ["about.md", "skills.md", "experience.md", "products.md", "contact.md"];
+const HIDDEN = ".matrix";
+const RAIN = {
+	green: "#1aff6a",
+	red: "#ff3b4e",
+	blue: "#4da3ff",
+	violet: "#b28cff",
+	amber: "#ffb84d",
+};
+// anything that wakes the Matrix
+const CHEATS = /^(matrix|neo|red pill|wake up,? neo\.*|follow the white rabbit\.?|the matrix has you\.?)$/;
 const COMMANDS = [
 	"help",
 	"whoami",
@@ -47,6 +59,11 @@ const ResponsePanel = ({ lines }) => {
 	const history = useRef([]);
 	const box = useRef(null);
 	const input = useRef(null);
+	const rootRef = useRef(null);
+	const [matrix, setMatrix] = useState("off"); // off | waking | on
+	const [rain, setRain] = useState("green");
+	const [holdHeight, setHoldHeight] = useState(0);
+	const wakeTimer = useRef(null);
 
 	const json = useMemo(
 		() => [
@@ -90,12 +107,45 @@ const ResponsePanel = ({ lines }) => {
 		line("email     " + INFO.main.email, { href: `mailto:${INFO.main.email}` }),
 	];
 
+	const wake = () => {
+		setHoldHeight(rootRef.current ? rootRef.current.offsetHeight : 0);
+		setMatrix("waking");
+		clearTimeout(wakeTimer.current);
+		wakeTimer.current = setTimeout(() => {
+			setMatrix("on");
+			setLog((prev) => [...prev, { cmd: null, out: [line(T.matrix.inside)] }]);
+		}, 2400);
+	};
+
+	const sleep = () => {
+		clearTimeout(wakeTimer.current);
+		setMatrix("off");
+	};
+
 	const run = (raw) => {
 		const text = raw.trim();
 		if (!text) return [];
 		const [name, ...args] = text.split(/\s+/);
 		const cmd = name.toLowerCase();
 		const arg = args.join(" ").toLowerCase();
+
+		if (CHEATS.test(text.toLowerCase())) {
+			if (matrix !== "off") return [line(T.matrix.already)];
+			wake();
+			return [line(T.matrix.wake), line(T.matrix.follow), line(T.matrix.rabbit)];
+		}
+		if (matrix === "on" && (text.toLowerCase() === "blue pill" || cmd === "exit" || cmd === "quit")) {
+			sleep();
+			return [line(T.matrix.out)];
+		}
+		if (cmd === "blue" && arg === "pill") return [line(T.matrix.out)];
+		if (cmd === "theme" && matrix === "on") {
+			if (RAIN[arg]) {
+				setRain(arg);
+				return [line(T.matrix.themeSet.replace("{c}", arg))];
+			}
+			return [line(T.matrix.themeUsage.replace("{c}", Object.keys(RAIN).join(", ")))];
+		}
 
 		switch (cmd) {
 			case "help":
@@ -131,9 +181,10 @@ const ResponsePanel = ({ lines }) => {
 			case "linkedin":
 				return links();
 			case "ls":
-				return [line(FILES.join("  "))];
+				return [line((args.includes("-a") || args.includes("-la") ? [".", "..", HIDDEN, ...FILES] : FILES).join("  "))];
 			case "cat": {
 				if (!arg) return [line(T.catUsage)];
+				if (arg === HIDDEN) return [line(T.matrix.hint)];
 				const f = arg.replace(/\.md$/, "");
 				if (f === "about") return about();
 				if (f === "skills") return skills();
@@ -263,9 +314,11 @@ const ResponsePanel = ({ lines }) => {
 		);
 	};
 
-	return (
+	const termEl = (
 		<div
-			className="term"
+			ref={rootRef}
+			className={`term${matrix === "waking" ? " term--waking" : ""}${matrix === "on" ? " term--matrix" : ""}`}
+			style={matrix === "on" ? { "--mx": RAIN[rain] } : undefined}
 			role="group"
 			aria-label={ui.respLabel}
 			onClick={(event) => {
@@ -301,9 +354,11 @@ const ResponsePanel = ({ lines }) => {
 				</div>
 				{log.map((entry, i) => (
 					<div className="term__entry" key={i}>
-						<div className="term__line--cmd">
-							<span className="term__prompt">$</span> {entry.cmd}
-						</div>
+						{entry.cmd !== null && (
+							<div className="term__line--cmd">
+								<span className="term__prompt">$</span> {entry.cmd}
+							</div>
+						)}
 						{entry.out.map(render)}
 					</div>
 				))}
@@ -333,6 +388,60 @@ const ResponsePanel = ({ lines }) => {
 			</div>
 		</div>
 	);
+
+	// Inside the Matrix the terminal moves to the middle of a full-screen
+	// layer, so the whole page is the backdrop. It lives in a portal so the
+	// hero's clipping can't touch it.
+	useEffect(() => {
+		if (matrix !== "on") return undefined;
+		const prev = document.body.style.overflow;
+		document.body.style.overflow = "hidden";
+		const onKey = (event) => {
+			if (event.key === "Escape") {
+				setMatrix("off");
+				setLog((l) => [...l, { cmd: null, out: [line(T.matrix.out)] }]);
+			}
+		};
+		window.addEventListener("keydown", onKey);
+		const focus = setTimeout(() => input.current && input.current.focus({ preventScroll: true }), 60);
+		return () => {
+			document.body.style.overflow = prev;
+			window.removeEventListener("keydown", onKey);
+			clearTimeout(focus);
+		};
+	}, [matrix, T]);
+
+	useEffect(() => {
+		if (box.current) box.current.scrollTop = box.current.scrollHeight;
+	}, [matrix]);
+
+	useEffect(() => () => clearTimeout(wakeTimer.current), []);
+
+	if (matrix === "on") {
+		return (
+			<React.Fragment>
+				<div className="term-hold" style={{ minHeight: holdHeight }} />
+				{createPortal(
+					<div className="matrix-stage" style={{ "--mx": RAIN[rain] }}>
+						<MatrixRain color={RAIN[rain]} />
+						{termEl}
+						<button
+							type="button"
+							className="matrix-exit"
+							onClick={() => {
+								sleep();
+								setLog((l) => [...l, { cmd: null, out: [line(T.matrix.out)] }]);
+							}}
+						>
+							{T.matrix.exitLabel}
+						</button>
+					</div>,
+					document.body
+				)}
+			</React.Fragment>
+		);
+	}
+	return termEl;
 };
 
 export default ResponsePanel;

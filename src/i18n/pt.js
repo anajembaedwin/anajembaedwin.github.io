@@ -97,6 +97,18 @@ const pt = {
 		 "rm": "Permissão negada. Gosto dos meus ficheiros.",
 		 "exit": "Não há fuga, só /contact.",
 		 "notFound": "comando não encontrado: {cmd}. Escreva help.",
+		 "matrix": {
+		  "wake": "Acorda, Neo...",
+		  "follow": "A Matrix apanhou-te...",
+		  "rabbit": "Segue o coelho branco.",
+		  "inside": "Está lá dentro. Experimente: theme red | blue | violet | amber | green. Escreva exit (ou prima Esc) para tomar a pílula azul.",
+		  "out": "Tomou a pílula azul. A história termina. Acorda e acredita no que quiser acreditar.",
+		  "already": "Já está lá dentro.",
+		  "hint": "Acorda, Neo... A Matrix apanhou-te. Experimente: red pill",
+		  "themeSet": "Chuva definida para {c}.",
+		  "themeUsage": "uso: theme <{c}>",
+		  "exitLabel": "Tomar a pílula azul (Esc)"
+		 },
 		 "cmds": {
 		  "help": "mostrar esta lista",
 		  "whoami": "quem sou",
