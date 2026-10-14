@@ -21,7 +21,9 @@ const pt = {
 		footerSub:
 			"Responsável de equipa de produto. Engenheiro web e de infraestrutura, a trabalhar a partir de África.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" },
-		hire: "Contratar-me",
+		hire: "Contrate-me para um projeto",
+		aboutMe: "Sobre mim",
+		openToContracts: "Disponível para contratos",
 		seeProducts: "Ver os meus produtos",
 		proofLabel: "Onde trabalhei",
 		marquee: "Tecnologias com que trabalho",
@@ -220,7 +222,7 @@ const pt = {
 		  },
 		  {
 		   "id": "about",
-		   "text": "A stack e o percurso do Edwin. Clique no retrato dele para lhe fazer perguntas."
+		   "text": "Uma biografia curta. A página Sobre mim tem a stack completa e um retrato que responde a perguntas."
 		  },
 		  {
 		   "id": "contact",
@@ -231,7 +233,7 @@ const pt = {
 		 "tips": {
 		  "services": "Parece que está a ver os serviços. Quer que o leve ao formulário de contacto?",
 		  "work": "Curioso sobre como o Edwin lidera uma equipa? A secção logo abaixo explica.",
-		  "about": "Experimente clicar no retrato do Edwin. Ele responde a perguntas.",
+		  "about": "A página Sobre mim tem um retrato que responde a perguntas.",
 		  "contact": "Dica: indique o prazo e o orçamento para a resposta ser útil.",
 		  "form": "A escrever uma mensagem? Diga o que quer construir e para quando.",
 		  "terminal": "Aquele terminal é real. Escreva help para ver o que faz.",

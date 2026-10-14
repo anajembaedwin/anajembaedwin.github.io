@@ -21,7 +21,9 @@ const fr = {
 		footerSub:
 			"Responsable d'équipe produit. Ingénieur web et infrastructure, basé en Afrique.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "E-mail" },
-		hire: "Me recruter",
+		hire: "Me confier un contrat",
+		aboutMe: "À propos de moi",
+		openToContracts: "Disponible pour des contrats",
 		seeProducts: "Voir mes produits",
 		proofLabel: "Où j'ai travaillé",
 		marquee: "Technologies que j'utilise",
@@ -220,7 +222,7 @@ const fr = {
 		  },
 		  {
 		   "id": "about",
-		   "text": "La stack et le parcours d'Edwin. Cliquez sur son portrait pour lui poser des questions."
+		   "text": "Une courte bio. La page À propos détaille sa stack, avec un portrait qui répond aux questions."
 		  },
 		  {
 		   "id": "contact",
@@ -231,7 +233,7 @@ const fr = {
 		 "tips": {
 		  "services": "On dirait que vous regardez les services. Je vous emmène au formulaire de contact ?",
 		  "work": "Curieux de savoir comment Edwin dirige une équipe ? La section juste en dessous l'explique.",
-		  "about": "Essayez de cliquer sur le portrait d'Edwin. Il répond aux questions.",
+		  "about": "La page À propos a un portrait qui répond aux questions.",
 		  "contact": "Astuce : mentionnez votre calendrier et votre budget pour que la réponse soit utile.",
 		  "form": "Vous écrivez un message ? Dites ce que vous voulez construire et pour quand.",
 		  "terminal": "Ce terminal est réel. Tapez help pour voir ce qu'il sait faire.",
