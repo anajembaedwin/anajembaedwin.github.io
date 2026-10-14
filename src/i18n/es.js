@@ -160,6 +160,7 @@ const es = {
 			"Construyamos algo.",
 			"Producción es solo staging con usuarios.",
 		],
+		diagramSteps: ["Un cliente envía una solicitud.", "La API la valida y se hace cargo.", "El trabajo entra en cola y se guarda en la base de datos.", "El resultado se liquida on-chain y se confirma al cliente."],
 		diagramTitle:
 			"Un cliente llama a una API. La API usa una cola y una base de datos Postgres, y ambas se conectan a Polygon.",
 		status: { live: "En vivo", beta: "Beta", building: "En construcción", soon: "Próximamente" },

@@ -3754,3 +3754,72 @@ body {
 	flex: 1 1 420px;
 	min-width: 0;
 }
+
+/* ---------- animated request flow ---------- */
+
+.diagram__lines rect {
+	transition: fill 0.3s, stroke 0.3s;
+}
+
+.diagram__lines rect.is-on {
+	fill: rgba(63, 224, 181, 0.28);
+	stroke: #ffffff;
+}
+
+.diagram__back {
+	stroke-dasharray: 4 6;
+	opacity: 0.6;
+}
+
+.diagram__dots circle {
+	fill: var(--saffron);
+	filter: drop-shadow(0 0 6px rgba(255, 184, 77, 0.9));
+}
+
+.diagram__dots circle.is-back {
+	fill: #ffffff;
+}
+
+.flow__steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	gap: 10px;
+	margin: 18px 0 0;
+	padding: 0;
+	max-width: 760px;
+	list-style: none;
+}
+
+.flow__steps li {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	padding: 10px 12px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 12px;
+	color: var(--on-night);
+	font: 500 0.85rem/1.35 var(--font-body);
+	transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.flow__steps li span {
+	flex: none;
+	display: grid;
+	place-items: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.14);
+	font: 700 0.75rem/1 var(--font-body);
+}
+
+.flow__steps li.is-active {
+	border-color: var(--saffron);
+	background: rgba(255, 184, 77, 0.12);
+	color: #ffffff;
+}
+
+.flow__steps li.is-active span {
+	background: var(--saffron);
+	color: #17122b;
+}

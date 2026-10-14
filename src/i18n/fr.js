@@ -160,6 +160,7 @@ const fr = {
 			"Construisons quelque chose.",
 			"La production, c'est juste la préprod avec des utilisateurs.",
 		],
+		diagramSteps: ["Un client envoie une requête.", "L'API la vérifie et la prend en charge.", "Le travail est mis en file et enregistré en base.", "Le résultat est validé on-chain et confirmé au client."],
 		diagramTitle:
 			"Un client appelle une API. L'API utilise une file d'attente et une base Postgres, et les deux se connectent à Polygon.",
 		status: { live: "En ligne", beta: "Bêta", building: "En construction", soon: "Bientôt" },
