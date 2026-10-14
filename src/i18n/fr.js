@@ -97,6 +97,18 @@ const fr = {
 		 "rm": "Permission refusée. J'aime mes fichiers.",
 		 "exit": "Pas d'issue, sauf /contact.",
 		 "notFound": "commande introuvable : {cmd}. Tapez help.",
+		 "matrix": {
+		  "wake": "Réveille-toi, Neo...",
+		  "follow": "La Matrice t'a...",
+		  "rabbit": "Suis le lapin blanc.",
+		  "inside": "Vous êtes dedans. Essayez : theme red | blue | violet | amber | green. Tapez exit (ou Échap) pour prendre la pilule bleue.",
+		  "out": "Vous avez pris la pilule bleue. L'histoire s'arrête. Vous vous réveillez et croyez ce que vous voulez croire.",
+		  "already": "Vous êtes déjà dedans.",
+		  "hint": "Réveille-toi, Neo... La Matrice t'a. Essayez : red pill",
+		  "themeSet": "Pluie réglée sur {c}.",
+		  "themeUsage": "usage : theme <{c}>",
+		  "exitLabel": "Prendre la pilule bleue (Échap)"
+		 },
 		 "cmds": {
 		  "help": "afficher cette liste",
 		  "whoami": "qui je suis",
