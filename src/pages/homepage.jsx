@@ -189,6 +189,9 @@ const Homepage = () => {
 					<div className="product-grid">
 						{LIVE.map((item) => (
 							<article className="product-card" key={item.id}>
+								{item.logo && (
+									<img className="live__logo" src={item.logo} alt="" loading="lazy" />
+								)}
 								<StatusChip status="live" />
 								<h3>{item.name}</h3>
 								<p>{ui.liveItems[item.id]}</p>
