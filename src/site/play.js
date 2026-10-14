@@ -5,7 +5,7 @@
 // fights with the hover transforms on the same elements.
 
 const SELECTOR =
-	".step, .service, .work__row, .proof__item, .product-card, .principles li, .testi, .contact__card, .avatar, .repo";
+	".step, .service, .work__row, .proof__item, .product-card, .game-card, .game-feature, .principles li, .testi, .contact__card, .avatar, .repo";
 const IGNORE = "a, button, input, textarea, select, label";
 const IDLE_MS = 30000;
 

@@ -14,6 +14,7 @@ const fr = {
 			services: "Services",
 			work: "Parcours",
 			products: "Produits",
+			games: "Jeux",
 			about: "À propos",
 			contact: "Contact",
 		},
@@ -144,7 +145,7 @@ const fr = {
 		],
 		diagramTitle:
 			"Un client appelle une API. L'API utilise une file d'attente et une base Postgres, et les deux se connectent à Polygon.",
-		status: { live: "En ligne", beta: "Bêta", building: "En construction" },
+		status: { live: "En ligne", beta: "Bêta", building: "En construction", soon: "Bientôt" },
 		form: {
 			name: "Nom",
 			email: "E-mail",
@@ -166,6 +167,50 @@ const fr = {
 				"Votre application de messagerie devrait s'ouvrir avec le message prérempli. Sinon, écrivez à {email}.",
 			failed: "L'envoi a échoué. Écrivez-moi plutôt à {email}.",
 			subject: "{type} : message de {name}",
+		},
+		gamesPage: {
+		 "title": "Jeux",
+		 "lead": "De petits jeux en ligne, construits un par un. Le premier est en cours, les autres sont prévus.",
+		 "metaDesc": "Jeux en ligne d'Edwin Anajemba. Tiny Wars est en cours, d'autres suivent.",
+		 "nowTitle": "En cours",
+		 "nextTitle": "Prévus ensuite",
+		 "notify": "Me prévenir",
+		 "follow": "Suivre l'avancement",
+		 "peek": "Rencontrer les petits gens",
+		 "play": "Jouer",
+		 "tags": {
+		  "realtime": "Temps réel",
+		  "daily": "Quotidien",
+		  "solo": "Solo + classement",
+		  "canvas": "Toile partagée",
+		  "live": "Événement en direct"
+		 },
+		 "items": {
+		  "tiny-wars": {
+		   "name": "Tiny Wars",
+		   "pitch": "Un monde partagé de petits personnages. Choisissez rouge, bleu ou vert, créez un personnage et menez la guerre hebdomadaire pour votre camp."
+		  },
+		  "daily-bug-hunt": {
+		   "name": "Daily Bug Hunt",
+		   "pitch": "Une énigme de développeur par jour, la même pour tous. Trouvez le bug, gardez votre série, partagez votre résultat."
+		  },
+		  "code-race": {
+		   "name": "Code Race",
+		   "pitch": "Affrontez d'autres joueurs en direct sur de vrais extraits de code et grimpez au classement."
+		  },
+		  "tiny-kingdom": {
+		   "name": "Tiny Kingdom",
+		   "pitch": "Touchez pour faire grandir un village qui rapporte même en votre absence. Échangez avec vos amis et visez la première place."
+		  },
+		  "pixel-canvas": {
+		   "name": "Pixel Canvas",
+		   "pitch": "Une immense toile, un pixel à la fois. Rejoignez une équipe et prenez du territoire."
+		  },
+		  "quiz-night": {
+		   "name": "Quiz Night",
+		   "pitch": "Un quiz hebdomadaire en direct avec des manches africaines et tech, un classement et des lots financés par des sponsors."
+		  }
+		 }
 		},
 		productsPage: {
 			title: "Les produits que je construis",

@@ -6,6 +6,7 @@ import Layout from "../site/Layout";
 import ContactForm from "../site/ContactForm";
 
 import INFO from "../data/user";
+import GAMES from "../data/games";
 import { useI18n, fmt, fmtText } from "../i18n";
 
 const Contact = () => {
@@ -13,7 +14,10 @@ const Contact = () => {
 	const t = ui.contactPage;
 	const [params] = useSearchParams();
 	const topic = params.get("topic");
-	const product = PRODUCTS.find((item) => item.slug === topic);
+	const game = GAMES.find((item) => item.slug === topic);
+	const product =
+		PRODUCTS.find((item) => item.slug === topic) ||
+		(game ? { slug: game.slug, name: ui.gamesPage.items[game.slug].name } : null);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
