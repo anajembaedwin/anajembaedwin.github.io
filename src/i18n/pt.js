@@ -168,6 +168,74 @@ const pt = {
 			failed: "Não foi possível enviar. Escreva-me antes para {email}.",
 			subject: "{type}: mensagem de {name}",
 		},
+		playPage: {
+		 "title": "Tiny Wars",
+		 "lead": "Defenda o seu castelo e derrube o deles. Três minutos por batalha, e cada batalha soma glória ao seu lado.",
+		 "metaDesc": "Jogue Tiny Wars: uma batalha de castelos de três minutos. Escolha um lado e lute na guerra semanal.",
+		 "canvasLabel": "O campo de batalha: o seu castelo à esquerda, o do inimigo à direita, com pequenas tropas a marchar entre eles.",
+		 "quit": "Sair da batalha",
+		 "lobby": {
+		  "nameLabel": "O seu nome",
+		  "namePlaceholder": "Pequeno Comandante",
+		  "sideLabel": "Escolha o seu lado",
+		  "diffLabel": "Dificuldade",
+		  "diff": {
+		   "easy": "Fácil",
+		   "normal": "Normal",
+		   "hard": "Difícil"
+		  },
+		  "start": "Começar batalha"
+		 },
+		 "how": {
+		  "title": "Como jogar",
+		  "steps": [
+		   "Gaste ouro em tropas. O ouro cresce sozinho.",
+		   "Os cavaleiros vencem magos e padeiros de perto, os arqueiros atingem cavaleiros ao longe, os magos esmagam multidões e os padeiros curam o exército.",
+		   "Toque a corneta para lançar o exército. Derrube o castelo deles, ou tenha o mais forte quando o tempo acabar."
+		  ],
+		  "keys": "Teclas: 1 a 4 enviam tropas, H toca a corneta."
+		 },
+		 "hud": {
+		  "gold": "Ouro",
+		  "horn": "Corneta de guerra",
+		  "time": "Tempo restante",
+		  "you": "Você",
+		  "enemy": "Inimigo",
+		  "ready": "Pronta"
+		 },
+		 "units": {
+		  "knight": "Cavaleiro",
+		  "archer": "Arqueiro",
+		  "wizard": "Mago",
+		  "baker": "Padeiro"
+		 },
+		 "result": {
+		  "win": "Vitória!",
+		  "lose": "Derrota",
+		  "draw": "Empate",
+		  "glory": "Glória ganha: {n}",
+		  "kills": "Tropas inimigas derrotadas: {n}",
+		  "castle": "O seu castelo está a {n}%",
+		  "time": "Duração da batalha: {n} segundos",
+		  "offline": "Modo de treino: a sua glória fica guardada neste dispositivo. Junta-se à guerra partilhada quando o servidor for ligado.",
+		  "sending": "A somar a sua glória à guerra…",
+		  "sent": "A sua glória foi somada à guerra semanal.",
+		  "failed": "Não foi possível contactar o servidor da guerra. A sua glória fica guardada neste dispositivo.",
+		  "locked": "Está preso ao primeiro lado esta semana, por isso a glória foi para ele.",
+		  "slow": "Demasiadas batalhas muito depressa. Esta só conta neste dispositivo.",
+		  "record": "O seu registo: {w} vitórias em {b} batalhas, {g} de glória.",
+		  "again": "Lutar outra vez",
+		  "change": "Mudar de lado"
+		 },
+		 "war": {
+		  "title": "A guerra semanal",
+		  "lead": "Cada batalha soma glória ao seu lado. O placar recomeça todas as segundas-feiras.",
+		  "offline": "Modo de treino por agora: o placar partilhado aparece quando o servidor da guerra for ligado.",
+		  "next": "A seguir: batalhas ao vivo contra outros jogadores.",
+		  "village": "Visitar a aldeia",
+		  "back": "Voltar aos jogos"
+		 }
+		},
 		villagePage: {
 		 "title": "Tiny Wars: a aldeia",
 		 "lead": "É aqui que vive a gente miúda. Veja-os trabalhar, discutir e ir para a guerra, e conheça o elenco.",
