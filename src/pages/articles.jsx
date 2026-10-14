@@ -49,7 +49,12 @@ const Articles = () => {
 						</div>
 
 						<div className="articles-container">
-							<div className="articles-wrapper">
+							{myArticles.length === 0 && (
+									<div className="subtitle articles-subtitle">
+										No articles yet. Check back soon.
+									</div>
+								)}
+								<div className="articles-wrapper">
 								{myArticles.map((article, index) => (
 									<div
 										className="articles-article"

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 
@@ -23,6 +23,10 @@ const ReadArticle = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [article]);
+
+	if (!article) {
+		return <Navigate to="/articles" replace />;
+	}
 
 	ArticleStyle = styled.div`
 		${article().style}
