@@ -1,0 +1,42 @@
+@import "../../../data/styles.css";
+
+.work-with-me {
+	margin-top: 20px;
+}
+
+.work-with-me-body {
+	margin-bottom: 10px;
+	max-width: 400px;
+}
+
+.work-with-me-intro {
+	font-size: 13px;
+	color: var(--secondary-color);
+	padding-bottom: 12px;
+}
+
+.work-with-me-services {
+	margin: 0;
+	padding-left: 18px;
+	font-size: 12px;
+	color: var(--secondary-color);
+	line-height: 1.7;
+}
+
+.work-with-me-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	padding-top: 16px;
+}
+
+.work-with-me-link {
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--secondary-color);
+	text-decoration: underline;
+}
+
+.work-with-me-link:hover {
+	color: var(--tertiary-color);
+}
