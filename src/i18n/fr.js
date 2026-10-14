@@ -168,6 +168,74 @@ const fr = {
 			failed: "L'envoi a échoué. Écrivez-moi plutôt à {email}.",
 			subject: "{type} : message de {name}",
 		},
+		playPage: {
+		 "title": "Tiny Wars",
+		 "lead": "Défendez votre château et brisez le leur. Trois minutes par bataille, et chaque bataille ajoute de la gloire à votre camp.",
+		 "metaDesc": "Jouez à Tiny Wars : une bataille de château de trois minutes. Choisissez un camp et combattez dans la guerre hebdomadaire.",
+		 "canvasLabel": "Le champ de bataille : votre château à gauche, celui de l'ennemi à droite, avec de petites troupes qui avancent entre les deux.",
+		 "quit": "Quitter la bataille",
+		 "lobby": {
+		  "nameLabel": "Votre nom",
+		  "namePlaceholder": "Petit Commandant",
+		  "sideLabel": "Choisissez votre camp",
+		  "diffLabel": "Difficulté",
+		  "diff": {
+		   "easy": "Facile",
+		   "normal": "Normal",
+		   "hard": "Difficile"
+		  },
+		  "start": "Lancer la bataille"
+		 },
+		 "how": {
+		  "title": "Comment jouer",
+		  "steps": [
+		   "Dépensez votre or en troupes. Il augmente tout seul.",
+		   "Les chevaliers battent mages et boulangers au corps à corps, les archers visent les chevaliers de loin, les mages écrasent les foules et les boulangers soignent l'armée.",
+		   "Sonnez le cor pour lancer votre armée. Brisez leur château, ou ayez le plus solide quand le temps est écoulé."
+		  ],
+		  "keys": "Touches : 1 à 4 envoient des troupes, H sonne le cor."
+		 },
+		 "hud": {
+		  "gold": "Or",
+		  "horn": "Cor de guerre",
+		  "time": "Temps restant",
+		  "you": "Vous",
+		  "enemy": "Ennemi",
+		  "ready": "Prêt"
+		 },
+		 "units": {
+		  "knight": "Chevalier",
+		  "archer": "Archer",
+		  "wizard": "Mage",
+		  "baker": "Boulanger"
+		 },
+		 "result": {
+		  "win": "Victoire !",
+		  "lose": "Défaite",
+		  "draw": "Match nul",
+		  "glory": "Gloire gagnée : {n}",
+		  "kills": "Troupes ennemies vaincues : {n}",
+		  "castle": "Votre château tient à {n} %",
+		  "time": "Durée de la bataille : {n} secondes",
+		  "offline": "Mode entraînement : votre gloire est enregistrée sur cet appareil. Elle rejoindra la guerre partagée quand le serveur sera activé.",
+		  "sending": "Ajout de votre gloire à la guerre…",
+		  "sent": "Votre gloire a été ajoutée à la guerre hebdomadaire.",
+		  "failed": "Serveur de guerre injoignable. Votre gloire est enregistrée sur cet appareil.",
+		  "locked": "Vous êtes lié à votre premier camp cette semaine, c'est donc lui qui reçoit cette gloire.",
+		  "slow": "Trop de batailles trop vite. Celle-ci ne compte que sur cet appareil.",
+		  "record": "Votre bilan : {w} victoires en {b} batailles, {g} de gloire.",
+		  "again": "Combattre encore",
+		  "change": "Changer de camp"
+		 },
+		 "war": {
+		  "title": "La guerre hebdomadaire",
+		  "lead": "Chaque bataille ajoute de la gloire à votre camp. Le classement repart à zéro chaque lundi.",
+		  "offline": "Mode entraînement pour l'instant : le classement partagé apparaîtra quand le serveur de guerre sera activé.",
+		  "next": "Ensuite : des batailles en direct contre d'autres joueurs.",
+		  "village": "Visiter le village",
+		  "back": "Retour aux jeux"
+		 }
+		},
 		villagePage: {
 		 "title": "Tiny Wars : le village",
 		 "lead": "C'est ici que vivent les petits gens. Regardez-les travailler, se disputer et partir en guerre, puis rencontrez la distribution.",

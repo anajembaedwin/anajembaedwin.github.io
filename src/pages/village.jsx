@@ -126,7 +126,10 @@ const Village = () => {
 						))}
 					</div>
 					<div className="game-card__actions">
-						<Link className="btn btn--hot" to="/contact?topic=tiny-wars">
+						<Link className="btn btn--hot" to="/games/tiny-wars/play">
+							{ui.gamesPage.play}
+						</Link>
+						<Link className="btn btn--ghost-dark" to="/contact?topic=tiny-wars">
 							{t.follow}
 						</Link>
 						<Link className="btn btn--ghost-dark" to="/games">

@@ -167,6 +167,74 @@ const es = {
 			failed: "No se pudo enviar. Escríbeme mejor a {email}.",
 			subject: "{type}: mensaje de {name}",
 		},
+		playPage: {
+		 "title": "Tiny Wars",
+		 "lead": "Defiende tu castillo y derriba el suyo. Tres minutos por batalla, y cada batalla suma gloria a tu bando.",
+		 "metaDesc": "Juega a Tiny Wars: una batalla de castillos de tres minutos. Elige un bando y lucha en la guerra semanal.",
+		 "canvasLabel": "El campo de batalla: tu castillo a la izquierda, el enemigo a la derecha, con pequeñas tropas marchando entre ambos.",
+		 "quit": "Abandonar la batalla",
+		 "lobby": {
+		  "nameLabel": "Tu nombre",
+		  "namePlaceholder": "Pequeño Comandante",
+		  "sideLabel": "Elige tu bando",
+		  "diffLabel": "Dificultad",
+		  "diff": {
+		   "easy": "Fácil",
+		   "normal": "Normal",
+		   "hard": "Difícil"
+		  },
+		  "start": "Empezar batalla"
+		 },
+		 "how": {
+		  "title": "Cómo jugar",
+		  "steps": [
+		   "Gasta oro en tropas. El oro crece solo.",
+		   "Los caballeros vencen a magos y panaderos de cerca, los arqueros disparan a los caballeros desde lejos, los magos aplastan multitudes y los panaderos curan al ejército.",
+		   "Toca el cuerno para lanzar a tu ejército. Derriba su castillo, o ten el más fuerte cuando acabe el tiempo."
+		  ],
+		  "keys": "Teclas: 1 a 4 envían tropas, H toca el cuerno."
+		 },
+		 "hud": {
+		  "gold": "Oro",
+		  "horn": "Cuerno de guerra",
+		  "time": "Tiempo restante",
+		  "you": "Tú",
+		  "enemy": "Enemigo",
+		  "ready": "Listo"
+		 },
+		 "units": {
+		  "knight": "Caballero",
+		  "archer": "Arquero",
+		  "wizard": "Mago",
+		  "baker": "Panadero"
+		 },
+		 "result": {
+		  "win": "¡Victoria!",
+		  "lose": "Derrota",
+		  "draw": "Empate",
+		  "glory": "Gloria ganada: {n}",
+		  "kills": "Tropas enemigas vencidas: {n}",
+		  "castle": "Tu castillo está al {n}%",
+		  "time": "Duración de la batalla: {n} segundos",
+		  "offline": "Modo práctica: tu gloria se guarda en este dispositivo. Se unirá a la guerra compartida cuando se active el servidor.",
+		  "sending": "Sumando tu gloria a la guerra…",
+		  "sent": "Tu gloria se sumó a la guerra semanal.",
+		  "failed": "No se pudo contactar con el servidor de la guerra. Tu gloria se guarda en este dispositivo.",
+		  "locked": "Estás fijado a tu primer bando esta semana, así que la gloria fue para él.",
+		  "slow": "Demasiadas batallas demasiado rápido. Esta solo cuenta en este dispositivo.",
+		  "record": "Tu marca: {w} victorias en {b} batallas, {g} de gloria.",
+		  "again": "Luchar otra vez",
+		  "change": "Cambiar de bando"
+		 },
+		 "war": {
+		  "title": "La guerra semanal",
+		  "lead": "Cada batalla suma gloria a tu bando. El marcador se reinicia cada lunes.",
+		  "offline": "Modo práctica por ahora: el marcador compartido aparecerá cuando se active el servidor de la guerra.",
+		  "next": "Próximamente: batallas en directo contra otros jugadores.",
+		  "village": "Visitar la aldea",
+		  "back": "Volver a los juegos"
+		 }
+		},
 		villagePage: {
 		 "title": "Tiny Wars: la aldea",
 		 "lead": "Aquí vive la gente diminuta. Míralos trabajar, discutir e ir a la guerra, y conoce al reparto.",

@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useSyncExternalStore } from "react";
 
+import { useLocation } from "react-router-dom";
+
 import { useI18n } from "../i18n";
 import { burst } from "./reactions";
 import { getCount, install, onReset, reset, subscribe } from "./play";
@@ -7,6 +9,8 @@ import { getCount, install, onReset, reset, subscribe } from "./play";
 // The floating "Reset the world" button, a one-time hint, and a small toast.
 const PlayLayer = () => {
 	const { ui } = useI18n();
+	const { pathname } = useLocation();
+	const quiet = pathname.endsWith("/play");
 	const count = useSyncExternalStore(subscribe, getCount);
 	const [toast, setToast] = useState(null);
 	const [hint, setHint] = useState(false);
@@ -82,7 +86,7 @@ const PlayLayer = () => {
 				</span>
 				{ui.reset}
 			</button>
-			{hint && count === 0 && (
+			{hint && count === 0 && !quiet && (
 				<div className="play-hint" role="status">
 					{coarse ? ui.dragHintTouch : ui.dragHint}
 				</div>

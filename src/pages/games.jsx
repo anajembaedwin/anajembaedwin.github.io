@@ -56,15 +56,14 @@ const Games = () => {
 							<h3>{info(first.slug).name}</h3>
 							<p>{info(first.slug).pitch}</p>
 							<div className="game-card__actions">
-								{first.play ? (
+								{first.play && (
 									<Link className="btn btn--hot" to={first.play}>
 										{t.play}
 									</Link>
-								) : (
-									<Link className="btn btn--hot" to="/games/tiny-wars">
-										{t.peek}
-									</Link>
 								)}
+								<Link className="btn btn--ghost-dark" to="/games/tiny-wars">
+									{t.peek}
+								</Link>
 								<Link className="btn btn--ghost-dark" to={`/contact?topic=${first.slug}`}>
 									{t.follow}
 								</Link>

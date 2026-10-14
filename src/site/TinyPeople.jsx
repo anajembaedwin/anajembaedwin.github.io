@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import { useLocation } from "react-router-dom";
+
 import { useI18n } from "../i18n";
 import { burst } from "./reactions";
 import { SIDES, start } from "./tiny";
@@ -17,6 +19,8 @@ const read = () => {
 const TinyPeople = () => {
 	const { ui } = useI18n();
 	const T = ui.tiny;
+	const { pathname } = useLocation();
+	const hidden = pathname.endsWith("/play");
 	const tRef = useRef(T);
 	tRef.current = T;
 	const canvas = useRef(null);
@@ -36,7 +40,7 @@ const TinyPeople = () => {
 	};
 
 	useEffect(() => {
-		if (!on || !canvas.current) return undefined;
+		if (!on || hidden || !canvas.current) return undefined;
 		const fill = (text, map) =>
 			Object.keys(map).reduce((s, k) => s.split(`{${k}}`).join(map[k]), text);
 		const stop = start(canvas.current, {
@@ -77,7 +81,7 @@ const TinyPeople = () => {
 			stop();
 			clearTimeout(hint);
 		};
-	}, [on]);
+	}, [on, hidden]);
 
 	useEffect(() => () => clearTimeout(timer.current), []);
 
@@ -93,7 +97,8 @@ const TinyPeople = () => {
 
 	return (
 		<React.Fragment>
-			{on && <canvas className="tiny-canvas" ref={canvas} aria-hidden="true" />}
+			{on && !hidden && <canvas className="tiny-canvas" ref={canvas} aria-hidden="true" />}
+			{!hidden && (
 			<div className="tiny-hud">
 				<button
 					type="button"
@@ -119,7 +124,8 @@ const TinyPeople = () => {
 					)}
 				</button>
 			</div>
-			{toast && (
+			)}
+			{toast && !hidden && (
 				<div className="tiny-toast" role="status">
 					{toast}
 				</div>
