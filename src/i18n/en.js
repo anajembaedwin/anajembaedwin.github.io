@@ -161,6 +161,7 @@ const en = {
 			"Let's build something.",
 			"Production is just staging with users.",
 		],
+		diagramSteps: ["A client sends a request.", "The API checks it and takes over.", "The work is queued and saved to the database.", "The result is settled on-chain and confirmed back."],
 		diagramTitle:
 			"A client calls an API. The API uses a queue and a Postgres database, and both connect to Polygon.",
 		status: { live: "Live", beta: "Beta", building: "Building", soon: "Coming soon" },
