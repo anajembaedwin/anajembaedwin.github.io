@@ -16,6 +16,21 @@ const Works = () => {
 						<div className="work">
 							<img
 								src="./brief-case.jpg"
+								alt="JointEarn LLC"
+								className="work-image"
+							/>
+							<div>
+								<div className="work-title">JointEarn LLC</div>
+								<div className="work-subtitle">
+									Lead Developer (promoted Oct 2026)
+								</div>
+							</div>
+							<div className="work-duration">Present</div>
+						</div>
+
+						<div className="work">
+							<img
+								src="./brief-case.jpg"
 								alt="Netzence Sustainability Limited"
 								className="work-image"
 							/>
@@ -25,7 +40,7 @@ const Works = () => {
 									Full Stack Web Developer (E-Commerce, Payment Integration, Web3)
 								</div>
 							</div>
-							<div className="work-duration">Jun 2024 - Present</div>
+							<div className="work-duration">From Jun 2024</div>
 						</div>
 
 						<div className="work">

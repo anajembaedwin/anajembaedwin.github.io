@@ -7,34 +7,30 @@ const INFO = {
 	},
 
 	socials: {
-		twitter: "https://twitter.com/",
-		github: "https://github.com/",
-		linkedin: "https://linkedin.com/",
-		instagram: "https://instagram.com/",
-		stackoverflow: "https://stackoverflow.com/",
-		facebook: "https://facebook.com/",
+		github: "https://github.com/anajembaedwin",
+		linkedin: "https://www.linkedin.com/in/anajembaedwin",
 	},
 
 	homepage: {
-		title: "Full Stack Developer, Blockchain, and DevOps Engineer, with Interest in Data and Machine Learning.",
+		title: "Lead Developer building backend systems, payments, and Web3 products.",
 		description:
-			"I am a Full Stack Developer with a strong foundation in blockchain development, backend engineering, and DevOps. Proficient in HTML, CSS, React, Node.js, Python, Solidity, Hardhat, web3.js, Go, and Bash, I specialize in creating scalable, secure, and reliable web applications and smart contracts. My experience spans various frameworks and technologies, allowing me to build solutions that adhere to industry best practices and standards. I thrive on solving complex problems, continually learning new skills, and embracing new challenges to enhance my development capabilities.",
+			"I'm a backend and full-stack engineer with 5+ years of experience, currently Lead Developer at JointEarn. I build APIs and platforms with TypeScript/NestJS, Python/FastAPI, PostgreSQL, Redis, and AWS, and I've shipped e-commerce backends, smart contracts on Polygon, and Claude-powered features. I also run BeezyLabs Technology Solutions, where I build my own products.",
 	},
 
 	"about": {
-		"title": "Edwin Anajemba: Crafting Future Solutions",
-		"description": "My journey is a tapestry of diverse projects, each a testament to my dedication and technical prowess. I pride myself on designing robust systems and delivering efficient, scalable solutions. I'm driven by continuous learning, eagerly embracing new challenges and technologies. Feedback is my compass, guiding my professional development and honing my skills. Each project in my portfolio is not just a task completed, but a unique challenge overcome and a milestone in my career."
+		"title": "Edwin Anajemba: Backend Engineer and Founder",
+		"description": "I've spent 5+ years designing and running production backends: three years owning the backend of a C2C/B2C e-commerce platform at Palimart, blockchain work at Netzence on CloseCarbon (smart contracts integrated with a Web2 backend and APIs), and now leading development at JointEarn. Outside my job, I'm the founder of BeezyLabs Technology Solutions Limited, where I build and ship my own software products. I care about systems that are secure, observable, and easy for the next engineer to pick up."
 	},
 
 	"articles": {
-		"title": "Driven by Innovation: Inspiring Future Generations",
-		"description": "A sequential anthology of my in-depth reflections on software development, leadership dynamics, and the solutions found in data."
+		"title": "Notes on Building Software",
+		"description": "Writing on backend engineering, payments, and building products. New posts coming soon."
 	},
 
 	projects: [
 		{
 			title: "Buz and Socials Reservations",
-			description: "Customer facing page.",
+			description: "Customer-facing reservation flow for Buz and Socials, letting guests book directly online.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://github.com/anajembaedwin/buz-and-socials-reservations",
@@ -43,7 +39,7 @@ const INFO = {
 		},
 		{
 			title: "Buz and Socials Hotel Booking Dashboard",
-			description: "Hotel Booking Dashboard.",
+			description: "Admin dashboard for managing hotel bookings, built for the Buz and Socials team.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://github.com/anajembaedwin/hotel-booking-dashboard",
@@ -52,7 +48,7 @@ const INFO = {
 		},
 		{
 			title: "Backend for the hotel-booking-dashboard",
-			description: "Backend for the hotel-booking-dashboard.",
+			description: "API powering the hotel booking dashboard and reservations.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://github.com/anajembaedwin/hotel-booking-backend",
@@ -70,7 +66,7 @@ const INFO = {
 		},
 		{
 			title: "Smartworka Frontend",
-			description: "Smartworka is a productivity tool to manage a project from inception.",
+			description: "Smartworka: a productivity tool for managing a project from inception to delivery.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/typescript/typescript.png",
 			linkText: "View Project",
 			link: "https://github.com/anajembaedwin/smartworka-frontend",
@@ -95,7 +91,7 @@ const INFO = {
 		},
 		{
 			title: "Palimart Cosmetics Backend",
-			description: "A NodeJS and Express RESTful API Backend for Palimart Cosmetics.",
+			description: "REST API backend for Palimart Cosmetics, part of the e-commerce platform whose backend I owned for three years.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
 			link: "https://github.com/anajembaedwin/cosmetics_backend",
@@ -106,20 +102,6 @@ const INFO = {
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
 			linkText: "View Project",
 			link: "https://github.com/anajembaedwin/travels_backend",
-		},
-		{
-			title: "Simple Flask REST API",
-			description: "A simple Flask REST API capable of CRUD operations on a 'person' resource.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-			linkText: "View Project",
-			link: "https://github.com/anajembaedwin/simple-flask-rest-api",
-		},
-		{
-			title: "Personal Blog",
-			description: "A personal blog for writing about web development and technologies.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com/anajembaedwin/personal-blog",
 		},
 	],
 };
