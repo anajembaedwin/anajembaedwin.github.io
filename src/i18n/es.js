@@ -486,10 +486,10 @@ const es = {
 		projectsPage: {
 			tab: "Código",
 			title: "Código en GitHub",
-			lead: "Proyectos de código abierto: plataformas de reservas, backends de comercio electrónico y herramientas.",
+			lead: "Proyectos seleccionados: microservicios, apps en tiempo real, autenticación, APIs financieras, ML y smart contracts.",
 			viewCode: "Ver código",
 			metaDesc:
-				"Proyectos de código abierto de Edwin Anajemba: plataformas de reservas, backends de comercio electrónico y herramientas de productividad.",
+				"Código seleccionado de Edwin Anajemba: microservicios NestJS, apps en tiempo real, autenticación, APIs financieras, machine learning y contratos Solidity.",
 		},
 		contactPage: {
 			tab: "Contacto",
@@ -680,14 +680,13 @@ const es = {
 		},
 	},
 	projects: [
-		"Flujo de reservas para clientes de Buz and Socials, para reservar directamente en línea.",
-		"Panel de administración para gestionar reservas de hotel, creado para el equipo de Buz and Socials.",
-		"API que alimenta el panel de reservas de hotel.",
-		"Smartworka: una herramienta de productividad para gestionar un proyecto desde el inicio hasta la entrega.",
-		"Tienda de comercio electrónico construida sobre el framework Medusa.",
-		"Una API RESTful desarrollada con Go y Gin para Vintage Jazz Records.",
-		"Backend de API REST de Palimart Cosmetics, parte de la plataforma de comercio electrónico cuyo backend gestioné durante tres años.",
-		"Un backend para un negocio de viajes y tours, construido con Python, Django y PostgreSQL.",
+		"Microservicios gRPC en NestJS: servicios de usuario y billetera con débitos seguros por transacción, Prisma sobre PostgreSQL, Docker, CI y pruebas de extremo a extremo.",
+		"Chat en tiempo real uno a uno: frontend en React y TypeScript, backend en Express y Socket.io, mensajes guardados en PostgreSQL, probado y compilado en CI.",
+		"Sistema de predicción de partidos de fútbol: modelos XGBoost y LightGBM, detección de apuestas de valor con cuotas en vivo y predicciones diarias publicadas con GitHub Actions.",
+		"Contratos Solidity para Recylox, una dApp de reciclaje: un token ERC20 y registro, depósitos, validación y pagos de recicladores y recolectores, con Hardhat.",
+		"Backend de autenticación por tokens: registro, inicio de sesión, restablecimiento de contraseña con tokens en Redis, límite de peticiones, docs Swagger, Docker y configuraciones de despliegue.",
+		"APIs de estado de flujo de caja y conciliación bancaria construidas con Node.js, Express y PostgreSQL.",
+		"Backend de API REST para Palimart Cosmetics, parte de la plataforma de comercio electrónico cuyo backend gestioné durante tres años.",
 	],
 };
 

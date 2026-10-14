@@ -12,45 +12,46 @@ const INFO = {
 	// Open-source repositories shown on /projects.
 	projects: [
 		{
-			title: "Buz and Socials Reservations",
+			title: "Checkit Wallet Microservices",
 			description:
-				"Customer-facing reservation flow for Buz and Socials, letting guests book directly online.",
-			tech: "JavaScript",
-			link: "https://github.com/anajembaedwin/buz-and-socials-reservations",
-		},
-		{
-			title: "Buz and Socials Hotel Booking Dashboard",
-			description:
-				"Admin dashboard for managing hotel bookings, built for the Buz and Socials team.",
-			tech: "JavaScript",
-			link: "https://github.com/anajembaedwin/hotel-booking-dashboard",
-		},
-		{
-			title: "Hotel Booking Backend",
-			description:
-				"API powering the hotel booking dashboard and reservations.",
-			tech: "JavaScript",
-			link: "https://github.com/anajembaedwin/hotel-booking-backend",
-		},
-		{
-			title: "Smartworka Frontend",
-			description:
-				"Smartworka: a productivity tool for managing a project from inception to delivery.",
+				"gRPC microservices in NestJS: user and wallet services with transaction-safe debits, Prisma on PostgreSQL, Docker, CI and end-to-end tests.",
 			tech: "TypeScript",
-			link: "https://github.com/anajembaedwin/smartworka-frontend",
+			link: "https://github.com/anajembaedwin/checkit-wallet-microservices",
 		},
 		{
-			title: "Medusa Ecommerce Storefront",
-			description: "Ecommerce storefront built on the Medusa framework.",
-			tech: "TypeScript",
-			link: "https://github.com/anajembaedwin/fullstack-medusa-app-storefront",
-		},
-		{
-			title: "Vintage Jazz Records API",
+			title: "Kairos Chat",
 			description:
-				"A RESTful API developed with Go and Gin for Vintage Jazz Records.",
-			tech: "Go",
-			link: "https://github.com/anajembaedwin/vintage-jazz-records",
+				"Real-time one-to-one chat: React and TypeScript frontend, Express and Socket.io backend, messages stored in PostgreSQL, tested and built in CI.",
+			tech: "TypeScript",
+			link: "https://github.com/anajembaedwin/kairos-chat",
+		},
+		{
+			title: "Prediict",
+			description:
+				"Football match prediction system: XGBoost and LightGBM models, value-bet detection from live odds, and daily predictions published by GitHub Actions.",
+			tech: "Python",
+			link: "https://github.com/thedatadoktor/prediict",
+		},
+		{
+			title: "Recylox Smart Contracts",
+			description:
+				"Solidity contracts for Recylox, a recycling dApp: an ERC20 token plus registration, deposits, validation and payments for recyclers and pickers, built with Hardhat.",
+			tech: "Solidity",
+			link: "https://github.com/Grandida-Projects/reccoin-backend",
+		},
+		{
+			title: "Django Auth Service",
+			description:
+				"Token-based authentication backend: registration, login, password reset with Redis-stored tokens, rate limiting, Swagger docs, Docker and deploy configs.",
+			tech: "Python",
+			link: "https://github.com/anajembaedwin/django-auth-service",
+		},
+		{
+			title: "Luca Accounting MVP",
+			description:
+				"Cash flow statement and bank reconciliation APIs built with Node.js, Express and PostgreSQL.",
+			tech: "JavaScript",
+			link: "https://github.com/anajembaedwin/luca-accounting-mvp",
 		},
 		{
 			title: "Palimart Cosmetics Backend",
@@ -58,13 +59,6 @@ const INFO = {
 				"REST API backend for Palimart Cosmetics, part of the e-commerce platform whose backend I owned for three years.",
 			tech: "JavaScript",
 			link: "https://github.com/anajembaedwin/cosmetics_backend",
-		},
-		{
-			title: "Travel and Tours Backend",
-			description:
-				"A backend for a travel and tours business built with Python, Django, and PostgreSQL.",
-			tech: "Python",
-			link: "https://github.com/anajembaedwin/travels_backend",
 		},
 	],
 };

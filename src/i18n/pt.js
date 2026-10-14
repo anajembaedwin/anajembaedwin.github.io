@@ -487,10 +487,10 @@ const pt = {
 		projectsPage: {
 			tab: "Código",
 			title: "Código no GitHub",
-			lead: "Projetos de código aberto: plataformas de reservas, backends de comércio eletrónico e ferramentas.",
+			lead: "Projetos selecionados: microsserviços, apps em tempo real, autenticação, APIs financeiras, ML e smart contracts.",
 			viewCode: "Ver código",
 			metaDesc:
-				"Projetos de código aberto de Edwin Anajemba: plataformas de reservas, backends de comércio eletrónico e ferramentas de produtividade.",
+				"Código selecionado de Edwin Anajemba: microsserviços NestJS, apps em tempo real, autenticação, APIs financeiras, machine learning e contratos Solidity.",
 		},
 		contactPage: {
 			tab: "Contacto",
@@ -681,14 +681,13 @@ const pt = {
 		},
 	},
 	projects: [
-		"Fluxo de reservas para clientes da Buz and Socials, para reservar diretamente online.",
-		"Painel de administração para gerir reservas de hotel, criado para a equipa da Buz and Socials.",
-		"API que alimenta o painel de reservas de hotel.",
-		"Smartworka: uma ferramenta de produtividade para gerir um projeto do início à entrega.",
-		"Loja de comércio eletrónico construída sobre a framework Medusa.",
-		"Uma API RESTful desenvolvida com Go e Gin para a Vintage Jazz Records.",
-		"Backend de API REST da Palimart Cosmetics, parte da plataforma de comércio eletrónico cujo backend giri durante três anos.",
-		"Um backend para uma empresa de viagens, construído com Python, Django e PostgreSQL.",
+		"Microsserviços gRPC em NestJS: serviços de utilizador e carteira com débitos seguros por transação, Prisma em PostgreSQL, Docker, CI e testes de ponta a ponta.",
+		"Chat em tempo real um-para-um: frontend em React e TypeScript, backend em Express e Socket.io, mensagens guardadas em PostgreSQL, testado e compilado em CI.",
+		"Sistema de previsão de jogos de futebol: modelos XGBoost e LightGBM, deteção de apostas de valor a partir de odds em direto e previsões diárias publicadas pelo GitHub Actions.",
+		"Contratos Solidity para a Recylox, uma dApp de reciclagem: um token ERC20 e registo, depósitos, validação e pagamentos de recicladores e recolhedores, com Hardhat.",
+		"Backend de autenticação por tokens: registo, início de sessão, redefinição de palavra-passe com tokens no Redis, limitação de pedidos, docs Swagger, Docker e configurações de deploy.",
+		"APIs de demonstração de fluxos de caixa e reconciliação bancária construídas com Node.js, Express e PostgreSQL.",
+		"Backend de API REST para a Palimart Cosmetics, parte da plataforma de comércio eletrónico cujo backend giri durante três anos.",
 	],
 };
 

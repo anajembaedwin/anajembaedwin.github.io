@@ -487,10 +487,10 @@ const fr = {
 		projectsPage: {
 			tab: "Code",
 			title: "Code sur GitHub",
-			lead: "Projets open source : plateformes de réservation, backends e-commerce et outils.",
+			lead: "Projets choisis : microservices, apps en temps réel, authentification, API financières, ML et smart contracts.",
 			viewCode: "Voir le code",
 			metaDesc:
-				"Projets open source d'Edwin Anajemba : plateformes de réservation, backends e-commerce et outils de productivité.",
+				"Code choisi d'Edwin Anajemba : microservices NestJS, apps en temps réel, authentification, API financières, machine learning et contrats Solidity.",
 		},
 		contactPage: {
 			tab: "Contact",
@@ -681,14 +681,13 @@ const fr = {
 		},
 	},
 	projects: [
-		"Parcours de réservation destiné aux clients de Buz and Socials, pour réserver directement en ligne.",
-		"Tableau de bord d'administration des réservations d'hôtel, conçu pour l'équipe de Buz and Socials.",
-		"API qui alimente le tableau de bord des réservations d'hôtel.",
-		"Smartworka : un outil de productivité pour gérer un projet du lancement à la livraison.",
-		"Vitrine e-commerce construite sur le framework Medusa.",
-		"Une API REST développée avec Go et Gin pour Vintage Jazz Records.",
+		"Microservices gRPC en NestJS : services utilisateur et portefeuille avec débits sécurisés par transaction, Prisma sur PostgreSQL, Docker, CI et tests de bout en bout.",
+		"Chat en temps réel en tête-à-tête : frontend React et TypeScript, backend Express et Socket.io, messages stockés dans PostgreSQL, testé et construit en CI.",
+		"Système de prédiction de matchs de football : modèles XGBoost et LightGBM, détection de paris à valeur à partir des cotes en direct, et prédictions quotidiennes publiées par GitHub Actions.",
+		"Contrats Solidity pour Recylox, une dApp de recyclage : un jeton ERC20 plus l'enregistrement, les dépôts, la validation et les paiements des recycleurs et collecteurs, avec Hardhat.",
+		"Backend d'authentification par jetons : inscription, connexion, réinitialisation du mot de passe avec jetons dans Redis, limitation de débit, docs Swagger, Docker et configs de déploiement.",
+		"API d'état des flux de trésorerie et de rapprochement bancaire construites avec Node.js, Express et PostgreSQL.",
 		"Backend d'API REST pour Palimart Cosmetics, une partie de la plateforme e-commerce dont j'ai géré le backend pendant trois ans.",
-		"Un backend pour une agence de voyages, construit avec Python, Django et PostgreSQL.",
 	],
 };
 
