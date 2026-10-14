@@ -69,9 +69,9 @@ const Homepage = () => {
 							{ui.openToContracts}
 						</p>
 						<div className="hero__actions">
-							<a className="btn btn--hot" href="#contact" data-react="🚀,✨,💜">
+							<Link className="btn btn--hot" to="/#contact" data-react="🚀,✨,💜">
 								{ui.hire}
-							</a>
+							</Link>
 							<Link className="btn btn--ghost" to="/about">
 								{ui.aboutMe}
 							</Link>

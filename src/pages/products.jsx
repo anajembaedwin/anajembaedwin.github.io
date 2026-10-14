@@ -34,7 +34,7 @@ const Products = () => {
 					{products.length === 0 ? (
 						<p className="prose">
 							{fmt(t.empty, {
-								link: <a href="/#contact">{t.getInTouch}</a>,
+								link: <Link to="/#contact">{t.getInTouch}</Link>,
 							})}
 						</p>
 					) : (
