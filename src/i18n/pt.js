@@ -43,6 +43,23 @@ const pt = {
 			"Retrato em desenho animado do Edwin. Prima para o ouvir dizer algo.",
 		avatarTitle:
 			"Retrato em desenho animado de Edwin Anajemba: cabelo curto, barba cheia, óculos de armação preta e camisa estampada.",
+		ask: {
+			title: "Pergunte-me o que quiser",
+			idle: "Escolha uma pergunta ou escreva a sua.",
+			placeholder: "Escreva uma pergunta…",
+			send: "Enviar",
+			cta: "Contactar",
+			fallback: "Boa pergunta, mas não tenho uma resposta pronta. Envie-me uma mensagem e respondo como deve ser.",
+			items: [
+			{ q: "O que faz?", a: "Sou Product Team Lead na JointEarn. Lidero os programadores, reviso código e sou responsável pela plataforma web e pela infraestrutura em que corre.", emoji: "🚀", keys: ["faz", "trabalho", "cargo", "funcao", "lider"] },
+			{ q: "Qual é a sua stack?", a: "TypeScript com NestJS, Python com FastAPI, React e Next.js, PostgreSQL, e AWS com Docker e GitHub Actions. Também escrevo Solidity na Polygon.", emoji: "🛠️", keys: ["stack", "tecnologia", "competencia", "linguagem", "ferramenta", "usa"] },
+			{ q: "Onde está baseado?", a: "Em África, a trabalhar com equipas de qualquer lugar.", emoji: "🌍", keys: ["onde", "baseado", "vive", "local", "pais", "fuso"] },
+			{ q: "Como lidera?", a: "Registo as decisões de arquitetura, entrego em passos pequenos fáceis de reverter e trato o deploy e a monitorização como parte da funcionalidade.", emoji: "🧭", keys: ["lider", "gere", "equipa", "estilo"] },
+			{ q: "Que mais está a construir?", a: "Fora do meu emprego, giro a BeezyLabs Technology Solutions e crio os meus próprios produtos. Veja a página de Produtos.", emoji: "🧪", keys: ["constr", "produto", "projeto", "beezy"] },
+			{ q: "Está disponível?", a: "Estou aberto a trabalho freelance. Diga-me o que é, o prazo e o orçamento.", emoji: "📬", keys: ["disponivel", "contratar", "freelance", "contacto", "email", "trabalhar"], cta: true },
+			{ q: "Uma curiosidade?", a: "Estudei Matemática antes de passar para software. Talvez por isso goste de testes e de reversões limpas.", emoji: "🎲", keys: ["curiosidade", "estudo", "curso", "matematica", "formacao", "hobby"] },
+			],
+		},
 		quips: [
 			"Na minha máquina funciona.",
 			"Já tentou desligar e voltar a ligar?",

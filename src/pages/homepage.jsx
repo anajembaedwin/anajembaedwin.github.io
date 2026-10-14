@@ -7,7 +7,7 @@ import ResponsePanel from "../site/ResponsePanel";
 import Diagram from "../site/Diagram";
 import StatusChip from "../site/StatusChip";
 import ContactForm from "../site/ContactForm";
-import Avatar from "../site/Avatar";
+import AboutSide from "../site/AboutSide";
 import Floaters from "../site/Floaters";
 import Marquee from "../site/Marquee";
 import Testimonials from "../site/Testimonials";
@@ -232,7 +232,7 @@ const Homepage = () => {
 
 			<section className="section" id="about">
 				<div className="wrap about" data-reveal>
-					<Avatar />
+					<AboutSide />
 					<div>
 						<h2 className="section-title">{SITE.about.title}</h2>
 						{SITE.about.text.map((paragraph) => (
