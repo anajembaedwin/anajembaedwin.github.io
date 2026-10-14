@@ -87,6 +87,12 @@ const Layout = ({ children, current }) => {
 							>
 								{ui.nav.products}
 							</Link>
+							<Link
+								to="/games"
+								aria-current={current === "games" ? "page" : undefined}
+							>
+								{ui.nav.games}
+							</Link>
 							<a href="/#about">{ui.nav.about}</a>
 							<a href="/#contact">{ui.nav.contact}</a>
 						</nav>

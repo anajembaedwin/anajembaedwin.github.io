@@ -11,7 +11,7 @@
 // Nothing here touches the layout and the canvas ignores pointer events.
 
 const BARRIERS =
-	".step, .service, .work__row, .proof__item, .product-card, .principles li, .testi, .contact__card, .avatar, .repo, .btn, .term, .marquee, .diagram-scroll, .ask, .skills, .hero__title, .hero__lead, .section-title, form";
+	".step, .service, .work__row, .proof__item, .product-card, .game-card, .game-feature, .principles li, .testi, .contact__card, .avatar, .repo, .btn, .term, .marquee, .diagram-scroll, .ask, .skills, .hero__title, .hero__lead, .section-title, form";
 
 export const SIDES = [
 	{ id: "red", color: "#ff4d6d" },
