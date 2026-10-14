@@ -58,6 +58,8 @@ const pt = {
 			{ q: "Que mais está a construir?", a: "Fora do meu emprego, giro a BeezyLabs Technology Solutions e crio os meus próprios produtos. Veja a página de Produtos.", emoji: "🧪", keys: ["constr", "produto", "projeto", "beezy"] },
 			{ q: "Está disponível?", a: "Estou aberto a trabalho freelance. Diga-me o que é, o prazo e o orçamento.", emoji: "📬", keys: ["disponivel", "contratar", "freelance", "contacto", "email", "trabalhar"], cta: true },
 			{ q: "Uma curiosidade?", a: "Estudei Matemática antes de passar para software. Talvez por isso goste de testes e de reversões limpas.", emoji: "🎲", keys: ["curiosidade", "estudo", "curso", "matematica", "formacao", "hobby"] },
+			{ q: "Qual é a sua experiência?", a: "Mais de 5 anos a construir plataformas web e a infraestrutura cloud por trás delas, em pagamentos, e-commerce e Web3.", emoji: "📈", keys: ["experiencia", "anos", "tempo", "senior", "carreira", "desde"] },
+			{ q: "Como trabalhamos juntos?", a: "Definimos o objetivo e o que significa estar concluído. Construo com demonstrações semanais, sem surpresas, depois fazemos o deploy, monitorizamos e entrego.", emoji: "🤝", keys: ["juntos", "processo", "comec", "prazo", "metodo", "demo", "passos"] },
 			],
 		},
 		quips: [

@@ -23,6 +23,7 @@ const AboutSide = () => {
 	const [value, setValue] = useState("");
 	const timer = useRef(null);
 	const panel = useRef(null);
+	const nextItem = useRef(0);
 
 	useEffect(() => () => clearInterval(timer.current), []);
 
@@ -80,7 +81,14 @@ const AboutSide = () => {
 
 	return (
 		<div className="about__side">
-			<Avatar talking={talking} />
+			<Avatar
+				talking={talking}
+				onAsk={() => {
+					const item = ask.items[nextItem.current % ask.items.length];
+					nextItem.current += 1;
+					say(item, false);
+				}}
+			/>
 			<div className="ask" ref={panel}>
 				<h3 className="ask__title">{ask.title}</h3>
 				<div className="ask__chips">
