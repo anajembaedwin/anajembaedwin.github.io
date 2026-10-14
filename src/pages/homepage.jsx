@@ -106,7 +106,7 @@ const Homepage = () => {
 									<div className="work__tag">{item.tag}</div>
 								</div>
 								<div>
-									<div className="work__label">My role</div>
+									<div className="work__label">What I did</div>
 									{item.role}
 								</div>
 								{item.outcome && (
@@ -205,6 +205,13 @@ const Homepage = () => {
 								</div>
 							))}
 						</dl>
+						<p className="prose edu">
+							<strong>Education.</strong> {SITE.about.education.degree}
+						</p>
+						<p className="prose edu">
+							<strong>Certifications.</strong>{" "}
+							{SITE.about.education.certs.join("; ")}.
+						</p>
 					</div>
 				</div>
 			</section>
