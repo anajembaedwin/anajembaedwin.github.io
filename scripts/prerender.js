@@ -26,7 +26,7 @@ try {
 
 const NAME = "Edwin Anajemba";
 const pages = [
-	["about", "About", "Product engineer and team lead with 5+ years building web platforms and the cloud infrastructure behind them."],
+	["about", "About", "Software product engineer and team lead with 5+ years building web platforms and the cloud infrastructure behind them."],
 	["products", "Products", "Products built and in progress. Each one stands on its own."],
 	["games", "Games", "Online games by Edwin Anajemba. Tiny Wars and Daily Bug Hunt are playable, with more on the way."],
 	["games/tiny-wars", "Tiny Wars village", "The Tiny Wars village: meet the tiny people and the characters of the game."],

@@ -512,7 +512,7 @@ const es = {
 	},
 	site: {
 		hero: {
-			headline: "Ingeniero de producto.",
+			headline: "Ingeniero de software de producto.",
 			lead: "Lidero el equipo de producto en JointEarn y construyo las plataformas web y la infraestructura en la nube detrás de los productos, desde pagos hasta Web3.",
 		},
 		response: [

@@ -513,7 +513,7 @@ const fr = {
 	},
 	site: {
 		hero: {
-			headline: "Ingénieur produit.",
+			headline: "Ingénieur logiciel produit.",
 			lead: "Je dirige l'équipe produit chez JointEarn et je construis les plateformes web et l'infrastructure cloud derrière les produits, des paiements au Web3.",
 		},
 		response: [

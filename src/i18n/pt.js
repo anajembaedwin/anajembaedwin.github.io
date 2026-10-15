@@ -513,7 +513,7 @@ const pt = {
 	},
 	site: {
 		hero: {
-			headline: "Engenheiro de produto.",
+			headline: "Engenheiro de software de produto.",
 			lead: "Lidero a equipa de produto na JointEarn e construo as plataformas web e a infraestrutura cloud por trás dos produtos, dos pagamentos à Web3.",
 		},
 		response: [
