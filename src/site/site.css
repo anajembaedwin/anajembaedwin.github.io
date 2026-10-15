@@ -3979,11 +3979,17 @@ body {
 	margin-top: 6px;
 }
 
-.race__mute {
+.race__tools {
 	position: absolute;
 	left: 50%;
-	transform: translateX(-50%);
 	top: 10px;
+	display: flex;
+	gap: 8px;
+	transform: translateX(-50%);
+	z-index: 3;
+}
+
+.race__mute {
 	width: 38px;
 	height: 38px;
 	border: 0;
@@ -4144,10 +4150,73 @@ body {
 		padding: 9px 16px;
 		font-size: 0.9rem;
 	}
-	.race__mute {
+	.race__tools {
 		top: 6px;
+	}
+	.race__mute {
 		width: 32px;
 		height: 32px;
 		font-size: 0.95rem;
+	}
+}
+
+.race__levels {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin: 4px 0 12px;
+}
+
+.race__chip {
+	padding: 6px 14px;
+	border: 2px solid var(--ink);
+	border-radius: 999px;
+	background: #ffffff;
+	font: 700 0.85rem/1 var(--font-body);
+	color: var(--ink);
+	cursor: pointer;
+}
+
+.race__chip.is-on {
+	background: var(--ink);
+	color: #ffffff;
+}
+
+.race__top {
+	display: grid;
+	gap: 4px;
+	margin: 0 auto 10px;
+	padding: 0;
+	max-width: 260px;
+	list-style: none;
+	font-size: 0.85rem;
+}
+
+.race__top li {
+	display: grid;
+	grid-template-columns: 1.5em 1fr auto;
+	gap: 8px;
+	padding: 4px 10px;
+	border-radius: 8px;
+	background: #f3f0fb;
+	text-align: left;
+}
+
+.race__top li.is-you {
+	background: var(--violet);
+	color: #ffffff;
+	font-weight: 700;
+}
+
+@media (max-width: 560px) {
+	.race__levels {
+		margin: 2px 0 6px;
+	}
+	.race__chip {
+		padding: 5px 10px;
+		font-size: 0.78rem;
+	}
+	.race__top {
+		display: none;
 	}
 }

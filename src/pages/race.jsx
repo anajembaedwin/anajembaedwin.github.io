@@ -46,16 +46,30 @@ const KEYMAP = {
 	W: "nitro",
 };
 
+const LEVELS = ["easy", "normal", "hard"];
+
+const topFor = (level) =>
+	(read("race:top") || [])
+		.filter((r) => r.level === level)
+		.sort((a, b) => a.time - b.time)
+		.slice(0, 5);
+
 const Race = () => {
 	const { site, ui } = useI18n();
 	const T = ui.race;
 	const canvasRef = useRef(null);
 	const engine = useRef(null);
 	const [phase, setPhase] = useState("ready");
+	const [paused, setPaused] = useState(false);
 	const [result, setResult] = useState(null);
 	const [muted, setMuted] = useState(() => read("race:muted") === true);
+	const [level, setLevel] = useState(() => {
+		const l = read("race:level");
+		return LEVELS.includes(l) ? l : "normal";
+	});
 	const [copied, setCopied] = useState(false);
-	const best = useRef(read("race:best"));
+	const levelRef = useRef(level);
+	levelRef.current = level;
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -70,6 +84,8 @@ const Race = () => {
 			go: T.hud.go,
 			bolt: T.hud.bolt,
 			finish: T.hud.finish,
+			off: T.hud.off,
+			finalLap: T.hud.finalLap,
 		};
 		const race = createRace(canvasRef.current, labels, {
 			onStart: () => {
@@ -77,16 +93,15 @@ const Race = () => {
 				setResult(null);
 				trackPlay("deploy-rush", "start");
 			},
+			onPause: (p) => setPaused(p),
 			onFinish: (r) => {
-				const prev = best.current;
-				const record = !prev || r.time < prev.time;
-				if (record) {
-					best.current = { time: r.time, lap: r.bestLap, place: r.place };
-					write("race:best", best.current);
-				}
-				setResult({ ...r, record, best: best.current });
+				const list = read("race:top") || [];
+				const prevBest = list.filter((x) => x.level === r.level).reduce((m, x) => Math.min(m, x.time), Infinity);
+				const record = r.time < prevBest;
+				list.push({ time: r.time, lap: r.bestLap, place: r.place, level: r.level });
+				write("race:top", list.sort((a, b) => a.time - b.time).slice(0, 40));
+				setResult({ ...r, record, top: topFor(r.level) });
 				setPhase("done");
-				// score: the faster the time and the higher the place, the bigger the number
 				trackPlay("deploy-rush", "finish", Math.max(1, (RACE.TOTAL - r.place + 1) * 1000 - r.time * 4));
 			},
 		});
@@ -101,9 +116,15 @@ const Race = () => {
 
 	useEffect(() => {
 		const onKey = (down) => (e) => {
-			const name = KEYMAP[e.key];
-			if (!name || !engine.current) return;
+			if (!engine.current) return;
 			if (e.target && /input|textarea|select/i.test(e.target.tagName)) return;
+			if (down && (e.key === "Escape" || e.key === "p" || e.key === "P")) {
+				e.preventDefault();
+				engine.current.toggle();
+				return;
+			}
+			const name = KEYMAP[e.key];
+			if (!name) return;
 			e.preventDefault();
 			engine.current.input(name, down);
 		};
@@ -111,7 +132,11 @@ const Race = () => {
 		const ku = onKey(false);
 		window.addEventListener("keydown", kd);
 		window.addEventListener("keyup", ku);
-		const blur = () => ["left", "right", "brake", "nitro"].forEach((n) => engine.current && engine.current.input(n, false));
+		const blur = () => {
+			if (!engine.current) return;
+			["left", "right", "brake", "nitro"].forEach((n) => engine.current.input(n, false));
+			engine.current.pause();
+		};
 		window.addEventListener("blur", blur);
 		return () => {
 			window.removeEventListener("keydown", kd);
@@ -121,8 +146,13 @@ const Race = () => {
 	}, []);
 
 	const start = useCallback(() => {
-		if (engine.current) engine.current.start();
+		if (engine.current) engine.current.start({ level: levelRef.current });
 	}, []);
+
+	const pickLevel = (l) => {
+		setLevel(l);
+		write("race:level", l);
+	};
 
 	const toggleMute = () => {
 		const next = !muted;
@@ -158,6 +188,19 @@ const Race = () => {
 		else done();
 	};
 
+	const levelPicker = (
+		<div className="race__levels" role="group" aria-label={T.level}>
+			{LEVELS.map((l) => (
+				<button key={l} type="button" className={`race__chip${level === l ? " is-on" : ""}`} aria-pressed={level === l} onClick={() => pickLevel(l)}>
+					{T.levels[l]}
+				</button>
+			))}
+		</div>
+	);
+
+	const best = topFor(level)[0];
+	const racing = phase === "racing";
+
 	return (
 		<Layout current="games">
 			<Helmet>
@@ -188,14 +231,34 @@ const Race = () => {
 										<h2>{T.readyTitle}</h2>
 										<p>{T.readyBody}</p>
 										<p className="race__keys">{T.keys}</p>
-										{best.current && (
+										{levelPicker}
+										{best && (
 											<p className="race__best">
-												{T.best} {fmt(best.current.time)}
+												{T.best} {fmt(best.time)}
 											</p>
 										)}
 										<button type="button" className="btn btn--hot" onClick={start}>
 											{T.start}
 										</button>
+									</div>
+								</div>
+							)}
+
+							{racing && paused && (
+								<div className="race__overlay">
+									<div className="race__card">
+										<h2>{T.paused}</h2>
+										<div className="game-card__actions">
+											<button type="button" className="btn btn--hot" onClick={() => engine.current && engine.current.resume()}>
+												{T.resume}
+											</button>
+											<button type="button" className="btn btn--ghost-dark" onClick={start}>
+												{T.restart}
+											</button>
+											<Link className="btn btn--ghost-dark" to="/games">
+												{T.moreGames}
+											</Link>
+										</div>
 									</div>
 								</div>
 							)}
@@ -208,7 +271,19 @@ const Race = () => {
 										<p>
 											{T.bestLap} {fmt(result.bestLap)}
 										</p>
-										{result.record ? <p className="race__best">{T.record}</p> : <p className="race__best">{T.best} {fmt(result.best.time)}</p>}
+										{result.record && <p className="race__best">{T.record}</p>}
+										{result.top.length > 0 && (
+											<ol className="race__top" aria-label={T.top}>
+												{result.top.map((r, i) => (
+													<li key={i} className={r.time === result.time ? "is-you" : ""}>
+														<span>{i + 1}</span>
+														<span>{fmt(r.time)}</span>
+														<span>{T.levels[r.level]}</span>
+													</li>
+												))}
+											</ol>
+										)}
+										{levelPicker}
 										<div className="game-card__actions">
 											<button type="button" className="btn btn--hot" onClick={start}>
 												{T.again}
@@ -224,9 +299,16 @@ const Race = () => {
 								</div>
 							)}
 
-							<button type="button" className="race__mute" onClick={toggleMute} aria-pressed={muted} aria-label={muted ? T.soundOn : T.soundOff}>
-								{muted ? "🔇" : "🔊"}
-							</button>
+							<div className="race__tools">
+								{racing && (
+									<button type="button" className="race__mute" onClick={() => engine.current && engine.current.toggle()} aria-label={paused ? T.resume : T.pause}>
+										{paused ? "▶" : "⏸"}
+									</button>
+								)}
+								<button type="button" className="race__mute" onClick={toggleMute} aria-pressed={muted} aria-label={muted ? T.soundOn : T.soundOff}>
+									{muted ? "🔇" : "🔊"}
+								</button>
+							</div>
 						</div>
 
 						<div className="race__pad" aria-label={T.controls}>

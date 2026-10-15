@@ -26,7 +26,11 @@ const CAR_W = 640;
 const PLAYER_Z = CAM_H * DEPTH;
 const LAPS = 3;
 const RIVALS = 5;
-const TRAFFIC = 46;
+const LEVELS = {
+	easy: { pace: 0.93, traffic: 34, label: "easy" },
+	normal: { pace: 1, traffic: 46, label: "normal" },
+	hard: { pace: 1.045, traffic: 60, label: "hard" },
+};
 const PW = CAR_W / ROAD; // car width in road units
 
 const COLORS = {
@@ -35,6 +39,7 @@ const COLORS = {
 	light: { road: "#6d6878", grass: "#22a579", rumble: "#ff5c7a", lane: "#f5f0ff" },
 	dark: { road: "#656071", grass: "#1d9770", rumble: "#fff4f6" },
 	start: { road: "#ffffff", grass: "#22a579", rumble: "#111111" },
+	far: { road: "#69646f", grass: "#209f75", rumble: "#ff9db0" },
 };
 
 const clamp = (v, a, b) => Math.max(a, Math.min(v, b));
@@ -50,7 +55,7 @@ const overlap = (x1, w1, x2, w2, k = 1) => {
 	return !(x1 + h1 < x2 - h2 || x1 - h1 > x2 + h2);
 };
 
-const CAR_COLORS = ["#ff5c7a", "#4d8cff", "#ffb84d", "#3fe0b5", "#a78bfa", "#f472b6", "#fde047"];
+const CAR_COLORS = ["#c9ccd6", "#8d97b5", "#b9a58b", "#9fb8a8", "#a58fb5", "#cfd4dc", "#7f8aa3"];
 const SIGNS = ["</>", "DEPLOY", "LGTM", "MERGE", "SHIP IT", "404", "git push", "CI PASS", "v2.0"];
 
 // ----------------------------------------------------------------- track
@@ -147,7 +152,7 @@ const shade = (hex, amt) => {
 
 // A car seen from behind. (cx, base) is the bottom centre, w the width.
 const drawCar = (ctx, cx, base, w, color, o = {}) => {
-	const h = w * 0.56;
+	const h = w * (o.van ? 0.72 : 0.56);
 	ctx.save();
 	if (o.tilt) {
 		ctx.translate(cx, base);
@@ -200,6 +205,29 @@ const drawCar = (ctx, cx, base, w, color, o = {}) => {
 	ctx.closePath();
 	ctx.fill();
 
+	if (o.van) {
+		// boxy rear with door lines
+		ctx.fillStyle = shade(color, 12);
+		rrect(ctx, cx - w * 0.43, base - h * 0.98, w * 0.86, h * 0.42, w * 0.05);
+		ctx.fill();
+		ctx.strokeStyle = "rgba(0,0,0,.25)";
+		ctx.lineWidth = Math.max(1, w * 0.012);
+		ctx.beginPath();
+		ctx.moveTo(cx, base - h * 0.98);
+		ctx.lineTo(cx, base - h * 0.56);
+		ctx.stroke();
+	}
+	if (o.racer) {
+		ctx.fillStyle = "rgba(255,255,255,.85)";
+		ctx.fillRect(cx - w * 0.05, base - h * 0.66, w * 0.1, h * 0.5);
+		ctx.fillRect(cx - w * 0.05, base - h, w * 0.1, h * 0.34);
+		// rear wing
+		ctx.fillStyle = shade(color, -55);
+		ctx.fillRect(cx - w * 0.42, base - h * 1.08, w * 0.84, h * 0.09);
+		ctx.fillRect(cx - w * 0.3, base - h * 1.0, w * 0.05, h * 0.1);
+		ctx.fillRect(cx + w * 0.25, base - h * 1.0, w * 0.05, h * 0.1);
+	}
+
 	// tail lights
 	const lit = o.brake ? "#ff2a3f" : "#d6283c";
 	if (o.brake) {
@@ -220,17 +248,24 @@ const drawCar = (ctx, cx, base, w, color, o = {}) => {
 	ctx.fill();
 
 	if (o.flame) {
-		const f = h * (0.38 + Math.random() * 0.22);
+		const f = h * (0.3 + Math.random() * 0.18);
 		[-0.3, 0.3].forEach((sx) => {
-			const g = ctx.createLinearGradient(0, base - h * 0.2, 0, base - h * 0.2 + f);
+			const fx = cx + w * sx;
+			const fy = base - h * 0.1;
+			const glow = ctx.createRadialGradient(fx, fy, 0, fx, fy, w * 0.14);
+			glow.addColorStop(0, "rgba(255,236,140,.9)");
+			glow.addColorStop(1, "rgba(255,120,80,0)");
+			ctx.fillStyle = glow;
+			ctx.fillRect(fx - w * 0.14, fy - w * 0.14, w * 0.28, w * 0.28);
+			const g = ctx.createLinearGradient(0, fy, 0, fy + f);
 			g.addColorStop(0, "#fff7b0");
 			g.addColorStop(0.5, "#ffb84d");
 			g.addColorStop(1, "rgba(255,92,122,0)");
 			ctx.fillStyle = g;
 			ctx.beginPath();
-			ctx.moveTo(cx + w * sx - w * 0.07, base - h * 0.2);
-			ctx.lineTo(cx + w * sx + w * 0.07, base - h * 0.2);
-			ctx.lineTo(cx + w * sx, base - h * 0.2 + f);
+			ctx.moveTo(fx - w * 0.05, fy);
+			ctx.lineTo(fx + w * 0.05, fy);
+			ctx.lineTo(fx, fy + f);
 			ctx.closePath();
 			ctx.fill();
 		});
@@ -275,7 +310,7 @@ const drawSign = (ctx, x, y, w, text) => {
 
 const drawBolt = (ctx, x, y, w, t) => {
 	const bob = Math.sin(t * 5) * w * 0.05;
-	const cy = y - w * 0.75 + bob;
+	const cy = y - w * 0.6 + bob;
 	const g = ctx.createRadialGradient(x, cy, 0, x, cy, w * 0.7);
 	g.addColorStop(0, "rgba(255,220,100,.55)");
 	g.addColorStop(1, "rgba(255,220,100,0)");
@@ -299,7 +334,10 @@ const drawBolt = (ctx, x, y, w, t) => {
 // ---------------------------------------------------------------- engine
 
 export const createRace = (canvas, labels, hooks = {}) => {
-	const dpr = Math.min(2, window.devicePixelRatio || 1);
+	const mq = (q) => !!(window.matchMedia && window.matchMedia(q).matches);
+	const coarse = mq("(pointer: coarse)");
+	const calm = mq("(prefers-reduced-motion: reduce)");
+	const dpr = Math.min(coarse ? 1.5 : 2, window.devicePixelRatio || 1);
 	canvas.width = W * dpr;
 	canvas.height = H * dpr;
 	const ctx = canvas.getContext("2d");
@@ -311,6 +349,33 @@ export const createRace = (canvas, labels, hooks = {}) => {
 	const TL = N * SEG;
 	const stars = Array.from({ length: 50 }, () => [Math.random() * W, Math.random() * (H / 2 - 40), Math.random() * 1.6 + 0.4]);
 
+	// A loop-shaped map of the circuit, drawn in the corner. It follows the curves
+	// loosely rather than being a survey of the road.
+	const mapPts = (() => {
+		const pts = [];
+		let wig = 0;
+		let x = 0;
+		let y = 0;
+		for (let i = 0; i < N; i++) {
+			wig += segments[i].curve * 0.0016;
+			const hd = (Math.PI * 2 * i) / N + wig;
+			x += Math.cos(hd);
+			y += Math.sin(hd);
+			pts.push([x, y]);
+		}
+		const dx = x;
+		const dy = y;
+		const out = pts.map(([px, py], i) => [px - (dx * (i + 1)) / N, py - (dy * (i + 1)) / N]);
+		const xs = out.map((q) => q[0]);
+		const ys = out.map((q) => q[1]);
+		const minX = Math.min(...xs);
+		const minY = Math.min(...ys);
+		const sc = Math.min(110 / (Math.max(...xs) - minX || 1), 66 / (Math.max(...ys) - minY || 1));
+		const ox = (110 - (Math.max(...xs) - minX) * sc) / 2;
+		const oy = (66 - (Math.max(...ys) - minY) * sc) / 2;
+		return out.map(([px, py]) => [ox + (px - minX) * sc, oy + (py - minY) * sc]);
+	})();
+
 	const findSeg = (z) => segments[Math.floor((((z % TL) + TL) % TL) / SEG)];
 
 	let st;
@@ -321,6 +386,14 @@ export const createRace = (canvas, labels, hooks = {}) => {
 	let alive = true;
 	let audio = null;
 	let muted = false;
+	let paused = false;
+	let level = "normal";
+	let drawN = coarse ? 130 : DRAW;
+	let slow = 0;
+	let prevNow = 0;
+	let padStart = false;
+	const pad = { left: false, right: false, brake: false, nitro: false };
+	const ctl = (name) => keys[name] || pad[name];
 	const keys = { left: false, right: false, brake: false, nitro: false };
 
 	const clearCars = () => segments.forEach((s) => (s.cars = []));
@@ -342,6 +415,8 @@ export const createRace = (canvas, labels, hooks = {}) => {
 			nitroOn: false,
 			shake: 0,
 			bumpCool: 0,
+			ghost: 0,
+			push: 0,
 			time: 0,
 			count: 0,
 			goFlash: 0,
@@ -359,7 +434,8 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		};
 		cars = [];
 		const lanes = [-0.5, 0.5, -0.5, 0.5, 0];
-		const paces = [0.97, 0.95, 0.93, 0.91, 0.89];
+		const cfg = LEVELS[level] || LEVELS.normal;
+		const paces = [0.97, 0.95, 0.93, 0.91, 0.89].map((v) => v * cfg.pace);
 		for (let i = 0; i < RIVALS; i++) {
 			const z = PLAYER_Z + 380 * (i + 1);
 			cars.push({
@@ -378,7 +454,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 				braking: false,
 			});
 		}
-		for (let i = 0; i < TRAFFIC; i++) {
+		for (let i = 0; i < cfg.traffic; i++) {
 			const z = rand(3200, TL - 400);
 			cars.push({
 				rival: false,
@@ -389,6 +465,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 				speed: MAX * rand(0.22, 0.4),
 				w: PW,
 				color: pick(CAR_COLORS),
+				van: Math.random() < 0.5,
 				finish: 0,
 				block: 0,
 				percent: 0,
@@ -453,7 +530,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		audio.osc.frequency.setTargetAtTime(f, audio.ac.currentTime, 0.05);
 		audio.osc2.frequency.setTargetAtTime(f * 0.5, audio.ac.currentTime, 0.05);
 		audio.filter.frequency.setTargetAtTime(380 + sp * 900, audio.ac.currentTime, 0.08);
-		audio.gain.gain.setTargetAtTime(muted || !running ? 0 : 0.05 + sp * 0.04, audio.ac.currentTime, 0.1);
+		audio.gain.gain.setTargetAtTime(muted || paused || !running ? 0 : 0.05 + sp * 0.04, audio.ac.currentTime, 0.1);
 	};
 
 	// ----------------------------------------------------------- update
@@ -488,6 +565,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		st.clock += dt;
 		st.shake = Math.max(0, st.shake - dt * 1.6);
 		st.bumpCool = Math.max(0, st.bumpCool - dt);
+		st.ghost = Math.max(0, st.ghost - dt);
 		st.toastT = Math.max(0, st.toastT - dt);
 		st.goFlash = Math.max(0, st.goFlash - dt);
 
@@ -513,10 +591,10 @@ export const createRace = (canvas, labels, hooks = {}) => {
 
 		if (racing) {
 			st.time += dt;
-			if (keys.left) st.x -= dx;
-			if (keys.right) st.x += dx;
+			if (ctl("left")) st.x -= dx;
+			if (ctl("right")) st.x += dx;
 			st.x -= dx * sp * playerSeg.curve * CENTRI;
-			st.nitroOn = keys.nitro && st.nitro > 0.02 && !keys.brake;
+			st.nitroOn = ctl("nitro") && st.nitro > 0.02 && !ctl("brake");
 		} else {
 			st.nitroOn = false;
 			st.x = lerp(st.x, 0, Math.min(1, dt * 1.4));
@@ -528,7 +606,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		st.dist += moved;
 
 		st.braking = false;
-		if (racing && keys.brake) {
+		if (racing && ctl("brake")) {
 			st.speed += BRAKE * dt;
 			st.braking = true;
 		} else if (racing) {
@@ -541,41 +619,57 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		if (st.nitroOn) st.nitro = Math.max(0, st.nitro - 0.4 * dt);
 		else st.nitro = Math.min(1, st.nitro + 0.07 * dt);
 
+		st.x += st.push * dt;
+		st.push *= Math.max(0, 1 - 4.5 * dt);
 		if ((st.x < -1 || st.x > 1) && st.speed > OFF_LIMIT) st.speed += OFF_DECEL * dt;
 		st.x = clamp(st.x, -2.2, 2.2);
 		st.speed = clamp(st.speed, 0, MAX * NITRO_CAP);
 
 		// scenery and pickups in the player's segment
-		playerSeg.sprites.forEach((s) => {
-			if (!overlap(st.x, PW, s.offset, s.w, 0.9)) return;
-			if (s.type === "bolt") {
-				if (s.lap !== st.lap) {
-					s.lap = st.lap;
+		playerSeg.sprites.forEach((sp2) => {
+			if (!overlap(st.x, PW, sp2.offset, sp2.w, 0.9)) return;
+			if (sp2.type === "bolt") {
+				if (sp2.lap !== st.lap) {
+					sp2.lap = st.lap;
 					st.nitro = Math.min(1, st.nitro + 0.45);
 					toast(labels.bolt);
 					beep(1040, 120);
 				}
-			} else if (st.bumpCool <= 0 && st.speed > MAX * 0.2) {
+			} else if (st.ghost <= 0 && st.speed > MAX * 0.2) {
 				st.speed = MAX * 0.2;
 				st.shake = 0.8;
-				st.bumpCool = 0.5;
-				st.x += st.x > 0 ? -0.18 : 0.18;
+				st.ghost = 0.6;
+				st.push = st.x > 0 ? -2.2 : 2.2;
 				beep(110, 160, 0.12);
 			}
 		});
 
-		// other cars
-		playerSeg.cars.forEach((c) => {
-			if (c.speed < st.speed && overlap(st.x, PW, c.offset, c.w, 0.8)) {
-				st.speed = Math.max(0, c.speed * (c.speed / Math.max(st.speed, 1)));
-				st.shake = Math.max(st.shake, 0.55);
-				if (st.bumpCool <= 0) {
-					beep(90, 140, 0.12);
-					st.bumpCool = 0.35;
+		// other cars: look at the segments just behind, at and just ahead of the player
+		if (st.ghost <= 0 && racing) {
+			const pz = st.position + PLAYER_Z;
+			let hit = null;
+			let hitDz = 0;
+			for (let k = -1; k <= 1 && !hit; k++) {
+				const seg = segments[(playerSeg.index + k + N) % N];
+				for (let i = 0; i < seg.cars.length; i++) {
+					const c = seg.cars[i];
+					const dz = ((((c.z - pz) % TL) + TL * 1.5) % TL) - TL / 2;
+					if (Math.abs(dz) < 330 && overlap(st.x, PW, c.offset, c.w, 0.85)) {
+						hit = c;
+						hitDz = dz;
+						break;
+					}
 				}
-				st.x += st.x > c.offset ? 0.04 : -0.04;
 			}
-		});
+			if (hit) {
+				const dir = st.x > hit.offset ? 1 : st.x < hit.offset ? -1 : st.x > 0 ? -1 : 1;
+				if (hitDz > -150 && st.speed > hit.speed) st.speed = Math.max(0, hit.speed * 0.8);
+				st.push = dir * 2.6;
+				st.shake = Math.max(st.shake, 0.6);
+				st.ghost = 0.7;
+				beep(90, 150, 0.12);
+			}
+		}
 
 		const pdist = st.dist + PLAYER_Z;
 		const lapNow = Math.min(LAPS, Math.floor(pdist / TL) + 1);
@@ -583,7 +677,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 			st.lapTimes.push(st.time - st.lapStart);
 			st.lapStart = st.time;
 			st.lap = lapNow;
-			toast(`${labels.lap} ${st.lap}/${LAPS}`);
+			toast(st.lap === LAPS ? labels.finalLap : `${labels.lap} ${st.lap}/${LAPS}`);
 			beep(660, 200);
 		}
 
@@ -635,6 +729,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 				hooks.onFinish({
 					place: st.place,
 					total: RIVALS + 1,
+					level,
 					time: st.finishTime,
 					bestLap: Math.min(...st.lapTimes),
 				});
@@ -697,9 +792,9 @@ export const createRace = (canvas, labels, hooks = {}) => {
 
 	const drawSegment = (seg) => {
 		const { p1, p2 } = seg;
-		const c = COLORS[seg.kind];
+		const c = COLORS[seg.drawKind || seg.kind];
 		const x1 = p1.screen.x;
-		const y1 = p1.screen.y;
+		const y1 = p1.screen.y + 1; // 1px overlap hides hairline seams
 		const w1 = p1.screen.w;
 		const x2 = p2.screen.x;
 		const y2 = p2.screen.y;
@@ -714,7 +809,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		poly(ctx, x1 - w1 - r1, y1, x1 - w1, y1, x2 - w2, y2, x2 - w2 - r2, y2, c.rumble);
 		poly(ctx, x1 + w1 + r1, y1, x1 + w1, y1, x2 + w2, y2, x2 + w2 + r2, y2, c.rumble);
 		poly(ctx, x1 - w1, y1, x1 + w1, y1, x2 + w2, y2, x2 - w2, y2, c.road);
-		if (seg.kind === "light") {
+		if (seg.drawKind === "light" || (!seg.drawKind && seg.kind === "light")) {
 			const lw1 = (w1 * 2) / LANES;
 			const lw2 = (w2 * 2) / LANES;
 			let lx1 = x1 - w1 + lw1;
@@ -723,7 +818,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 				poly(ctx, lx1 - l1 / 2, y1, lx1 + l1 / 2, y1, lx2 + l2 / 2, y2, lx2 - l2 / 2, y2, c.lane);
 			}
 		}
-		if (seg.kind === "start") {
+		if (seg.kind === "start" && seg.drawKind === "start") {
 			// chequered finish line
 			const cells = 10;
 			for (let i = 0; i < cells; i++) {
@@ -762,9 +857,10 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		ctx.fillStyle = "#fff";
 		ctx.font = font(34);
 		ctx.fillText(String(rank), 28, 66);
+		const rw = ctx.measureText(String(rank)).width;
 		ctx.font = font(16, 700);
 		ctx.fillStyle = "#c9bcff";
-		ctx.fillText(`/ ${RIVALS + 1}`, 28 + ctx.measureText(String(rank)).width * 1.9 + 2, 66);
+		ctx.fillText(`/ ${RIVALS + 1}`, 28 + rw + 6, 66);
 
 		tag(174, 14, 120, 62);
 		ctx.fillStyle = "#c9bcff";
@@ -784,15 +880,14 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		ctx.fillText(`${m}:${s}`, W - 28, 47);
 
 		// speed
-		tag(14, H - 74, 150, 60);
+		tag(14, H - 78, 120, 62);
 		ctx.textAlign = "left";
-		ctx.fillStyle = "#fff";
-		ctx.font = font(34);
-		const kmh = Math.round((st.speed / MAX) * 240);
-		ctx.fillText(String(kmh), 28, H - 30);
 		ctx.fillStyle = "#c9bcff";
 		ctx.font = font(12, 700);
-		ctx.fillText(labels.kmh, 28 + ctx.measureText(String(kmh)).width * 2.05, H - 30);
+		ctx.fillText(labels.kmh, 28, H - 58);
+		ctx.fillStyle = "#fff";
+		ctx.font = font(34);
+		ctx.fillText(String(Math.round((st.speed / MAX) * 240)), 28, H - 26);
 
 		// nitro
 		tag(W - 224, H - 56, 210, 42);
@@ -810,6 +905,44 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		if (st.nitro > 0.01) {
 			rrect(ctx, W - 210, H - 30, 182 * st.nitro, 10, 5);
 			ctx.fill();
+		}
+
+		// minimap
+		const mx = W - 138;
+		const my = 70;
+		tag(mx - 8, my - 6, 128, 80);
+		ctx.strokeStyle = "rgba(255,255,255,.55)";
+		ctx.lineWidth = 4;
+		ctx.lineJoin = "round";
+		ctx.beginPath();
+		for (let i = 0; i < mapPts.length; i += 4) {
+			const q = mapPts[i];
+			if (i === 0) ctx.moveTo(mx + q[0], my + q[1]);
+			else ctx.lineTo(mx + q[0], my + q[1]);
+		}
+		ctx.closePath();
+		ctx.stroke();
+		const dot = (z, color, r) => {
+			const q = mapPts[Math.floor((((z % TL) + TL) % TL) / SEG) % N];
+			ctx.fillStyle = color;
+			ctx.beginPath();
+			ctx.arc(mx + q[0], my + q[1], r, 0, Math.PI * 2);
+			ctx.fill();
+		};
+		cars.forEach((c) => c.rival && dot(c.z, c.color, 3.4));
+		dot(st.position + PLAYER_Z, "#ffffff", 5.2);
+		dot(st.position + PLAYER_Z, "#ffd84d", 3.4);
+
+		// off-road warning
+		if (Math.abs(st.x) > 1.02 && st.speed > OFF_LIMIT * 0.6 && st.phase === "racing") {
+			const pulse = 0.22 + 0.1 * Math.sin(st.clock * 14);
+			const eg = ctx.createLinearGradient(0, 0, W, 0);
+			eg.addColorStop(0, `rgba(255,60,80,${pulse})`);
+			eg.addColorStop(0.2, "rgba(255,60,80,0)");
+			eg.addColorStop(0.8, "rgba(255,60,80,0)");
+			eg.addColorStop(1, `rgba(255,60,80,${pulse})`);
+			ctx.fillStyle = eg;
+			ctx.fillRect(0, 0, W, H);
 		}
 
 		ctx.textAlign = "center";
@@ -837,6 +970,11 @@ export const createRace = (canvas, labels, hooks = {}) => {
 			ctx.fillText(st.toast, W / 2, 110);
 			ctx.globalAlpha = 1;
 		}
+		if (Math.abs(st.x) > 1.02 && st.speed > OFF_LIMIT * 0.6 && st.phase === "racing") {
+			ctx.fillStyle = "#ff8a9a";
+			ctx.font = font(22);
+			ctx.fillText(labels.off, W / 2, 160);
+		}
 		if (st.phase === "finished") {
 			ctx.fillStyle = "#fff";
 			ctx.font = font(84);
@@ -846,7 +984,10 @@ export const createRace = (canvas, labels, hooks = {}) => {
 
 	const render = () => {
 		ctx.save();
-		if (st.shake > 0) ctx.translate((Math.random() - 0.5) * st.shake * 12, (Math.random() - 0.5) * st.shake * 10);
+		if (st.shake > 0) {
+			const k = calm ? 0.2 : 1;
+			ctx.translate((Math.random() - 0.5) * st.shake * 12 * k, (Math.random() - 0.5) * st.shake * 10 * k);
+		}
 		drawSky();
 
 		const base = findSeg(st.position);
@@ -858,10 +999,11 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		const curLap = st.lap;
 		const clock = st.clock;
 
-		for (let n = 0; n < DRAW; n++) {
+		for (let n = 0; n < drawN; n++) {
 			const seg = segments[(base.index + n) % N];
 			seg.looped = seg.index < base.index;
-			seg.fog = 1 / Math.exp(((n / DRAW) * (n / DRAW)) * FOG);
+			seg.drawKind = seg.kind === "start" ? "start" : n > drawN * 0.36 ? "far" : seg.kind;
+			seg.fog = 1 / Math.exp(((n / drawN) * (n / drawN)) * FOG);
 			const camZ = st.position - (seg.looped ? TL : 0);
 			project(seg.p1, st.x * ROAD - x, CAM_H, camZ);
 			project(seg.p2, st.x * ROAD - x - dx, CAM_H, camZ);
@@ -873,7 +1015,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 			maxY = seg.p1.screen.y;
 		}
 
-		for (let n = DRAW - 1; n >= 0; n--) {
+		for (let n = drawN - 1; n >= 0; n--) {
 			const seg = segments[(base.index + n) % N];
 			if (!seg.visible) continue;
 			const alpha = clamp(seg.fog * 2.4, 0, 1);
@@ -883,27 +1025,27 @@ export const createRace = (canvas, labels, hooks = {}) => {
 				const sx = seg.p1.screen.x + (sc * s.offset * ROAD * W) / 2;
 				const sy = seg.p1.screen.y;
 				const w = (sc * s.w * ROAD * W) / 2;
-				if (s.type === "tree") drawTree(ctx, sx, sy, w * 1.25);
-				else if (s.type === "sign") drawSign(ctx, sx, sy, w * 1.4, s.text);
-				else if (s.type === "bolt" && s.lap !== curLap) drawBolt(ctx, sx, sy, w * 2.4, clock);
+				if (s.type === "tree") drawTree(ctx, sx, sy, w * 1.0);
+				else if (s.type === "sign") drawSign(ctx, sx, sy, w * 0.8, s.text);
+				else if (s.type === "bolt" && s.lap !== curLap) drawBolt(ctx, sx, sy, w * 0.75, clock);
 			});
 			seg.cars.forEach((car) => {
 				const sc = lerp(seg.p1.screen.scale, seg.p2.screen.scale, car.percent);
 				const cx = lerp(seg.p1.screen.x, seg.p2.screen.x, car.percent) + (sc * car.offset * ROAD * W) / 2;
 				const cy = lerp(seg.p1.screen.y, seg.p2.screen.y, car.percent);
-				drawCar(ctx, cx, cy, (sc * CAR_W * W) / 2, car.color, { brake: car.braking });
+				drawCar(ctx, cx, cy, (sc * CAR_W * W) / 2, car.color, { brake: car.braking, van: car.van, racer: car.rival });
 			});
 			ctx.globalAlpha = 1;
 		}
 
 		// player car
 		const sp = st.speed / MAX;
-		const steer = (keys.right ? 1 : 0) - (keys.left ? 1 : 0);
+		const steer = (ctl("right") ? 1 : 0) - (ctl("left") ? 1 : 0);
 		const bob = st.phase === "racing" || st.phase === "finished" ? Math.sin(st.clock * 38) * sp * 2.2 : 0;
 		const pw = ((DEPTH / PLAYER_Z) * CAR_W * W) / 2;
-		const playerSeg = findSeg(st.position + PLAYER_Z);
-		const tilt = steer * 0.05 * (0.4 + sp) + playerSeg.curve * sp * 0.004;
-		drawCar(ctx, W / 2, H - 8 + bob, pw, "#ffd84d", { brake: st.braking, flame: st.nitroOn, tilt });
+		st.tilt = lerp(st.tilt || 0, steer * 0.028 * (0.4 + sp), 0.18);
+		const blink = st.ghost > 0 && Math.floor(st.clock * 16) % 3 === 0;
+		if (!blink) drawCar(ctx, W / 2, H - 30 + bob, pw, "#ffd84d", { brake: st.braking, flame: st.nitroOn, tilt: st.tilt });
 
 		if (st.nitroOn) {
 			ctx.strokeStyle = "rgba(255,255,255,.28)";
@@ -925,11 +1067,48 @@ export const createRace = (canvas, labels, hooks = {}) => {
 
 	// ------------------------------------------------------------- loop
 
+	const readPad = () => {
+		pad.left = pad.right = pad.brake = pad.nitro = false;
+		let g = null;
+		try {
+			const list = navigator.getGamepads ? navigator.getGamepads() : [];
+			for (let i = 0; i < list.length; i++) if (list[i]) g = list[i];
+		} catch (error) {
+			g = null;
+		}
+		if (!g) return;
+		const ax = g.axes[0] || 0;
+		const b = (i) => !!(g.buttons[i] && g.buttons[i].pressed);
+		pad.left = ax < -0.3 || b(14);
+		pad.right = ax > 0.3 || b(15);
+		pad.brake = b(6) || b(1) || b(13);
+		pad.nitro = b(7) || b(0) || b(12);
+		const start = b(9);
+		if (start && !padStart) api.toggle();
+		padStart = start;
+	};
+
 	const frame = (now) => {
 		if (!alive) return;
 		raf = requestAnimationFrame(frame);
 		const dt = Math.min(0.1, (now - last) / 1000);
+		const ft = now - (prevNow || now);
+		prevNow = now;
 		last = now;
+		readPad();
+		if (paused) {
+			acc = 0;
+			engine();
+			render();
+			return;
+		}
+		// on slow devices, draw fewer segments rather than stutter
+		if (ft > 26) slow++;
+		else slow = Math.max(0, slow - 1);
+		if (slow > 45 && drawN > 80) {
+			drawN -= 15;
+			slow = 0;
+		}
 		acc += dt;
 		let guard = 0;
 		while (acc >= STEP && guard < 6) {
@@ -942,18 +1121,46 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		render();
 	};
 
+	const onHidden = () => {
+		if (document.hidden && (st.phase === "racing" || st.phase === "countdown")) api.pause();
+	};
+	document.addEventListener("visibilitychange", onHidden);
+
 	reset();
 	last = performance.now();
 	raf = requestAnimationFrame(frame);
 
-	return {
-		start() {
+	const api = {
+		start(opts = {}) {
+			if (opts.level && LEVELS[opts.level]) level = opts.level;
+			paused = false;
+			if (hooks.onPause) hooks.onPause(false);
 			startAudio();
 			if (audio && audio.ac.state === "suspended") audio.ac.resume();
 			reset();
 			st.phase = "countdown";
 			st.count = 3.4;
-			if (hooks.onStart) hooks.onStart();
+			if (hooks.onStart) hooks.onStart(level);
+		},
+		pause() {
+			if (paused || (st.phase !== "racing" && st.phase !== "countdown")) return;
+			paused = true;
+			Object.keys(keys).forEach((k) => (keys[k] = false));
+			if (hooks.onPause) hooks.onPause(true);
+		},
+		resume() {
+			if (!paused) return;
+			paused = false;
+			last = performance.now();
+			if (hooks.onPause) hooks.onPause(false);
+		},
+		toggle() {
+			if (paused) api.resume();
+			else api.pause();
+		},
+		isPaused: () => paused,
+		setLevel(l) {
+			if (LEVELS[l]) level = l;
 		},
 		input(name, value) {
 			if (name in keys) keys[name] = !!value;
@@ -967,6 +1174,7 @@ export const createRace = (canvas, labels, hooks = {}) => {
 		debug: () => ({ st, cars, segments, TL, MAX, N }),
 		destroy() {
 			alive = false;
+			document.removeEventListener("visibilitychange", onHidden);
 			cancelAnimationFrame(raf);
 			if (audio) {
 				try {
@@ -979,6 +1187,8 @@ export const createRace = (canvas, labels, hooks = {}) => {
 			}
 		},
 	};
+
+	return api;
 };
 
 export const RACE = { LAPS, TOTAL: RIVALS + 1 };
