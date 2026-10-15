@@ -10,11 +10,11 @@ import { useI18n } from "../i18n";
 
 const Art = ({ game, big }) => (
 	<div
-		className={`game-art${big ? " game-art--big" : ""}`}
+		className={`game-art game-art--img${big ? " game-art--big" : ""}`}
 		style={{ background: `linear-gradient(135deg, ${game.tone[0]}, ${game.tone[1]})` }}
 		aria-hidden="true"
 	>
-		<span>{game.emoji}</span>
+		<img src={`${process.env.PUBLIC_URL || ""}/games/${game.slug}.svg`} alt="" loading="lazy" width="800" height="450" />
 	</div>
 );
 

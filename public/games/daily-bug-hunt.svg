@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Daily Bug Hunt: a code editor with one buggy line lit by a lantern">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fe0b5"/><stop offset="1" stop-color="#4d8cff"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3b0" stop-opacity=".95"/><stop offset="1" stop-color="#fff3b0" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="450" fill="url(#bg)"/>
+<g fill="#fff" opacity=".18"><circle cx="70" cy="70" r="46"/><circle cx="740" cy="390" r="70"/><circle cx="700" cy="60" r="24"/></g>
+<rect x="90" y="52" width="620" height="346" rx="22" fill="#17112f" stroke="#17111a" stroke-width="6"/>
+<path d="M90 74a22 22 0 0122-22h576a22 22 0 0122 22v28H90z" fill="#2a2152"/>
+<circle cx="120" cy="77" r="7" fill="#ff5c7a"/><circle cx="144" cy="77" r="7" fill="#ffb84d"/><circle cx="168" cy="77" r="7" fill="#3fe0b5"/>
+<g font-family="ui-monospace,Menlo,Consolas,monospace" font-size="19" fill="#9d90e6">
+<text x="116" y="140" fill="#5b5390">1</text><text x="156" y="140">function total(items) {</text>
+<text x="116" y="176" fill="#5b5390">2</text><text x="156" y="176">  let sum = 0;</text>
+<text x="116" y="212" fill="#5b5390">3</text><text x="156" y="212">  for (let i = 0; i &lt;= items.length; i++) {</text>
+<text x="116" y="248" fill="#5b5390">4</text><text x="156" y="248">    sum += items[i].price;</text>
+<text x="116" y="284" fill="#5b5390">5</text><text x="156" y="284">  }</text>
+<text x="116" y="320" fill="#5b5390">6</text><text x="156" y="320">  return sum;</text>
+<text x="116" y="356" fill="#5b5390">7</text><text x="156" y="356">}</text></g>
+<rect x="100" y="188" width="600" height="34" rx="8" fill="#ff5c7a" opacity=".28"/>
+<ellipse cx="560" cy="205" rx="170" ry="70" fill="url(#glow)"/>
+<!-- bug -->
+<g transform="translate(610 190) rotate(-14)" stroke="#17111a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M-22-14l-18-14M-26 0h-22M-22 14l-18 14M22-14l18-14M26 0h22M22 14l18 14" fill="none"/>
+<ellipse cx="0" cy="4" rx="26" ry="30" fill="#ff5c7a"/><path d="M0-26V34" stroke-width="3"/>
+<circle cx="-10" cy="-2" r="5" fill="#17111a" stroke="none"/><circle cx="12" cy="10" r="5" fill="#17111a" stroke="none"/><circle cx="-9" cy="18" r="4" fill="#17111a" stroke="none"/>
+<circle cx="0" cy="-34" r="14" fill="#ff8aa0"/><circle cx="-5" cy="-37" r="3" fill="#fff" stroke="none"/><circle cx="6" cy="-37" r="3" fill="#fff" stroke="none"/>
+<path d="M-6-47l-8-12M6-47l8-12" fill="none"/></g>
+<!-- lantern -->
+<g transform="translate(676 318)" stroke="#17111a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><path d="M-16-34a16 12 0 0132 0" fill="none"/><rect x="-22" y="-26" width="44" height="12" rx="4" fill="#ffb84d"/><path d="M-20-14h40l-6 44h-28z" fill="#fff3b0"/><rect x="-24" y="30" width="48" height="10" rx="4" fill="#ffb84d"/><path d="M0-4c10 8 8 20 0 22-8-2-10-14 0-22z" fill="#ff8a3d" stroke-width="3"/></g>
+</svg>

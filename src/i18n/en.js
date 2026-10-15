@@ -250,6 +250,7 @@ const en = {
 		  "village": "Tap a tiny person. They might get a name and a job, or not."
 		 }
 		},
+		race: {"name": "Deploy Rush", "eyebrow": "Arcade racing", "metaDesc": "Deploy Rush: a free arcade racing game. Three laps, six cars, traffic and nitro. Beat your best time.", "lead": "Race the deadline. Three laps, five rivals, a road full of traffic. Gas is automatic, so it comes down to your steering, your braking and when you burn the nitro.", "readyTitle": "Ready to ship?", "readyBody": "You start in last place. Weave through traffic, grab the lightning bolts for nitro and cross the line first.", "keys": "Arrow keys or A / D to steer. Down or S to brake. Space or Up for nitro.", "best": "Best time", "start": "Start race", "bestLap": "Best lap", "record": "New personal best!", "again": "Race again", "share": "Copy my result", "copied": "Copied", "moreGames": "More games", "soundOn": "Turn sound on", "soundOff": "Turn sound off", "controls": "Controls", "left": "Steer left", "right": "Steer right", "brake": "BRAKE", "boost": "NITRO", "tip": "Tip: brake a little before the sharp bends. Going off the road costs you speed.", "shareText": "I finished {place} of {total} in Deploy Rush in {time}. Beat me:", "places": ["1st place", "2nd place", "3rd place", "4th place", "5th place", "6th place"], "hud": {"pos": "POSITION", "lap": "LAP", "kmh": "KM/H", "nitro": "NITRO", "go": "GO!", "bolt": "+NITRO", "finish": "FINISH!"}},
 		bugHunt: {
 		 "name": "Daily Bug Hunt",
 		 "eyebrow": "Daily game",
@@ -436,6 +437,7 @@ const en = {
 		 "play": "Play now",
 		 "tags": {
 		  "realtime": "Realtime",
+		  "racing": "Arcade racing",
 		  "daily": "Daily",
 		  "solo": "Solo + leaderboard",
 		  "canvas": "Shared canvas",
@@ -449,6 +451,10 @@ const en = {
 		  "daily-bug-hunt": {
 		   "name": "Daily Bug Hunt",
 		   "pitch": "One developer puzzle a day, the same for everyone. Find the bug, keep your streak, share your result."
+		  },
+		  "deploy-rush": {
+		   "name": "Deploy Rush",
+		   "pitch": "Three laps, five rivals and a road full of traffic. Steer, brake and burn your nitro to beat your best time."
 		  },
 		  "code-race": {
 		   "name": "Code Race",
