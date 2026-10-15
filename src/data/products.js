@@ -8,7 +8,23 @@
 //
 // Each product stands on its own. Do not link products to each other.
 
+import STORE_URL from "./store";
+
 const PRODUCTS = [
+	{
+		slug: "beezylabs-store",
+		name: "BeezyLabs Store",
+		status: "beta",
+		pitch: "A small store for the software, integrations, templates and scripts I build.",
+		audience: "Developers and small teams who want working code they can drop in",
+		url: STORE_URL,
+		highlights: [
+			"Instant downloads with a licence key for each purchase",
+			"Checkout by card, naira or USDC",
+			"No passwords: sign in with a one-time email link",
+		],
+		screenshot: "",
+	},
 	{
 		slug: "beezyapply",
 		name: "BeezyApply",

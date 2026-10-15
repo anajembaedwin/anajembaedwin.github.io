@@ -1,3 +1,4 @@
+import STORE_URL from "../data/store";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
@@ -196,6 +197,10 @@ const ResponsePanel = ({ lines }) => {
 			}
 			case "open": {
 				if (!arg) return [line(T.openUsage)];
+				if (arg === "store") {
+					window.open(STORE_URL, "_blank", "noopener");
+					return [line(T.opening.replace("{x}", arg))];
+				}
 				if (arg === "products" || arg === "projects" || arg === "contact" || arg === "about") {
 					if (arg === "contact" && document.getElementById("contact")) {
 						document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
