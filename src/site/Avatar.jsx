@@ -95,14 +95,14 @@ const Avatar = ({ talking = false, onAsk }) => {
 <use href="#paisley" transform="translate(70 930) rotate(-20) scale(.8)"/><use href="#paisley" transform="translate(900 930) rotate(60) scale(.8)"/>
 <use href="#paisley" transform="translate(300 900) rotate(10) scale(.7)"/><use href="#paisley" transform="translate(720 905) rotate(-15) scale(.7)"/>
 
-<path d="M348 600 L656 600 L648 770 Q502 850 366 770 Z" fill="#4e3023" stroke="#17111a" strokeWidth="9" strokeLinejoin="round"/>
+<path d="M348 600 L656 600 L648 770 Q502 850 366 770 Z" fill="#9b6444" stroke="#17111a" strokeWidth="9" strokeLinejoin="round"/>
 <path d="M366 770 Q502 850 648 770 L618 960 L392 960 Z" fill="#f6f0e7" stroke="#17111a" strokeWidth="9" strokeLinejoin="round"/>
 <path d="M340 622 L392 960 M664 622 L618 960" stroke="#17111a" strokeWidth="10" strokeLinecap="round" fill="none"/>
 
-<ellipse cx="302" cy="388" rx="24" ry="54" fill="#6a4130" stroke="#17111a" strokeWidth="8"/>
-<ellipse cx="714" cy="392" rx="22" ry="52" fill="#6a4130" stroke="#17111a" strokeWidth="8"/>
-<path d="M312 330 C306 210 380 124 508 120 C640 120 712 210 706 340 L702 470 C692 600 612 706 504 708 C392 706 314 600 308 470 Z" fill="#6a4130" stroke="#17111a" strokeWidth="10" strokeLinejoin="round"/>
-<ellipse cx="510" cy="204" rx="92" ry="14" fill="#8a5a45" opacity=".55"/>
+<ellipse cx="302" cy="388" rx="24" ry="54" fill="#c48a63" stroke="#17111a" strokeWidth="8"/>
+<ellipse cx="714" cy="392" rx="22" ry="52" fill="#c48a63" stroke="#17111a" strokeWidth="8"/>
+<path d="M312 330 C306 210 380 124 508 120 C640 120 712 210 706 340 L702 470 C692 600 612 706 504 708 C392 706 314 600 308 470 Z" fill="#c48a63" stroke="#17111a" strokeWidth="10" strokeLinejoin="round"/>
+<ellipse cx="510" cy="204" rx="92" ry="14" fill="#dcad88" opacity=".55"/>
 
 <path d="M308 372 L308 470 C316 600 394 708 504 710 C612 708 696 600 704 470 L704 372 C690 424 664 448 630 456 C600 442 560 450 506 458 C452 450 412 442 382 456 C346 448 324 424 308 372 Z" fill="#1d1519" stroke="#17111a" strokeWidth="8" strokeLinejoin="round"/>
 <path d="M360 600 Q430 680 504 690 M650 600 Q585 680 504 690" fill="none" stroke="#3a2c33" strokeWidth="7" strokeLinecap="round" opacity=".7"/>
@@ -111,12 +111,12 @@ const Avatar = ({ talking = false, onAsk }) => {
 
 <use href="#brow"/><use href="#brow" transform="translate(1018 0) scale(-1 1)"/>
 
-<path d="M494 352 C480 392 452 402 454 420 C476 438 546 438 570 420 C572 402 542 392 530 352 Z" fill="#7a4d39" stroke="#17111a" strokeWidth="7" strokeLinejoin="round"/>
+<path d="M494 352 C480 392 452 402 454 420 C476 438 546 438 570 420 C572 402 542 392 530 352 Z" fill="#d29c76" stroke="#17111a" strokeWidth="7" strokeLinejoin="round"/>
 <ellipse cx="480" cy="418" rx="11" ry="7" fill="#17111a"/><ellipse cx="544" cy="418" rx="11" ry="7" fill="#17111a"/>
 
 <path d="M420 484 C460 452 486 466 506 474 C530 466 558 452 596 484 C572 494 540 488 506 494 C474 488 446 494 420 484 Z" fill="#1d1519" stroke="#17111a" strokeWidth="6" strokeLinejoin="round"/>
 <g className="avatar__mouth">
-<path d="M434 508 C462 494 486 500 506 508 C530 498 556 494 584 508 C570 538 536 548 506 548 C476 548 448 538 434 508 Z" fill="#b86f60" stroke="#17111a" strokeWidth="7" strokeLinejoin="round"/>
+<path d="M434 508 C462 494 486 500 506 508 C530 498 556 494 584 508 C570 538 536 548 506 548 C476 548 448 538 434 508 Z" fill="#c4695e" stroke="#17111a" strokeWidth="7" strokeLinejoin="round"/>
 <path d="M440 512 C480 520 532 520 578 512" fill="none" stroke="#17111a" strokeWidth="6" strokeLinecap="round"/>
 </g>
 
