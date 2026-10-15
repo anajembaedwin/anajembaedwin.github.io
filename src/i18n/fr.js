@@ -250,6 +250,7 @@ const fr = {
 		  "village": "Touchez un petit personnage. Il pourrait recevoir un nom et un métier, ou pas."
 		 }
 		},
+		race: {"name": "Deploy Rush", "eyebrow": "Course arcade", "metaDesc": "Deploy Rush : un jeu de course arcade gratuit. Trois tours, six voitures, du trafic et du nitro. Battez votre meilleur temps.", "lead": "Courez contre la deadline. Trois tours, cinq rivaux, une route pleine de trafic. L'accélérateur est automatique : tout dépend de votre direction, de vos freinages et du moment où vous lâchez le nitro.", "readyTitle": "Prêt à livrer ?", "readyBody": "Vous partez dernier. Faufilez-vous dans le trafic, prenez les éclairs pour le nitro et franchissez la ligne en premier.", "keys": "Flèches ou A / D pour tourner. Bas ou S pour freiner. Espace ou Haut pour le nitro.", "best": "Meilleur temps", "start": "Lancer la course", "bestLap": "Meilleur tour", "record": "Nouveau record personnel !", "again": "Rejouer", "share": "Copier mon résultat", "copied": "Copié", "moreGames": "Autres jeux", "soundOn": "Activer le son", "soundOff": "Couper le son", "controls": "Commandes", "left": "Tourner à gauche", "right": "Tourner à droite", "brake": "FREIN", "boost": "NITRO", "tip": "Astuce : freinez un peu avant les virages serrés. Sortir de la route fait perdre de la vitesse.", "shareText": "J'ai fini {place} sur {total} à Deploy Rush en {time}. Faites mieux :", "places": ["1re place", "2e place", "3e place", "4e place", "5e place", "6e place"], "hud": {"pos": "POSITION", "lap": "TOUR", "kmh": "KM/H", "nitro": "NITRO", "go": "GO !", "bolt": "+NITRO", "finish": "ARRIVÉE !"}},
 		bugHunt: {
 		 "name": "Chasse quotidienne aux bugs",
 		 "eyebrow": "Jeu quotidien",
@@ -436,6 +437,7 @@ const fr = {
 		 "play": "Jouer",
 		 "tags": {
 		  "realtime": "Temps réel",
+		  "racing": "Course arcade",
 		  "daily": "Quotidien",
 		  "solo": "Solo + classement",
 		  "canvas": "Toile partagée",
@@ -449,6 +451,10 @@ const fr = {
 		  "daily-bug-hunt": {
 		   "name": "Daily Bug Hunt",
 		   "pitch": "Une énigme de développeur par jour, la même pour tous. Trouvez le bug, gardez votre série, partagez votre résultat."
+		  },
+		  "deploy-rush": {
+		   "name": "Deploy Rush",
+		   "pitch": "Trois tours, cinq rivaux et une route pleine de trafic. Dirigez, freinez et lâchez le nitro pour battre votre record."
 		  },
 		  "code-race": {
 		   "name": "Code Race",

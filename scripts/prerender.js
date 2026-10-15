@@ -32,6 +32,7 @@ const pages = [
 	["games/tiny-wars", "Tiny Wars village", "The Tiny Wars village: meet the tiny people and the characters of the game."],
 	["games/tiny-wars/play", "Play Tiny Wars", "A three-minute castle battle. Pick a side and fight in the weekly war."],
 	["games/daily-bug-hunt/play", "Daily Bug Hunt", "One developer puzzle a day, the same for everyone. Find the bug with Pip's lantern."],
+	["games/deploy-rush/play", "Deploy Rush", "A free arcade racing game. Three laps, five rivals, traffic and nitro. Beat your best time."],
 	["projects", "Projects", "Selected code by Edwin Anajemba: microservices, real-time apps, auth, finance APIs, ML and smart contracts."],
 	["contact", "Contact", "Get in touch about freelance projects, product leadership or collaborations."],
 	...products.map((p) => [`products/${p.slug}`, p.name, p.pitch]),

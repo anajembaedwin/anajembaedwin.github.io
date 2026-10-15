@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Layout from "../site/Layout";
+import GameBanner from "../site/GameBanner";
 import { ROLES, GLYPHS, SIDES } from "../site/tiny";
 
 import { useI18n } from "../i18n";
@@ -51,9 +52,12 @@ const Village = () => {
 			</Helmet>
 
 			<section className="page-hero">
-				<div className="wrap">
-					<h1 className="page-hero__title">{t.title}</h1>
-					<p className="page-hero__lead">{t.lead}</p>
+				<div className="wrap page-hero--split">
+					<div>
+						<h1 className="page-hero__title">{t.title}</h1>
+						<p className="page-hero__lead">{t.lead}</p>
+					</div>
+					<GameBanner slug="tiny-wars" />
 				</div>
 			</section>
 

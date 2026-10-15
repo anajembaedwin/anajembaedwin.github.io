@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Layout from "../site/Layout";
+import GameBanner from "../site/GameBanner";
 import { Pip } from "../site/Guide";
 import { todays, dayKey } from "../game/bugs";
 import { useI18n } from "../i18n";
@@ -159,10 +160,13 @@ const BugHunt = () => {
 			</Helmet>
 
 			<section className="page-hero">
-				<div className="wrap">
-					<p className="eyebrow">{T.eyebrow}</p>
-					<h1 className="page-hero__title">{T.name}</h1>
-					<p className="page-hero__lead">{T.lead}</p>
+				<div className="wrap page-hero--split">
+					<div>
+						<p className="eyebrow">{T.eyebrow}</p>
+						<h1 className="page-hero__title">{T.name}</h1>
+						<p className="page-hero__lead">{T.lead}</p>
+					</div>
+					<GameBanner slug="daily-bug-hunt" />
 				</div>
 			</section>
 

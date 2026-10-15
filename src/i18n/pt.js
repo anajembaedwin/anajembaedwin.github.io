@@ -250,6 +250,7 @@ const pt = {
 		  "village": "Toque numa pessoa miúda. Pode ganhar nome e profissão, ou não."
 		 }
 		},
+		race: {"name": "Deploy Rush", "eyebrow": "Corrida arcade", "metaDesc": "Deploy Rush: um jogo de corrida arcade gratuito. Três voltas, seis carros, trânsito e nitro. Bata o seu melhor tempo.", "lead": "Corra contra o prazo. Três voltas, cinco rivais, uma estrada cheia de trânsito. O acelerador é automático: tudo depende da sua direção, das suas travagens e de quando queima o nitro.", "readyTitle": "Pronto para entregar?", "readyBody": "Começa em último. Desvie-se do trânsito, apanhe os raios para ganhar nitro e cruze a meta em primeiro.", "keys": "Setas ou A / D para virar. Baixo ou S para travar. Espaço ou Cima para o nitro.", "best": "Melhor tempo", "start": "Começar corrida", "bestLap": "Melhor volta", "record": "Novo recorde pessoal!", "again": "Correr de novo", "share": "Copiar meu resultado", "copied": "Copiado", "moreGames": "Mais jogos", "soundOn": "Ligar o som", "soundOff": "Desligar o som", "controls": "Controles", "left": "Virar à esquerda", "right": "Virar à direita", "brake": "FREIO", "boost": "NITRO", "tip": "Dica: trave um pouco antes das curvas fechadas. Sair da pista faz perder velocidade.", "shareText": "Terminei em {place} de {total} no Deploy Rush em {time}. Tente me bater:", "places": ["1.º lugar", "2.º lugar", "3.º lugar", "4.º lugar", "5.º lugar", "6.º lugar"], "hud": {"pos": "POSIÇÃO", "lap": "VOLTA", "kmh": "KM/H", "nitro": "NITRO", "go": "VAI!", "bolt": "+NITRO", "finish": "CHEGADA!"}},
 		bugHunt: {
 		 "name": "Caça diária aos bugs",
 		 "eyebrow": "Jogo diário",
@@ -436,6 +437,7 @@ const pt = {
 		 "play": "Jogar",
 		 "tags": {
 		  "realtime": "Tempo real",
+		  "racing": "Corrida arcade",
 		  "daily": "Diário",
 		  "solo": "Solo + classificação",
 		  "canvas": "Tela partilhada",
@@ -449,6 +451,10 @@ const pt = {
 		  "daily-bug-hunt": {
 		   "name": "Daily Bug Hunt",
 		   "pitch": "Um enigma de programação por dia, igual para todos. Encontre o bug, mantenha a sequência e partilhe o resultado."
+		  },
+		  "deploy-rush": {
+		   "name": "Deploy Rush",
+		   "pitch": "Três voltas, cinco rivais e uma estrada cheia de trânsito. Vire, trave e queime o nitro para bater o seu recorde."
 		  },
 		  "code-race": {
 		   "name": "Code Race",
