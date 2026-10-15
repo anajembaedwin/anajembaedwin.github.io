@@ -3,7 +3,7 @@
 // logo on the card. Only add an entry once the site has been checked and is live.
 
 const LIVE = [
-	{ id: "jointearn", name: "JointEarn", url: "https://www.jointearn.com" },
+	{ id: "jointearn", name: "JointEarn", url: "https://web.jointearn.com" },
 	{ id: "eyemark", name: "Eyemark", url: "https://www.eyemark.ng" },
 	{ id: "closecarbon", name: "CloseCarbon", url: "https://netzence.com/closecarbon/" },
 	{ id: "cruva", name: "Cruva (formerly UpTk)", url: "https://www.cruva.com" },
