@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Quiz Night: a live quiz stage with a microphone and a leaderboard">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fd9a4"/><stop offset="1" stop-color="#ffb84d"/></linearGradient>
+<linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+<rect width="800" height="450" fill="url(#bg)"/>
+<path d="M120 0h60l90 320H40z" fill="url(#beam)"/><path d="M620 0h60l80 320H540z" fill="url(#beam)"/>
+<g stroke="#17111a" stroke-width="5"><rect x="0" y="340" width="800" height="110" fill="#17112f"/><path d="M0 340H800" /></g>
+<!-- question bubbles -->
+<g stroke="#17111a" stroke-width="5" stroke-linejoin="round"><path d="M90 70h110a16 16 0 0116 16v50a16 16 0 01-16 16h-60l-26 24v-24H90a16 16 0 01-16-16V86a16 16 0 0116-16z" fill="#fff"/><path d="M590 52h120a16 16 0 0116 16v50a16 16 0 01-16 16h-24v24l-26-24h-70a16 16 0 01-16-16V68a16 16 0 0116-16z" fill="#fff"/></g>
+<g font-family="system-ui,sans-serif" font-weight="800" fill="#17111a" text-anchor="middle"><text x="145" y="124" font-size="52">?</text><text x="650" y="108" font-size="40">A  B  C</text></g>
+<!-- mic -->
+<g stroke="#17111a" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"><rect x="360" y="86" width="80" height="130" rx="40" fill="#ff5c7a"/><path d="M360 130h80M360 160h80" stroke-width="4"/><path d="M330 170v10a70 70 0 00140 0v-10" fill="none"/><path d="M400 250v70M350 320h100" fill="none"/></g>
+<!-- scoreboard -->
+<g stroke="#17111a" stroke-width="5" stroke-linejoin="round"><rect x="150" y="270" width="500" height="150" rx="16" fill="#17112f"/></g>
+<g stroke="#17111a" stroke-width="3"><rect x="180" y="352" width="90" height="56" rx="6" fill="#ffd84d"/><rect x="290" y="326" width="90" height="82" rx="6" fill="#3fe0b5"/><rect x="400" y="292" width="90" height="116" rx="6" fill="#ff5c7a"/><rect x="510" y="338" width="90" height="70" rx="6" fill="#4d8cff"/></g>
+<g fill="#ffd84d" stroke="#17111a" stroke-width="3" stroke-linejoin="round"><path d="M445 262l6 14 15 2-11 10 3 15-13-8-13 8 3-15-11-10 15-2z" transform="translate(0 -8)"/></g>
+</svg>
