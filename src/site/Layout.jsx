@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import INFO from "../data/user";
@@ -8,6 +8,7 @@ import PlayLayer from "./PlayLayer";
 import TinyPeople from "./TinyPeople";
 import Guide from "./Guide";
 import { useLiveHeartbeat } from "../live/stats";
+import STORE_URL from "../data/store";
 
 const Layout = ({ children, current }) => {
 	const { lang, setLang, site, ui } = useI18n();
@@ -76,6 +77,29 @@ const Layout = ({ children, current }) => {
 
 	const closeMenu = () => setMenuOpen(false);
 
+	// The "Build" group: opens on click (and on hover with a mouse), closes on outside click or Escape.
+	const [groupOpen, setGroupOpen] = useState(false);
+	const groupRef = useRef(null);
+	const closeAll = () => {
+		setGroupOpen(false);
+		setMenuOpen(false);
+	};
+	useEffect(() => {
+		if (!groupOpen) return undefined;
+		const onDown = (event) => {
+			if (groupRef.current && !groupRef.current.contains(event.target)) setGroupOpen(false);
+		};
+		const onKey = (event) => {
+			if (event.key === "Escape") setGroupOpen(false);
+		};
+		document.addEventListener("pointerdown", onDown);
+		document.addEventListener("keydown", onKey);
+		return () => {
+			document.removeEventListener("pointerdown", onDown);
+			document.removeEventListener("keydown", onKey);
+		};
+	}, [groupOpen]);
+
 	return (
 		<React.Fragment>
 			<a className="skip-link" href="#main">
@@ -127,26 +151,60 @@ const Layout = ({ children, current }) => {
 							<Link to="/#work" onClick={closeMenu}>
 								{ui.nav.work}
 							</Link>
-							<Link to="/#contact" onClick={closeMenu}>
-								{ui.nav.contact}
-							</Link>
-							<Link
-								to="/products"
-								aria-current={current === "products" ? "page" : undefined}
+							<div
+								className={`nav__group${groupOpen ? " is-open" : ""}`}
+								ref={groupRef}
 							>
-								{ui.nav.products}
-							</Link>
-							<Link
-								to="/games"
-								aria-current={current === "games" ? "page" : undefined}
+								<button
+									type="button"
+									className="nav__trigger"
+									aria-expanded={groupOpen}
+									aria-haspopup="true"
+									aria-controls="nav-build"
+									data-current={["products", "games", "projects"].includes(current) ? "true" : undefined}
+									onClick={() => setGroupOpen(!groupOpen)}
+								>
+									{ui.nav.build}
+									<span className="nav__caret" aria-hidden="true" />
+								</button>
+								<div className="nav__menu" id="nav-build">
+									<Link
+										to="/products"
+										aria-current={current === "products" ? "page" : undefined}
+										onClick={closeAll}
+									>
+										{ui.nav.products}
+									</Link>
+									<Link
+										to="/games"
+										aria-current={current === "games" ? "page" : undefined}
+										onClick={closeAll}
+									>
+										{ui.nav.games}
+									</Link>
+									<Link
+										to="/projects"
+										aria-current={current === "projects" ? "page" : undefined}
+										onClick={closeAll}
+									>
+										{ui.nav.code}
+									</Link>
+								</div>
+							</div>
+							<a
+								className="nav__store"
+								href={STORE_URL}
+								target="_blank"
+								rel="noreferrer"
+								onClick={closeMenu}
 							>
-								{ui.nav.games}
-							</Link>
-							<Link to="/projects" aria-current={current === "projects" ? "page" : undefined} onClick={closeMenu}>
-								{ui.nav.code}
-							</Link>
+								{ui.nav.store} <span aria-hidden="true">↗</span>
+							</a>
 							<Link to="/about" aria-current={current === "about" ? "page" : undefined}>
 								{ui.nav.about}
+							</Link>
+							<Link to="/#contact" onClick={closeMenu}>
+								{ui.nav.contact}
 							</Link>
 						</nav>
 						<div className="lang" role="group" aria-label={ui.langLabel}>

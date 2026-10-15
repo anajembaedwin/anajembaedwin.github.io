@@ -14,6 +14,8 @@ const pt = {
 			services: "Serviços",
 			work: "Percurso",
 			products: "Produtos",
+			build: "Criar",
+			store: "Loja",
 			games: "Jogos",
 			code: "Código",
 			about: "Sobre",
@@ -39,6 +41,7 @@ const pt = {
 		liveLede: "Produtos reais com utilizadores reais. Abra qualquer um para ver o trabalho em uso.",
 		visitSite: "Visitar o site",
 		liveItems: {"jointearn": "Uma plataforma de recompensas onde se ganha a ver vídeos, a jogar, a ler notícias e a comprar. Lidero a equipa de produto e sou responsável pelo frontend React e pelo backend Node.js.", "eyemark": "A plataforma da Nigéria para acompanhar projetos públicos e reportar o progresso. Trabalhei na aplicação web.", closecarbon: "Verificação de emissões de carbono da Netzence. Construí os smart contracts em Hyperledger e o backend Python e as APIs que recebem dados do dispositivo de monitorização.", girllead: "Um acelerador de talentos sem fins lucrativos. Como voluntário, desenhei a arquitetura backend das plataformas internas e escrevi os requisitos de produto e o plano de migração.", cruva: "Antes UpTk, o marketplace onde construí os fluxos de comprador e comerciante. Hoje a Cruva é uma plataforma de IA para o crescimento de afiliados do TikTok Shop." },
+		storeBanner: { kicker: "Novo", title: "A loja BeezyLabs", text: "Software, integrações, modelos e scripts que construí, numa pequena loja. Está no início e vou juntando produtos à medida que ficam prontos.", cta: "Visitar a loja", more: "Sobre a loja" },
 		productsTitle: "Produtos que construo",
 		allProducts: "Todos os produtos",
 		viewProduct: "Ver {name}",
@@ -97,7 +100,7 @@ const pt = {
 		 "projects": "Abrir a página de projetos",
 		 "catUsage": "uso: cat <ficheiro>  (experimente ls)",
 		 "noFile": "cat: {f}: ficheiro inexistente",
-		 "openUsage": "uso: open services | work | about | contact | products | projects",
+		 "openUsage": "uso: open services | work | about | contact | products | projects | store",
 		 "opening": "a abrir {x}…",
 		 "langUsage": "uso: lang <{l}>",
 		 "langSet": "idioma: {l}",
@@ -682,6 +685,11 @@ const pt = {
 		},
 	},
 	products: {
+		"beezylabs-store": {
+			pitch: "Uma pequena loja com o software, as integrações, os modelos e os scripts que construo.",
+			audience: "Programadores e equipas pequenas que querem código pronto a usar",
+			highlights: ["Descarregamento imediato com uma chave de licença por compra", "Pagamento por cartão, nairas ou USDC", "Sem palavras-passe: entre com uma ligação de uso único enviada por email"],
+		},
 		beezyapply: {
 			pitch: "Otimização de CV com IA para quem procura emprego na Nigéria.",
 			audience: "Quem procura emprego na Nigéria",

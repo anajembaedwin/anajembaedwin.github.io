@@ -13,6 +13,7 @@ import Testimonials from "../site/Testimonials";
 
 import INFO from "../data/user";
 import LIVE from "../data/live";
+import STORE_URL from "../data/store";
 import { useI18n, fmt } from "../i18n";
 
 const Homepage = () => {
@@ -76,6 +77,9 @@ const Homepage = () => {
 							<Link className="btn btn--ghost" to="/about">
 								{ui.aboutMe}
 							</Link>
+							<a className="btn btn--ghost" href={STORE_URL} target="_blank" rel="noreferrer">
+								{ui.storeBanner.cta} ↗
+							</a>
 						</div>
 					</div>
 					<ResponsePanel lines={SITE.response} />
@@ -94,6 +98,32 @@ const Homepage = () => {
 			</section>
 
 			<Marquee />
+
+			<section className="store-banner" aria-labelledby="store-banner-title">
+				<div className="wrap store-banner__grid" data-reveal>
+					<div>
+						<span className="store-banner__kicker">{ui.storeBanner.kicker}</span>
+						<h2 className="store-banner__title" id="store-banner-title">
+							{ui.storeBanner.title}
+						</h2>
+						<p className="store-banner__text">{ui.storeBanner.text}</p>
+						<div className="hero__actions">
+							<a className="btn btn--hot" href={STORE_URL} target="_blank" rel="noreferrer">
+								{ui.storeBanner.cta} ↗
+							</a>
+							<Link className="btn btn--ghost" to="/products/beezylabs-store">
+								{ui.storeBanner.more}
+							</Link>
+						</div>
+					</div>
+					<div className="store-banner__art" aria-hidden="true">
+						<span>&lt;/&gt;</span>
+						<span>.zip</span>
+						<span>API</span>
+						<span>$</span>
+					</div>
+				</div>
+			</section>
 
 			<section className="section" id="services">
 				<div className="wrap" data-reveal>
