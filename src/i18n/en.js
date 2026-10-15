@@ -23,7 +23,7 @@ const en = {
 		},
 		liveStats: {"live": "Live", "online": "online now", "playing": "playing", "visits": "visits today", "plays": "games played today", "note": "Anonymous. No cookies, no IP addresses stored."},
 		footerSub:
-			"Product engineer and team lead. Web and infrastructure, based in Africa.",
+			"Software product engineer and team lead. Web and infrastructure, based in Africa.",
 		footerLinks: { github: "GitHub", linkedin: "LinkedIn", email: "Email" },
 		hire: "Hire me for a contract",
 		aboutMe: "About me",
