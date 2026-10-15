@@ -99,7 +99,7 @@ export const SITE = {
 				tag: "Digital entertainment, social engagement, and e-commerce platform. 2025 to now.",
 				role: "Backend engineer, then full stack, now Product Team Lead. I oversee the developers, track progress, and make sure deliverables ship. I still own delivery of the React frontend and the Node.js/TypeScript backend.",
 				outcome: "The backend is the system of record for user activity, engagement, and transactions.",
-				link: { url: "https://www.jointearn.com", label: "jointearn.com" },
+				link: { url: "https://web.jointearn.com", label: "web.jointearn.com" },
 			},
 			{
 				name: "Maxxed Technical Systems",
