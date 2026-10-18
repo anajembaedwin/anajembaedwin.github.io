@@ -106,19 +106,21 @@ export const SITE = {
 				tag: "Enterprise SaaS platform. 2024 to 2025.",
 				role: "Built backend services and data access layers in Node.js and Python on PostgreSQL.",
 				outcome: "Cut response times by about 25% by optimizing SQL queries and reporting views.",
+				link: { url: "https://techmaxxed.com", label: "techmaxxed.com" },
 			},
 			{
 				name: "CloseCarbon (Netzence)",
 				tag: "Carbon emissions verification platform. 2024 to 2025, contract.",
 				role: "Built smart contracts on Hyperledger and integrated them with a Python (FastAPI) backend and APIs that take in data from an embedded tracking device.",
 				outcome: "Auditable emissions records for an ESG compliance platform.",
-				link: { url: "https://netzence.com/closecarbon/", label: "netzence.com/closecarbon" },
+				link: { url: "https://www.closecarbon.com/", label: "closecarbon.com" },
 			},
 			{
 				name: "Cruva (formerly UpTk)",
 				tag: "E-commerce marketplace. 2024, contract.",
 				role: "Built Vue.js buyer and merchant workflows, and deployed backend services on AWS.",
 				outcome: "A marketplace with 2,000+ users and about $10,000 in monthly transactions.",
+				link: { url: "https://www.cruva.com", label: "cruva.com" },
 			},
 			{
 				name: "Palimart",

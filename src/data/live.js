@@ -5,7 +5,7 @@
 const LIVE = [
 	{ id: "jointearn", name: "JointEarn", url: "https://web.jointearn.com" },
 	{ id: "eyemark", name: "Eyemark", url: "https://www.eyemark.ng" },
-	{ id: "closecarbon", name: "CloseCarbon", url: "https://netzence.com/closecarbon/" },
+	{ id: "closecarbon", name: "CloseCarbon", url: "https://www.closecarbon.com/" },
 	{ id: "cruva", name: "Cruva (formerly UpTk)", url: "https://www.cruva.com" },
 	{ id: "girllead", name: "GirlLEAD Talent Accelerator", url: "https://thegirlleadproject.org" },
 ];
