@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import ReactGA from "react-ga4";
 
 import Homepage from "./pages/homepage";
+import AiSolutions from "./pages/aiSolutions";
 import Products from "./pages/products";
 import ProductDetail from "./pages/productDetail";
 import Games from "./pages/games";
@@ -29,6 +30,7 @@ function App() {
 		<div className="App">
 			<Routes>
 				<Route path="/" element={<Homepage />} />
+				<Route path="/ai-solutions" element={<AiSolutions />} />
 				<Route path="/products" element={<Products />} />
 				<Route path="/products/:slug" element={<ProductDetail />} />
 				<Route path="/games" element={<Games />} />

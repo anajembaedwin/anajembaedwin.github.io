@@ -4420,3 +4420,64 @@ body {
 		display: none;
 	}
 }
+
+/* ---------- AI solutions page ---------- */
+
+.ai-cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 26px;
+}
+
+.ai-grid {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 760px) {
+	.ai-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ai-list {
+	margin: 14px 0 0;
+	padding-left: 1.1em;
+	color: var(--ink-2);
+}
+
+.ai-list li {
+	margin-bottom: 8px;
+	font-size: 0.95rem;
+}
+
+.ai-list--why {
+	max-width: 70ch;
+	font-size: 1.05rem;
+}
+
+.ai-usecases {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 16px;
+}
+
+.ai-steps {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 900px) {
+	.ai-steps {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.ai-steps {
+		grid-template-columns: 1fr;
+	}
+}
+
+.ai-final__btn {
+	margin-top: 6px;
+}

@@ -151,6 +151,13 @@ const Layout = ({ children, current }) => {
 							<Link to="/#work" onClick={closeMenu}>
 								{ui.nav.work}
 							</Link>
+							<Link
+								to="/ai-solutions"
+								aria-current={current === "ai" ? "page" : undefined}
+								onClick={closeMenu}
+							>
+								{ui.nav.ai}
+							</Link>
 							<div
 								className={`nav__group${groupOpen ? " is-open" : ""}`}
 								ref={groupRef}

@@ -15,6 +15,7 @@ const en = {
 			label: "Main",
 			services: "Services",
 			work: "Work",
+			ai: "AI solutions",
 			products: "Products",
 			build: "Build",
 			store: "Store",
@@ -476,6 +477,143 @@ const en = {
 		   "pitch": "A live weekly quiz with African and tech rounds, a leaderboard and sponsor-funded prizes."
 		  }
 		 }
+		},
+		aiPage: {
+			metaDesc:
+				"AI solutions by Edwin Anajemba: data readiness, retrieval and RAG, AI features, agents and automation, and taking AI to production.",
+			title: "Build AI that works in production.",
+			lead: "From clean data to agents running in production. I design, build and ship AI features inside real products, with the engineering around them that keeps them reliable, secure and affordable.",
+			cta: "Book a discovery call",
+			ctaSecondary: "See what I offer",
+			areasTitle: "What I can do for you",
+			areasLede: "Pick one area or combine them. Each is a clear piece of work with a defined outcome.",
+			areas: [
+				{
+					title: "Data readiness for AI",
+					text: "AI is only as good as the data behind it. I get yours structured, clean and safe to use.",
+					items: [
+						"Data ingestion and preparation: moving, structuring and cleaning data from databases, documents and APIs",
+						"Labeling and enrichment: taxonomies, tagging and quality checks",
+						"Evaluation datasets, so you can measure whether the AI is any good",
+						"Access controls, lineage and audit trails",
+					],
+				},
+				{
+					title: "Knowledge search and RAG",
+					text: "Let people and products ask questions of your documents and data and get answers they can trust.",
+					items: [
+						"Retrieval architecture: document ingestion, chunking, embeddings and hybrid keyword plus semantic search",
+						"Answers with sources, so every claim can be checked",
+						"Permissions that follow the user, with PII redaction and audit logs",
+						"Relevance tuning and monitoring after launch",
+					],
+				},
+				{
+					title: "AI features in your product",
+					text: "Add practical AI to a web or mobile product using the Claude API and other leading models.",
+					items: [
+						"Chat and assistants inside your app",
+						"Summarising, classifying and extracting structured data from text, PDFs and forms",
+						"Drafting, rewriting and optimisation features, such as CV and content tools",
+						"Prompt design, structured outputs and model choice for cost and quality",
+					],
+				},
+				{
+					title: "Agents and automation",
+					text: "Systems that take action across your tools, with a human in the loop where it matters.",
+					items: [
+						"Workflow automation across email, CRMs, payments, support desks and internal tools",
+						"Agents that call your APIs and databases safely, with tool access and approvals",
+						"Triage and routing for tickets, leads and requests",
+						"Monitoring, retries and fallbacks when a step fails",
+					],
+				},
+				{
+					title: "Taking AI to production",
+					text: "Turning a promising prototype into something your team can run and trust.",
+					items: [
+						"Hardening prototypes: tests, evaluations and guardrails",
+						"Deployment pipelines on AWS with Docker and GitHub Actions",
+						"Cost and latency control: caching, batching and model selection",
+						"Logging, tracing and alerts so you can see what the AI is doing",
+					],
+				},
+				{
+					title: "Governance and security",
+					text: "Use AI without creating new risk for your customers or your business.",
+					items: [
+						"Data handling and privacy review for AI features",
+						"Prompt-injection and misuse protection",
+						"Human review steps and approval flows",
+						"Documentation your team and auditors can follow",
+					],
+				},
+				{
+					title: "Integration and modernisation",
+					text: "AI has to plug into what you already run, so I make that part easy.",
+					items: [
+						"APIs and webhooks that connect AI features to your existing systems",
+						"Backend upgrades and cloud migrations that AI work depends on",
+						"Payments and Web3 integration alongside AI features",
+						"Developer tooling and CI/CD so your team can keep shipping",
+					],
+				},
+				{
+					title: "Team enablement",
+					text: "Your team should be able to run and extend the work after I leave.",
+					items: [
+						"AI-assisted development workflows with Claude Code and Copilot",
+						"Code review and engineering guidelines for AI-generated code",
+						"Hands-on training and mentoring for developers",
+						"Handover documentation and recorded walkthroughs",
+					],
+				},
+			],
+			useCasesTitle: "Where this pays off",
+			useCasesLede: "Common starting points. If yours is not here, tell me what you are trying to do.",
+			useCases: [
+				{
+					title: "Customer support agent",
+					text: "Answers common questions from your docs, hands the hard ones to a person with the context attached.",
+				},
+				{
+					title: "Triage and routing",
+					text: "Reads incoming tickets, emails or leads, tags them and sends them to the right team.",
+				},
+				{
+					title: "Internal knowledge search",
+					text: "One place to ask questions across policies, wikis and files, with sources and access rules.",
+				},
+				{
+					title: "Document processing",
+					text: "Pulls fields out of invoices, CVs, contracts and forms and writes them to your system.",
+				},
+				{
+					title: "Search and personalisation",
+					text: "Smarter search and recommendations inside your product, tuned on your own data.",
+				},
+				{
+					title: "Developer productivity",
+					text: "Code review helpers, test generation and internal tools that shorten delivery time.",
+				},
+			],
+			processTitle: "How an AI project runs",
+			process: [
+				{ title: "Discover", text: "We pick one use case and agree how success is measured." },
+				{ title: "Prototype", text: "A working version on your real data within days." },
+				{ title: "Evaluate", text: "Tests and metrics show where it works and where it fails." },
+				{ title: "Ship", text: "Deployment, monitoring and guardrails for real users." },
+				{ title: "Improve", text: "Review results, fix gaps and widen the scope." },
+			],
+			whyTitle: "Why work with me",
+			why: [
+				"An engineer, not a slide deck. I build the data layer, the AI feature and the production platform myself.",
+				"Product thinking from leading a product team, so the AI solves a real user problem.",
+				"Strong backend, cloud and payments background: Node.js, Python, PostgreSQL and AWS.",
+				"Hands-on with the Claude API and AI-assisted development every day.",
+			],
+			ctaTitle: "Have an AI idea or a stalled prototype?",
+			ctaText: "Tell me what you are building, your timeline and your budget range. I reply with a plan and a first step.",
 		},
 		productsPage: {
 			title: "Products I build",
